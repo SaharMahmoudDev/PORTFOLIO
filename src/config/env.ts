@@ -12,10 +12,15 @@ export const env = createEnv({
     NODE_ENV: z
       .enum(["development", "test", "production"])
       .default("development"),
+    // Optional for now — Phase 4 wires the DB into real queries and makes
+    // this required.
+    DATABASE_URL: z.url().optional(),
   },
   client: {},
   runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,
+    DATABASE_URL: process.env.DATABASE_URL,
   },
   emptyStringAsUndefined: true,
+  skipValidation: !!process.env.SKIP_ENV_VALIDATION,
 });
