@@ -1,13 +1,11 @@
 import { getRequestConfig } from "next-intl/server";
-import { defaultLocale } from "./config";
+import { isValidLocale, routing } from "./routing";
 
-/**
- * Light setup: a single fixed locale so next-intl is wired without an
- * `app/[locale]` restructure. Phase 3 switches this to read the matched
- * `[locale]` route segment and negotiate the request locale.
- */
-export default getRequestConfig(async () => {
-  const locale = defaultLocale;
+export default getRequestConfig(async ({ requestLocale }) => {
+  const requested = await requestLocale;
+  const locale = isValidLocale(requested ?? "")
+    ? requested!
+    : routing.defaultLocale;
 
   return {
     locale,
