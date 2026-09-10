@@ -3,17 +3,11 @@ import { cn } from "@/lib/utils";
 import { Container } from "./container";
 
 type SectionProps = ComponentProps<"section"> & {
-  /** Hairline divider along the top edge (canvas default). */
   divider?: boolean;
-  /** Constrain and pad the children with <Container>. Set false to bleed full-width. */
   contained?: boolean;
   containerClassName?: string;
 };
 
-/**
- * Vertical page section with the canvas rhythm (~100px block padding) and an
- * optional hairline top border separating it from the section above.
- */
 export function Section({
   divider = true,
   contained = true,

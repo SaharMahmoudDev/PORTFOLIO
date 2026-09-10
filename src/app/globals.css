@@ -2,7 +2,6 @@
 @import "tw-animate-css";
 @import "../styles/tokens.css";
 
-/* Dark mode is driven by `data-theme` on <html> (next-themes), per CLAUDE.md. */
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
 @theme inline {
@@ -16,7 +15,6 @@
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
-  /* shadcn semantic colours */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -37,7 +35,6 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  /* project-specific tokens */
   --color-heading: var(--heading);
   --color-panel: var(--panel);
   --color-fg-subtle: var(--foreground-subtle);
