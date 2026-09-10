@@ -1,0 +1,107 @@
+/**
+ * Design tokens — sourced from the Claude Design canvas (_claude-design-reference/).
+ *
+ * The canvas is dark-only, so the DARK palette holds the real, reviewed values.
+ * The LIGHT palette here is a first-pass harmonisation (same hue family, flipped
+ * lightness) to be refined when the Dark/Light toggle actually ships (Phase 3.8).
+ *
+ * Per CLAUDE.md: :root = light, [data-theme="dark"] = dark. next-themes writes
+ * `data-theme` on <html> and defaults to "dark".
+ *
+ * shadcn/ui semantic names are reused where they fit; project-specific tokens
+ * (terminal dots, hairline, bracket border, inverted CTA band) are added below.
+ */
+
+:root {
+  --radius: 0.5rem;
+
+  /* surfaces */
+  --background: #f6f8f7;
+  --foreground: #0b120f;
+  --heading: #05100b;
+  --card: #ffffff;
+  --card-foreground: #0b120f;
+  --popover: #ffffff;
+  --popover-foreground: #0b120f;
+  --panel: #eef2f0; /* darker inset (terminal header strip) */
+
+  /* brand / actions */
+  --primary: #12a25a; /* brand green, darkened for contrast on light surfaces */
+  --primary-foreground: #ffffff;
+  --secondary: #e9efeb;
+  --secondary-foreground: #1b2620;
+  --muted: #edf1ef;
+  --muted-foreground: #56635c;
+  --accent: #e6efe9; /* subtle green wash (hover/selected bg) */
+  --accent-foreground: #12201a;
+  --destructive: #c4443e;
+  --destructive-foreground: #ffffff;
+
+  /* text scale (extras beyond foreground/muted-foreground) */
+  --foreground-subtle: #45524b;
+  --foreground-faint: #6b7873;
+  --link: #2b3a33;
+
+  /* lines */
+  --border: #d8e0db;
+  --border-strong: #c3cfc8; /* bracket-corner cards */
+  --hairline: #e4e9e6; /* section dividers */
+  --input: #d8e0db;
+  --ring: #12a25a;
+
+  /* terminal / pipeline card dots */
+  --term-red: #d0554f;
+  --term-amber: #d39a3f;
+  --term-grey: #b4bfb8;
+
+  /* inverted CTA band — flips to dark on a light page */
+  --inverted: #0f1613;
+  --inverted-foreground: #eaf0ec;
+  --inverted-muted: #9daca3;
+}
+
+[data-theme="dark"] {
+  /* surfaces */
+  --background: #0a0f0d;
+  --foreground: #eaf0ec;
+  --heading: #f5faf7;
+  --card: #111815;
+  --card-foreground: #eaf0ec;
+  --popover: #111815;
+  --popover-foreground: #eaf0ec;
+  --panel: #0d1310;
+
+  /* brand / actions */
+  --primary: #35d482;
+  --primary-foreground: #06120c;
+  --secondary: #16201b;
+  --secondary-foreground: #eaf0ec;
+  --muted: #16201b;
+  --muted-foreground: #8fa398;
+  --accent: #16201b;
+  --accent-foreground: #eaf0ec;
+  --destructive: #e5605a;
+  --destructive-foreground: #06120c;
+
+  /* text scale */
+  --foreground-subtle: #a6b6ad;
+  --foreground-faint: #5c6c63;
+  --link: #c3cfc8;
+
+  /* lines */
+  --border: #1f2b24;
+  --border-strong: #2a3830;
+  --hairline: #151d19;
+  --input: #223029;
+  --ring: #35d482;
+
+  /* terminal / pipeline card dots */
+  --term-red: #e5605a;
+  --term-amber: #e8b75c;
+  --term-grey: #3c4a42;
+
+  /* inverted CTA band — flips to cream on a dark page */
+  --inverted: #ece8de;
+  --inverted-foreground: #14201a;
+  --inverted-muted: #4a544d;
+}
