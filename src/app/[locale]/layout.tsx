@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { AppProviders } from "@/providers";
+import { Navbar } from "@/components/common";
 import { fontVariables } from "@/lib/fonts";
 import { getDirection, isValidLocale, routing } from "@/i18n/routing";
 import "../globals.css";
@@ -36,7 +37,10 @@ export default async function LocaleLayout({
     >
       <body className="min-h-full font-sans">
         <NextIntlClientProvider>
-          <AppProviders>{children}</AppProviders>
+          <AppProviders>
+            <Navbar />
+            {children}
+          </AppProviders>
         </NextIntlClientProvider>
       </body>
     </html>

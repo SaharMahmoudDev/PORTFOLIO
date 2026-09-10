@@ -1,1 +1,19 @@
-{}
+{
+  "nav": {
+    "projects": "Projects",
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact",
+    "startProject": "Start a project",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "footer": {
+    "tagline": "Frontend engineer building React & Next.js interfaces, with AI automation wired into the workflow.",
+    "sitemap": "Sitemap",
+    "connect": "Connect",
+    "email": "Email",
+    "backToTop": "Back to top",
+    "builtWith": "built with React, Next.js & AI automation"
+  }
+}
