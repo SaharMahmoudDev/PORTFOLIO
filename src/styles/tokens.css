@@ -1,17 +1,3 @@
-/**
- * Design tokens — sourced from the Claude Design canvas (_claude-design-reference/).
- *
- * The canvas is dark-only, so the DARK palette holds the real, reviewed values.
- * The LIGHT palette here is a first-pass harmonisation (same hue family, flipped
- * lightness) to be refined when the Dark/Light toggle actually ships (Phase 3.8).
- *
- * Per CLAUDE.md: :root = light, [data-theme="dark"] = dark. next-themes writes
- * `data-theme` on <html> and defaults to "dark".
- *
- * shadcn/ui semantic names are reused where they fit; project-specific tokens
- * (terminal dots, hairline, bracket border, inverted CTA band) are added below.
- */
-
 :root {
   --radius: 0.5rem;
 

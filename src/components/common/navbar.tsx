@@ -15,10 +15,6 @@ const links = [
   { href: "/contact", key: "contact" },
 ] as const;
 
-/**
- * Site header. Transparent so it reads as part of the hero atmosphere on the
- * home page (canvas: nav merges into the hero with no divider).
- */
 export function Navbar() {
   const t = useTranslations("nav");
   const pathname = usePathname();

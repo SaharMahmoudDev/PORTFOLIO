@@ -1,6 +1,5 @@
 import { cn } from "@/lib/utils";
 
-/** Chevron mark + wordmark, matching the canvas nav/footer lockup. */
 export function Logo({ className }: { className?: string }) {
   return (
     <span className={cn("text-link flex items-center gap-2.5", className)}>

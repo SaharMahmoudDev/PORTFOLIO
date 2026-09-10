@@ -11,7 +11,6 @@ function makeQueryClient() {
   return new QueryClient({
     defaultOptions: {
       queries: {
-        // Avoid immediate refetches on the client right after hydration.
         staleTime: 60 * 1000,
       },
     },
@@ -22,10 +21,8 @@ let browserQueryClient: QueryClient | undefined;
 
 function getQueryClient() {
   if (isServer) {
-    // Server: always make a fresh client so requests don't share state.
     return makeQueryClient();
   }
-  // Browser: reuse one client across renders (and Fast Refresh).
   browserQueryClient ??= makeQueryClient();
   return browserQueryClient;
 }

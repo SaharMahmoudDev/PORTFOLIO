@@ -2,7 +2,6 @@ import type { ComponentProps } from "react";
 import { cn } from "@/lib/utils";
 
 type BracketCardProps = ComponentProps<"div"> & {
-  /** Corner bracket length. */
   cornerSize?: "sm" | "md" | "lg";
 };
 
@@ -12,9 +11,6 @@ const cornerSizeMap = {
   lg: "size-[26px]",
 } as const;
 
-/**
- * Signature canvas card: no full border, just L-shaped brackets at each corner.
- */
 export function BracketCard({
   cornerSize = "md",
   className,
