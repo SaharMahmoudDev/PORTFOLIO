@@ -48,6 +48,20 @@
   --color-inverted: var(--inverted);
   --color-inverted-foreground: var(--inverted-foreground);
   --color-inverted-muted: var(--inverted-muted);
+
+  --animate-glow-pulse: glow-pulse 7s ease-in-out infinite;
+
+  @keyframes glow-pulse {
+    0%,
+    100% {
+      opacity: 0.5;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.9;
+      transform: scale(1.06);
+    }
+  }
 }
 
 @layer base {

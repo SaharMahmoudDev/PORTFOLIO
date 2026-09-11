@@ -1,5 +1,6 @@
 import type { ComponentProps } from "react";
 import { cn } from "@/lib/utils";
+import { Text } from "./text";
 
 type EyebrowProps = ComponentProps<"div"> & {
   marker?: boolean;
@@ -12,15 +13,16 @@ export function Eyebrow({
   ...props
 }: EyebrowProps) {
   return (
-    <div
-      className={cn(
-        "text-fg-faint font-mono text-[13px] tracking-tight",
-        className,
-      )}
+    <Text
+      as="div"
+      font="mono"
+      size="xs"
+      tone="faint"
+      className={cn("tracking-tight", className)}
       {...props}
     >
       {marker && <span className="text-primary">{"// "}</span>}
       {children}
-    </div>
+    </Text>
   );
 }

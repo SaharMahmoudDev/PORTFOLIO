@@ -1,8 +1,7 @@
 import type { ReactNode } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { Container } from "./container";
-import { Logo } from "./logo";
+import { Container, Logo, Text } from "@/components/ui";
 
 const navKeys = ["projects", "services", "about", "contact"] as const;
 
@@ -20,16 +19,13 @@ function FooterColumn({
 }) {
   return (
     <div className="flex flex-col gap-3.5">
-      <span className="text-fg-faint font-mono text-xs tracking-wide">
+      <Text font="mono" size="xs" tone="faint" className="tracking-wide">
         {title}
-      </span>
+      </Text>
       {children}
     </div>
   );
 }
-
-const linkClass =
-  "font-mono text-sm text-link transition-colors hover:text-foreground";
 
 export function Footer() {
   const t = useTranslations();
@@ -39,37 +35,60 @@ export function Footer() {
     <footer className="border-hairline bg-background border-t">
       <Container className="pt-20">
         <div className="grid gap-12 pb-14 md:grid-cols-[1.3fr_1fr_1fr]">
-          <div className="flex max-w-[340px] flex-col gap-3.5">
+          <div className="flex max-w-85 flex-col gap-3.5">
             <Logo />
-            <p className="text-muted-foreground text-sm leading-relaxed">
+            <Text size="sm" tone="muted">
               {t("footer.tagline")}
-            </p>
+            </Text>
           </div>
 
           <FooterColumn title={t("footer.sitemap")}>
             {navKeys.map((key) => (
-              <Link key={key} href={`/${key}`} className={linkClass}>
+              <Text
+                key={key}
+                as={Link}
+                href={`/${key}`}
+                font="mono"
+                size="sm"
+                tone="link"
+                className="hover:text-foreground transition-colors"
+              >
                 {t(`nav.${key}`)}
-              </Link>
+              </Text>
             ))}
           </FooterColumn>
 
           <FooterColumn title={t("footer.connect")}>
             {connectLinks.map(({ label, href }) => (
-              <a key={label} href={href} className={linkClass}>
+              <Text
+                key={label}
+                as="a"
+                href={href}
+                font="mono"
+                size="sm"
+                tone="link"
+                className="hover:text-foreground transition-colors"
+              >
                 {label}
-              </a>
+              </Text>
             ))}
           </FooterColumn>
         </div>
 
-        <div className="border-hairline text-fg-faint flex flex-col gap-3 border-t py-6 font-mono text-xs sm:flex-row sm:items-center sm:justify-between">
-          <span>
+        <div className="border-hairline flex flex-col gap-3 border-t py-6 sm:flex-row sm:items-center sm:justify-between">
+          <Text font="mono" size="xs" tone="faint">
             © {year} Sahar Mahmoud — {t("footer.builtWith")}
-          </span>
-          <a href="#top" className="hover:text-foreground transition-colors">
+          </Text>
+          <Text
+            as="a"
+            href="#top"
+            font="mono"
+            size="xs"
+            tone="faint"
+            className="hover:text-foreground transition-colors"
+          >
             {t("footer.backToTop")} ↑
-          </a>
+          </Text>
         </div>
       </Container>
     </footer>

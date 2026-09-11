@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import { Text } from "./text";
 
 export function Logo({ className }: { className?: string }) {
   return (
@@ -25,7 +26,9 @@ export function Logo({ className }: { className?: string }) {
           strokeLinejoin="round"
         />
       </svg>
-      <span className="text-foreground font-mono text-sm">Sahar Mahmoud</span>
+      <Text as="span" font="mono" size="sm" tone="default">
+        Sahar Mahmoud
+      </Text>
     </span>
   );
 }
