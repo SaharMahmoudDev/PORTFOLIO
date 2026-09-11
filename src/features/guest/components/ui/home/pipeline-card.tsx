@@ -1,0 +1,68 @@
+import { Dot, Text } from "@/components/ui";
+
+type StepTone = "done" | "active" | "pending";
+
+const steps: { text: string; tone: StepTone }[] = [
+  { text: "$ paste project url", tone: "done" },
+  { text: "→ extract metadata & content", tone: "done" },
+  { text: "→ analyze with AI", tone: "done" },
+  { text: "◐ awaiting your review", tone: "active" },
+  { text: "○ publish", tone: "pending" },
+];
+
+const dotProps: Record<
+  StepTone,
+  { tone: "primary" | "term-amber" | "term-grey"; variant: "filled" | "ring" }
+> = {
+  done: { tone: "primary", variant: "filled" },
+  active: { tone: "term-amber", variant: "ring" },
+  pending: { tone: "term-grey", variant: "ring" },
+};
+
+const textTone: Record<StepTone, "default" | "term-amber" | "faint"> = {
+  done: "default",
+  active: "term-amber",
+  pending: "faint",
+};
+
+export function PipelineCard() {
+  return (
+    <div className="relative w-full self-start">
+      <div className="animate-glow-pulse pointer-events-none absolute -inset-e-12 -top-10 size-100 rounded-full bg-[radial-gradient(circle,rgba(53,212,130,0.28),rgba(53,212,130,0)_70%)] blur-[70px]" />
+
+      <div className="border-border bg-card relative overflow-hidden rounded-[10px] border">
+        <div className="border-border bg-panel flex items-center gap-2 border-b px-4.5 py-3.5">
+          <Dot tone="term-red" />
+          <Dot tone="term-amber" />
+          <Dot tone="term-grey" />
+          <Text as="span" font="mono" size="xs" tone="faint" className="ms-2">
+            ai-project-generator.log
+          </Text>
+        </div>
+
+        <div className="flex flex-col px-5.5 py-6">
+          {steps.map((step, i) => {
+            const last = i === steps.length - 1;
+            return (
+              <div key={step.text} className="flex gap-3.5">
+                <div className="flex flex-col items-center">
+                  <Dot {...dotProps[step.tone]} />
+                  {!last && <span className="bg-border min-h-7 w-px flex-1" />}
+                </div>
+                <Text
+                  as="span"
+                  font="mono"
+                  size="xs"
+                  tone={textTone[step.tone]}
+                  className={!last ? "pb-5" : undefined}
+                >
+                  {step.text}
+                </Text>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+}
