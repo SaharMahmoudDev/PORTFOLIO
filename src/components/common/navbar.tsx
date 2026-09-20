@@ -4,7 +4,14 @@ import { Menu, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { useUIStore } from "@/store/ui-store";
-import { Button, Container, Logo, Text } from "@/components/ui";
+import {
+  Button,
+  Container,
+  LocaleSwitch,
+  Logo,
+  Text,
+  ThemeToggle,
+} from "@/components/ui";
 
 const links = [
   { href: "/projects", key: "projects" },
@@ -50,20 +57,34 @@ export function Navbar() {
               {t(key)}
             </Text>
           ))}
+          <div className="flex items-center gap-1">
+            <LocaleSwitch label={t("switchLanguage")} />
+            <ThemeToggle
+              lightLabel={t("themeToLight")}
+              darkLabel={t("themeToDark")}
+            />
+          </div>
           <Button href="/contact" variant="secondary" size="sm">
             {t("startProject")}
           </Button>
         </div>
 
-        <button
-          type="button"
-          onClick={toggleMobileMenu}
-          aria-label={mobileMenuOpen ? t("closeMenu") : t("openMenu")}
-          aria-expanded={mobileMenuOpen}
-          className="text-foreground md:hidden"
-        >
-          {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
-        </button>
+        <div className="flex items-center gap-1 md:hidden">
+          <LocaleSwitch label={t("switchLanguage")} />
+          <ThemeToggle
+            lightLabel={t("themeToLight")}
+            darkLabel={t("themeToDark")}
+          />
+          <button
+            type="button"
+            onClick={toggleMobileMenu}
+            aria-label={mobileMenuOpen ? t("closeMenu") : t("openMenu")}
+            aria-expanded={mobileMenuOpen}
+            className="text-foreground inline-flex size-9 items-center justify-center"
+          >
+            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
       </Container>
 
       {mobileMenuOpen && (
