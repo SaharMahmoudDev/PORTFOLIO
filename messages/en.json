@@ -35,6 +35,31 @@
       "step4": "◐ awaiting your review",
       "step5": "○ publish"
     },
+    "howIWork": {
+      "eyebrow": "how-i-work",
+      "title": "How I work",
+      "description": "Four things I hold to on every build, from a single component to a full product.",
+      "photo": "[workspace photo]",
+      "badge": "Turning ideas into shipped interfaces",
+      "steps": {
+        "performance": {
+          "title": "01 — Performance first",
+          "text": "Loading, rendering and JS load handled as part of the build, not an afterthought."
+        },
+        "clean": {
+          "title": "02 — Clean & maintainable",
+          "text": "Reusable components, typed end-to-end with Zod and TypeScript."
+        },
+        "ai": {
+          "title": "03 — AI-assisted workflow",
+          "text": "AI accelerates the build and automates repetitive parts — every output reviewed before it ships."
+        },
+        "responsive": {
+          "title": "04 — Responsive by default",
+          "text": "Designed and tested across desktop, tablet and mobile, not just the screenshot breakpoint."
+        }
+      }
+    },
     "selectedWork": {
       "eyebrow": "selected-work",
       "title": "A few things I've shipped",

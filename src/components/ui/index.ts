@@ -1,4 +1,5 @@
 export { ArrowLink } from "./arrow-link";
+export { Badge } from "./badge";
 export { BracketCard } from "./bracket-card";
 export { Button } from "./button";
 export { Container } from "./container";
