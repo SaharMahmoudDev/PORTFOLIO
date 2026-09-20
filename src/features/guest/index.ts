@@ -1,6 +1,10 @@
 export { AboutCta } from "./components/ui/about/about-cta";
 export { AboutHeader } from "./components/ui/about/about-header";
 export { AskAi } from "./components/ui/home/ask-ai";
+export { CaseStudyBody } from "./components/ui/case-study/case-study-body";
+export { CaseStudyCta } from "./components/ui/case-study/case-study-cta";
+export { CaseStudyHeader } from "./components/ui/case-study/case-study-header";
+export { CaseStudyResults } from "./components/ui/case-study/case-study-results";
 export { ContactCta } from "./components/ui/home/contact-cta";
 export { ContactForm } from "./components/ui/contact/contact-form";
 export { ContactHeader } from "./components/ui/contact/contact-header";
@@ -11,6 +15,7 @@ export { Hero } from "./components/ui/home/hero";
 export { HowIWork } from "./components/ui/home/how-i-work";
 export { Journey } from "./components/ui/about/journey";
 export { MyStory } from "./components/ui/about/my-story";
+export { NextProject } from "./components/ui/case-study/next-project";
 export { ProjectsBrowser } from "./components/ui/projects/projects-browser";
 export { ProjectsCta } from "./components/ui/projects/projects-cta";
 export { ProjectsHeader } from "./components/ui/projects/projects-header";
