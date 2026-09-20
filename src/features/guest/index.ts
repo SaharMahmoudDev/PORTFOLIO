@@ -1,3 +1,4 @@
+export { AskAi } from "./components/ui/home/ask-ai";
 export { FreelanceServices } from "./components/ui/home/freelance-services";
 export { Hero } from "./components/ui/home/hero";
 export { HowIWork } from "./components/ui/home/how-i-work";
