@@ -2,6 +2,7 @@ export { AboutCta } from "./components/ui/about/about-cta";
 export { AboutHeader } from "./components/ui/about/about-header";
 export { AskAi } from "./components/ui/home/ask-ai";
 export { ContactCta } from "./components/ui/home/contact-cta";
+export { EngagementOptions } from "./components/ui/services/engagement-options";
 export { FreelanceServices } from "./components/ui/home/freelance-services";
 export { Hero } from "./components/ui/home/hero";
 export { HowIWork } from "./components/ui/home/how-i-work";
