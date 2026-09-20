@@ -197,5 +197,12 @@
         }
       }
     }
+  },
+  "services": {
+    "header": {
+      "eyebrow": "$ ls services/",
+      "title": "Services",
+      "description": "From a single landing page to a full product with AI wired into the workflow — here's what I build, and what's included every time."
+    }
   }
 }
