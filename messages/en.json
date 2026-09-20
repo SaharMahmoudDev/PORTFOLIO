@@ -29,6 +29,20 @@
       "availability": "available for freelance",
       "photo": "[your photo]",
       "caption": "Sahar Mahmoud — Frontend Engineer, AI Automation"
+    },
+    "story": {
+      "eyebrow": "my-story",
+      "title": "How I got here",
+      "paragraph1": "[Placeholder — replace with your own story: how you got into frontend development, the kind of problems you like solving, and what pulled you toward building interfaces.]",
+      "paragraph2": "[Placeholder — a second paragraph on how AI automation entered your workflow: what it replaced, what it freed you up to focus on, and how you keep it reviewed rather than running unchecked.]",
+      "stats": {
+        "experience": { "value": "[X]+", "label": "years of experience" },
+        "projects": { "value": "[X]+", "label": "projects shipped" },
+        "focus": {
+          "value": "02",
+          "label": "focus areas — frontend engineering, AI automation"
+        }
+      }
     }
   },
   "home": {
