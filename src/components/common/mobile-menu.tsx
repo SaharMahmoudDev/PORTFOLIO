@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import { useUIStore } from "@/store/ui-store";
@@ -39,7 +40,7 @@ export function MobileMenu({ links }: MobileMenuProps) {
         aria-hidden="true"
         onClick={close}
         className={cn(
-          "fixed inset-0 top-16 z-40 bg-black/40 transition-opacity duration-300",
+          "fixed inset-0 z-60 bg-black/50 transition-opacity duration-300",
           open ? "opacity-100" : "pointer-events-none opacity-0",
         )}
       />
@@ -48,10 +49,20 @@ export function MobileMenu({ links }: MobileMenuProps) {
         id="mobile-menu"
         inert={!open}
         className={cn(
-          "border-hairline bg-background/75 fixed end-0 top-16 bottom-0 z-40 flex w-[min(82vw,320px)] flex-col gap-1 border-s p-5 backdrop-blur-xl transition-transform duration-400 ease-out",
+          "border-hairline bg-background fixed inset-y-0 end-0 z-60 flex w-[min(82vw,320px)] flex-col gap-1 border-s px-5 pb-5 transition-transform duration-400 ease-out",
           open ? "translate-x-0" : "ltr:translate-x-full rtl:-translate-x-full",
         )}
       >
+        <div className="flex h-16 shrink-0 items-center justify-end">
+          <button
+            type="button"
+            onClick={close}
+            aria-label={t("closeMenu")}
+            className="text-foreground inline-flex size-9 items-center justify-center"
+          >
+            <X size={22} />
+          </button>
+        </div>
         {links.map(({ href, key }, index) => (
           <Text
             key={href}
