@@ -326,6 +326,14 @@
       "tracker": {
         "outcome": "[One-line outcome — e.g. a lightweight project tracker built for small product teams]"
       }
+    },
+    "toolbar": {
+      "filterLabel": "Filter projects",
+      "all": "All",
+      "searchLabel": "Search projects",
+      "searchPlaceholder": "Search projects…",
+      "empty": "No projects match your search.",
+      "reset": "Clear filters"
     }
   }
 }

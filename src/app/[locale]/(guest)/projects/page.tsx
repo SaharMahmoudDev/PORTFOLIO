@@ -1,5 +1,5 @@
 import { setRequestLocale } from "next-intl/server";
-import { ProjectsGrid, ProjectsHeader } from "@/features/guest";
+import { ProjectsBrowser, ProjectsHeader } from "@/features/guest";
 import { projects } from "@/features/guest/data/projects";
 
 export default async function ProjectsPage({
@@ -11,7 +11,7 @@ export default async function ProjectsPage({
   return (
     <>
       <ProjectsHeader />
-      <ProjectsGrid items={projects} />
+      <ProjectsBrowser items={projects} />
     </>
   );
 }
