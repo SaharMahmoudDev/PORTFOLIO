@@ -6,7 +6,10 @@
     "contact": "Contact",
     "startProject": "Start a project",
     "openMenu": "Open menu",
-    "closeMenu": "Close menu"
+    "closeMenu": "Close menu",
+    "themeToLight": "Switch to light theme",
+    "themeToDark": "Switch to dark theme",
+    "switchLanguage": "Switch language"
   },
   "footer": {
     "tagline": "Frontend engineer building React & Next.js interfaces, with AI automation wired into the workflow.",
@@ -15,5 +18,22 @@
     "email": "Email",
     "backToTop": "Back to top",
     "builtWith": "built with React, Next.js & AI automation"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "$ whoami --role=frontend-engineer --focus=ai-automation",
+      "title": "Frontend engineering, with the busywork automated away.",
+      "description": "I design and build production interfaces in React and Next.js — then wire AI automation straight into the workflow itself, from content generation to lead triage.",
+      "primaryCta": "View selected work",
+      "secondaryCta": "Start a project →"
+    },
+    "pipeline": {
+      "log": "ai-project-generator.log",
+      "step1": "$ paste project url",
+      "step2": "→ extract metadata & content",
+      "step3": "→ analyze with AI",
+      "step4": "◐ awaiting your review",
+      "step5": "○ publish"
+    }
   }
 }

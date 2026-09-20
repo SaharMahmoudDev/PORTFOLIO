@@ -1,13 +1,17 @@
+import { useTranslations } from "next-intl";
 import { Dot, Text } from "@/components/ui";
 
 type StepTone = "done" | "active" | "pending";
 
-const steps: { text: string; tone: StepTone }[] = [
-  { text: "$ paste project url", tone: "done" },
-  { text: "→ extract metadata & content", tone: "done" },
-  { text: "→ analyze with AI", tone: "done" },
-  { text: "◐ awaiting your review", tone: "active" },
-  { text: "○ publish", tone: "pending" },
+const steps: {
+  key: "step1" | "step2" | "step3" | "step4" | "step5";
+  tone: StepTone;
+}[] = [
+  { key: "step1", tone: "done" },
+  { key: "step2", tone: "done" },
+  { key: "step3", tone: "done" },
+  { key: "step4", tone: "active" },
+  { key: "step5", tone: "pending" },
 ];
 
 const dotProps: Record<
@@ -26,6 +30,8 @@ const textTone: Record<StepTone, "default" | "term-amber" | "faint"> = {
 };
 
 export function PipelineCard() {
+  const t = useTranslations("home.pipeline");
+
   return (
     <div className="relative w-full self-start">
       <div className="animate-glow-pulse pointer-events-none absolute -inset-e-12 -top-10 size-100 rounded-full bg-[radial-gradient(circle,rgba(53,212,130,0.28),rgba(53,212,130,0)_70%)] blur-[70px]" />
@@ -36,7 +42,7 @@ export function PipelineCard() {
           <Dot tone="term-amber" />
           <Dot tone="term-grey" />
           <Text as="span" font="mono" size="xs" tone="faint" className="ms-2">
-            ai-project-generator.log
+            {t("log")}
           </Text>
         </div>
 
@@ -44,7 +50,7 @@ export function PipelineCard() {
           {steps.map((step, i) => {
             const last = i === steps.length - 1;
             return (
-              <div key={step.text} className="flex gap-3.5">
+              <div key={step.key} className="flex gap-3.5">
                 <div className="flex flex-col items-center">
                   <Dot {...dotProps[step.tone]} />
                   {!last && <span className="bg-border min-h-7 w-px flex-1" />}
@@ -56,7 +62,7 @@ export function PipelineCard() {
                   tone={textTone[step.tone]}
                   className={!last ? "pb-5" : undefined}
                 >
-                  {step.text}
+                  {t(step.key)}
                 </Text>
               </div>
             );
