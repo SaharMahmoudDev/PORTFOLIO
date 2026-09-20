@@ -5,6 +5,8 @@ import { Dot } from "./dot";
 const variantClass = {
   pill: "gap-2 rounded-full px-3 py-1.5 text-link",
   card: "gap-2.5 rounded-lg bg-card px-4 py-3 text-foreground",
+  solid:
+    "rounded-full border-primary bg-primary px-3 py-1 text-[11px] font-medium text-primary-foreground",
 } as const;
 
 type BadgeProps = ComponentProps<"span"> & {
