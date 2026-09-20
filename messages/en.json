@@ -243,6 +243,46 @@
           }
         }
       }
+    },
+    "pricing": {
+      "eyebrow": "how-i-price",
+      "title": "Engagement options",
+      "description": "A rough starting point — every quote is scoped to what you actually need after a short discovery call.",
+      "startingAt": "starting at",
+      "cta": "Get a quote",
+      "popular": "MOST COMMON",
+      "plans": {
+        "single": {
+          "label": "SINGLE PAGE",
+          "price": "$[X]",
+          "description": "A focused landing page or one-off interface, launched fast.",
+          "points": {
+            "p1": "1 page, fully responsive",
+            "p2": "Up to 2 rounds of revisions",
+            "p3": "~1 week delivery"
+          }
+        },
+        "multi": {
+          "label": "MULTI-PAGE SITE",
+          "price": "$[X]",
+          "description": "A full marketing site or small product, built to grow.",
+          "points": {
+            "p1": "Up to [X] pages, CMS-ready",
+            "p2": "Analytics & SEO setup included",
+            "p3": "~2–3 week delivery"
+          }
+        },
+        "full": {
+          "label": "FULL PRODUCT",
+          "price": "$[X]",
+          "description": "Dashboards, auth, AI features — a complete application.",
+          "points": {
+            "p1": "Custom backend & database",
+            "p2": "AI automation available on request",
+            "p3": "Ongoing support plans available"
+          }
+        }
+      }
     }
   }
 }
