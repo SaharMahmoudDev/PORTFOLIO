@@ -290,5 +290,12 @@
       "cta": "Send a message",
       "email": "[your@email.com]"
     }
+  },
+  "projects": {
+    "header": {
+      "eyebrow": "$ ls projects/",
+      "title": "Every project, from problem to outcome",
+      "description": "A running collection of dashboards, storefronts and product interfaces. Each one links to a full case study — the problem, the approach, and what shipped."
+    }
   }
 }
