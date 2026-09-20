@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import { Dot, Text } from "@/components/ui";
+import { Dot, Glow, Text } from "@/components/ui";
 
 type StepTone = "done" | "active" | "pending";
 
@@ -34,7 +34,7 @@ export function PipelineCard() {
 
   return (
     <div className="relative w-full self-start">
-      <div className="animate-glow-pulse pointer-events-none absolute -inset-e-12 -top-10 size-100 rounded-full bg-[radial-gradient(circle,rgba(53,212,130,0.28),rgba(53,212,130,0)_70%)] blur-[70px]" />
+      <Glow intensity="strong" pulse className="-inset-e-12 -top-10 size-100" />
 
       <div className="border-border bg-card relative overflow-hidden rounded-[10px] border">
         <div className="border-border bg-panel flex items-center gap-2 border-b px-4.5 py-3.5">

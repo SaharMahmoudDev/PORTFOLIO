@@ -6,6 +6,7 @@ export { Container } from "./container";
 export { Divider } from "./divider";
 export { Dot } from "./dot";
 export { Eyebrow } from "./eyebrow";
+export { Glow } from "./glow";
 export { Input } from "./input";
 export { LocaleSwitch } from "./locale-switch";
 export { Logo } from "./logo";

@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { Button, Dot, Input, Tag, Text } from "@/components/ui";
+import { Button, Dot, Glow, Input, Tag, Text } from "@/components/ui";
 import { ChatBubble } from "./chat-bubble";
 
 const suggestions = ["build", "best", "available"] as const;
@@ -52,7 +52,7 @@ export function ChatCard() {
 
   return (
     <div className="relative">
-      <div className="pointer-events-none absolute -start-10 -top-8 size-80 rounded-full bg-[radial-gradient(circle,rgba(53,212,130,0.16),rgba(53,212,130,0)_70%)] blur-[60px]" />
+      <Glow intensity="soft" className="-start-10 -top-8 size-80" />
 
       <div className="border-border bg-card relative overflow-hidden rounded-[10px] border">
         <div className="border-border bg-panel flex items-center justify-between gap-2.5 border-b px-5 py-4">
