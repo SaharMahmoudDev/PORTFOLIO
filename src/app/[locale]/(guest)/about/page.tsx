@@ -1,5 +1,5 @@
 import { setRequestLocale } from "next-intl/server";
-import { AboutHeader } from "@/features/guest";
+import { AboutHeader, MyStory } from "@/features/guest";
 
 export default async function AboutPage({
   params,
@@ -7,5 +7,10 @@ export default async function AboutPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  return <AboutHeader />;
+  return (
+    <>
+      <AboutHeader />
+      <MyStory />
+    </>
+  );
 }
