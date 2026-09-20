@@ -1,6 +1,7 @@
 import { setRequestLocale } from "next-intl/server";
 import {
   EngagementOptions,
+  ServicesCta,
   ServicesGrid,
   ServicesHeader,
 } from "@/features/guest";
@@ -16,6 +17,7 @@ export default async function ServicesPage({
       <ServicesHeader />
       <ServicesGrid />
       <EngagementOptions />
+      <ServicesCta />
     </>
   );
 }

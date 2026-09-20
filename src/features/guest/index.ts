@@ -9,6 +9,7 @@ export { HowIWork } from "./components/ui/home/how-i-work";
 export { Journey } from "./components/ui/about/journey";
 export { MyStory } from "./components/ui/about/my-story";
 export { SelectedWork } from "./components/ui/home/selected-work";
+export { ServicesCta } from "./components/ui/services/services-cta";
 export { ServicesGrid } from "./components/ui/services/services-grid";
 export { ServicesHeader } from "./components/ui/services/services-header";
 export { TechStack } from "./components/ui/about/tech-stack";
