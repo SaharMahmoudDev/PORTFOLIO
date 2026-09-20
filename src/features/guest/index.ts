@@ -2,6 +2,7 @@ export { AboutCta } from "./components/ui/about/about-cta";
 export { AboutHeader } from "./components/ui/about/about-header";
 export { AskAi } from "./components/ui/home/ask-ai";
 export { ContactCta } from "./components/ui/home/contact-cta";
+export { CaseStudyBody } from "./components/ui/case-study/case-study-body";
 export { CaseStudyHeader } from "./components/ui/case-study/case-study-header";
 export { ContactForm } from "./components/ui/contact/contact-form";
 export { ContactHeader } from "./components/ui/contact/contact-header";
