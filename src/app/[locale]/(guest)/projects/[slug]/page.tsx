@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { setRequestLocale } from "next-intl/server";
-import { CaseStudyHeader } from "@/features/guest";
+import { CaseStudyBody, CaseStudyHeader } from "@/features/guest";
 import { getProject, projects } from "@/features/guest/data/projects";
 import { routing } from "@/i18n/routing";
 
@@ -19,5 +19,10 @@ export default async function CaseStudyPage({
   const project = getProject(slug);
   if (!project) notFound();
 
-  return <CaseStudyHeader project={project} />;
+  return (
+    <>
+      <CaseStudyHeader project={project} />
+      <CaseStudyBody project={project} />
+    </>
+  );
 }
