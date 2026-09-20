@@ -6,7 +6,10 @@
     "contact": "Contact",
     "startProject": "Start a project",
     "openMenu": "Open menu",
-    "closeMenu": "Close menu"
+    "closeMenu": "Close menu",
+    "themeToLight": "Switch to light theme",
+    "themeToDark": "Switch to dark theme",
+    "switchLanguage": "Switch language"
   },
   "footer": {
     "tagline": "Frontend engineer building React & Next.js interfaces, with AI automation wired into the workflow.",
@@ -15,5 +18,124 @@
     "email": "Email",
     "backToTop": "Back to top",
     "builtWith": "built with React, Next.js & AI automation"
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "$ whoami --role=frontend-engineer --focus=ai-automation",
+      "title": "Frontend engineering, with the busywork automated away.",
+      "description": "I design and build production interfaces in React and Next.js — then wire AI automation straight into the workflow itself, from content generation to lead triage.",
+      "primaryCta": "View selected work",
+      "secondaryCta": "Start a project →"
+    },
+    "pipeline": {
+      "log": "ai-project-generator.log",
+      "step1": "$ paste project url",
+      "step2": "→ extract metadata & content",
+      "step3": "→ analyze with AI",
+      "step4": "◐ awaiting your review",
+      "step5": "○ publish"
+    },
+    "howIWork": {
+      "eyebrow": "how-i-work",
+      "title": "How I work",
+      "description": "Four things I hold to on every build, from a single component to a full product.",
+      "photo": "[workspace photo]",
+      "badge": "Turning ideas into shipped interfaces",
+      "steps": {
+        "performance": {
+          "title": "01 — Performance first",
+          "text": "Loading, rendering and JS load handled as part of the build, not an afterthought."
+        },
+        "clean": {
+          "title": "02 — Clean & maintainable",
+          "text": "Reusable components, typed end-to-end with Zod and TypeScript."
+        },
+        "ai": {
+          "title": "03 — AI-assisted workflow",
+          "text": "AI accelerates the build and automates repetitive parts — every output reviewed before it ships."
+        },
+        "responsive": {
+          "title": "04 — Responsive by default",
+          "text": "Designed and tested across desktop, tablet and mobile, not just the screenshot breakpoint."
+        }
+      }
+    },
+    "contactCta": {
+      "title": "Have a workflow worth automating?",
+      "description": "Whether it's a new interface, a dashboard rebuild, or a manual process that should run itself — let's talk about it.",
+      "cta": "Send a message",
+      "email": "[your@email.com]"
+    },
+    "askAi": {
+      "eyebrow": "ask-sahar-ai",
+      "title": "Got a question? Ask my AI.",
+      "description": "Trained on my projects, stack and availability — it can answer most questions before you even reach out.",
+      "points": {
+        "instant": "Answers instantly, no back-and-forth",
+        "knows": "Knows my case studies, stack & rates",
+        "human": "Prefer a human? The form below reaches me directly"
+      },
+      "chat": {
+        "name": "Ask Sahar's AI",
+        "online": "online",
+        "greeting": "Hi — I'm Sahar's AI assistant. Ask me about her work, stack, or availability.",
+        "suggestions": {
+          "build": "What can you build?",
+          "best": "Show your best project",
+          "available": "Are you available now?"
+        },
+        "placeholder": "Ask a question…",
+        "send": "Send",
+        "typing": "Sahar's AI is typing",
+        "replies": {
+          "build": "I build production interfaces in React and Next.js — landing pages, dashboards and full apps — and wire AI automation into the workflow.",
+          "best": "The e-commerce platform is a good place to start — see the Selected Work section above and open its case study.",
+          "available": "Sahar is open to a small number of freelance projects right now. Use the contact form below and she'll get back to you.",
+          "fallback": "Thanks for asking! The live assistant isn't connected yet — for now, the contact form below reaches Sahar directly."
+        }
+      }
+    },
+    "services": {
+      "eyebrow": "freelance-services",
+      "availability": "Available for select client work",
+      "title": "Freelance services",
+      "description": "I take on a small number of freelance engagements alongside my own projects.",
+      "items": {
+        "frontend": {
+          "title": "Frontend Development",
+          "text": "Building responsive, modern web interfaces with React and Next.js, from a single component to a full application."
+        },
+        "landing": {
+          "title": "Landing Pages",
+          "text": "High-clarity, fast-loading landing pages designed to communicate a product or offer clearly and convert visitors."
+        },
+        "dashboards": {
+          "title": "Dashboard Interfaces",
+          "text": "Modern admin and data-management dashboards with sensible information hierarchy, tables, and filtering."
+        }
+      }
+    },
+    "selectedWork": {
+      "eyebrow": "selected-work",
+      "title": "A few things I've shipped",
+      "projectName": "[Project name]",
+      "screenshot": "[project screenshot]",
+      "viewCaseStudy": "View case study",
+      "select": "Show project: {name}",
+      "projects": {
+        "featured": {
+          "url": "ecommerce-platform.vercel.app",
+          "outcome": "[One-line outcome — e.g. cut checkout drop-off by replacing a 4-step flow with one page]"
+        },
+        "leads": {
+          "url": "lead-dashboard.vercel.app",
+          "outcome": "[One-line outcome — e.g. AI-classified inbound leads, cutting response time to an hour]"
+        },
+        "booking": {
+          "url": "booking-flow.vercel.app",
+          "outcome": "[One-line outcome — e.g. rebuilt a booking flow, improving Lighthouse from 61 to 98]"
+        }
+      }
+    }
   }
 }

@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { AppProviders } from "@/providers";
-import { Footer, Navbar } from "@/components/common";
 import { fontVariables } from "@/lib/fonts";
 import { getDirection, isValidLocale, routing } from "@/i18n/routing";
 import "../globals.css";
@@ -35,13 +34,9 @@ export default async function LocaleLayout({
       className={`${fontVariables} h-full antialiased`}
       suppressHydrationWarning
     >
-      <body id="top" className="flex min-h-svh flex-col font-sans">
+      <body id="top" className="font-sans">
         <NextIntlClientProvider>
-          <AppProviders>
-            <Navbar />
-            <div className="flex-1">{children}</div>
-            <Footer />
-          </AppProviders>
+          <AppProviders>{children}</AppProviders>
         </NextIntlClientProvider>
       </body>
     </html>

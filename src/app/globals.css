@@ -48,6 +48,20 @@
   --color-inverted: var(--inverted);
   --color-inverted-foreground: var(--inverted-foreground);
   --color-inverted-muted: var(--inverted-muted);
+
+  --animate-glow-pulse: glow-pulse 7s ease-in-out infinite;
+
+  @keyframes glow-pulse {
+    0%,
+    100% {
+      opacity: 0.5;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.9;
+      transform: scale(1.06);
+    }
+  }
 }
 
 @layer base {
@@ -55,7 +69,25 @@
     @apply border-border outline-ring/50;
   }
 
+  html {
+    @media (prefers-reduced-motion: no-preference) {
+      scroll-behavior: smooth;
+    }
+  }
+
   body {
     @apply bg-background text-foreground;
+    background-image:
+      radial-gradient(
+        60% 45% at 85% 0%,
+        color-mix(in oklab, var(--primary) 16%, transparent),
+        transparent 70%
+      ),
+      radial-gradient(
+        45% 40% at 0% 100%,
+        color-mix(in oklab, var(--primary) 9%, transparent),
+        transparent 70%
+      );
+    background-attachment: fixed;
   }
 }
