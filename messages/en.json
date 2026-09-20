@@ -347,6 +347,38 @@
       "eyebrow": "$ ./send-message --to=sahar",
       "title": "Let's talk about what you're building.",
       "description": "New project, a rebuild, or something that should just run itself — tell me a bit about it and I'll get back to you."
+    },
+    "form": {
+      "name": "name",
+      "namePlaceholder": "Your name",
+      "email": "email",
+      "emailPlaceholder": "you@company.com",
+      "projectType": "what do you need?",
+      "projectTypes": {
+        "website": "Website",
+        "webApp": "Web app",
+        "automation": "AI / automation",
+        "other": "Something else"
+      },
+      "budget": "budget",
+      "optional": "// optional",
+      "budgets": {
+        "small": "< $2k",
+        "medium": "$2k – $5k",
+        "large": "$5k+",
+        "unsure": "Not sure yet"
+      },
+      "message": "message",
+      "messagePlaceholder": "What are you building, and what does success look like?",
+      "submit": "Send message",
+      "sending": "Sending…",
+      "reply": "// usually replies within 24h",
+      "success": "Message sent — I'll get back to you soon.",
+      "errors": {
+        "name": "Please enter your name.",
+        "email": "Please enter a valid email.",
+        "message": "Tell me a bit more (at least 20 characters)."
+      }
     }
   }
 }
