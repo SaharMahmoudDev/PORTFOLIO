@@ -334,6 +334,12 @@
       "searchPlaceholder": "Search projects…",
       "empty": "No projects match your search.",
       "reset": "Clear filters"
+    },
+    "cta": {
+      "title": "Got a project like these in mind?",
+      "description": "Tell me what you're building — I'll tell you honestly what it takes to ship it well.",
+      "cta": "Start a project",
+      "email": "[your@email.com]"
     }
   }
 }

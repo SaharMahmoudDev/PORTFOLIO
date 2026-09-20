@@ -1,5 +1,5 @@
 import { setRequestLocale } from "next-intl/server";
-import { ProjectsBrowser, ProjectsHeader } from "@/features/guest";
+import { ProjectsBrowser, ProjectsCta, ProjectsHeader } from "@/features/guest";
 import { projects } from "@/features/guest/data/projects";
 
 export default async function ProjectsPage({
@@ -12,6 +12,7 @@ export default async function ProjectsPage({
     <>
       <ProjectsHeader />
       <ProjectsBrowser items={projects} />
+      <ProjectsCta />
     </>
   );
 }
