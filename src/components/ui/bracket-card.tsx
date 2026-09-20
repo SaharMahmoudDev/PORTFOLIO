@@ -3,6 +3,7 @@ import { cn } from "@/lib/utils";
 
 type BracketCardProps = ComponentProps<"div"> & {
   cornerSize?: "sm" | "md" | "lg";
+  tone?: "default" | "primary";
   interactive?: boolean;
 };
 
@@ -14,6 +15,7 @@ const cornerSizeMap = {
 
 export function BracketCard({
   cornerSize = "md",
+  tone = "default",
   interactive,
   className,
   children,
@@ -21,7 +23,8 @@ export function BracketCard({
 }: BracketCardProps) {
   const corner = cornerSizeMap[cornerSize];
   const base = cn(
-    "pointer-events-none absolute border-border-strong",
+    "pointer-events-none absolute",
+    tone === "primary" ? "border-primary" : "border-border-strong",
     interactive &&
       "transition-colors duration-300 group-hover/bracket:border-primary",
   );
