@@ -387,5 +387,18 @@
       "linkedin": "لينكدإن",
       "timezone": "// من القاهرة · GMT+2"
     }
+  },
+  "caseStudy": {
+    "header": {
+      "back": "كل المشاريع",
+      "role": "الدور",
+      "timeline": "المدة",
+      "liveDemo": "نسخة حية",
+      "source": "الكود",
+      "heroImage": "[لقطة شاشة رئيسية للمشروع]",
+      "year": "السنة",
+      "roleValue": "مهندسة فرونت إند (منفردة)",
+      "timelineValue": "X أسابيع، على X مراحل تسليم"
+    }
   }
 }
