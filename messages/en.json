@@ -387,5 +387,18 @@
       "linkedin": "linkedin",
       "timezone": "// based in Cairo · GMT+2"
     }
+  },
+  "caseStudy": {
+    "header": {
+      "back": "All projects",
+      "role": "Role",
+      "timeline": "Timeline",
+      "liveDemo": "Live demo",
+      "source": "Source",
+      "heroImage": "[project hero screenshot]",
+      "year": "Year",
+      "roleValue": "Frontend Engineer (solo)",
+      "timelineValue": "X weeks, shipped in X milestones"
+    }
   }
 }
