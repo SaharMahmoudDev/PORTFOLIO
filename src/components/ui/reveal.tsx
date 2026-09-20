@@ -17,16 +17,18 @@ export function Reveal({
   distance = 48,
   className,
 }: RevealProps) {
-  const ref = useRef<HTMLDivElement>(null);
+  const outer = useRef<HTMLDivElement>(null);
+  const inner = useRef<HTMLDivElement>(null);
 
   useGSAP(
     () => {
-      const el = ref.current;
-      if (!el) return;
+      const trigger = outer.current;
+      const target = inner.current;
+      if (!trigger || !target) return;
 
       const mm = gsap.matchMedia();
       mm.add("(prefers-reduced-motion: no-preference)", () => {
-        gsap.from(el, {
+        gsap.from(target, {
           y: distance,
           autoAlpha: 0,
           duration: 0.9,
@@ -34,7 +36,7 @@ export function Reveal({
           ease: "power3.out",
           clearProps: "all",
           scrollTrigger: {
-            trigger: el,
+            trigger,
             start: "top 88%",
             toggleActions: "play reset play reset",
           },
@@ -43,12 +45,12 @@ export function Reveal({
 
       return () => mm.revert();
     },
-    { scope: ref },
+    { scope: outer },
   );
 
   return (
-    <div ref={ref} className={className}>
-      {children}
+    <div ref={outer} className={className}>
+      <div ref={inner}>{children}</div>
     </div>
   );
 }
