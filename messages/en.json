@@ -283,6 +283,12 @@
           }
         }
       }
+    },
+    "cta": {
+      "title": "Not sure which one fits?",
+      "description": "Tell me what you're building and I'll tell you honestly what it needs — no pressure, no upsell.",
+      "cta": "Send a message",
+      "email": "[your@email.com]"
     }
   }
 }
