@@ -34,6 +34,27 @@
       "step3": "→ analyze with AI",
       "step4": "◐ awaiting your review",
       "step5": "○ publish"
+    },
+    "selectedWork": {
+      "eyebrow": "selected-work",
+      "title": "A few things I've shipped",
+      "projectName": "[Project name]",
+      "screenshot": "[project screenshot]",
+      "viewCaseStudy": "View case study",
+      "projects": {
+        "featured": {
+          "url": "ecommerce-platform.vercel.app",
+          "outcome": "[One-line outcome — e.g. cut checkout drop-off by replacing a 4-step flow with one page]"
+        },
+        "leads": {
+          "url": "lead-dashboard.vercel.app",
+          "outcome": "[One-line outcome — e.g. AI-classified inbound leads, cutting response time to an hour]"
+        },
+        "booking": {
+          "url": "booking-flow.vercel.app",
+          "outcome": "[One-line outcome — e.g. rebuilt a booking flow, improving Lighthouse from 61 to 98]"
+        }
+      }
     }
   }
 }

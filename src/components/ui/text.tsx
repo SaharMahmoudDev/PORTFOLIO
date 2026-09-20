@@ -9,9 +9,12 @@ const toneClass = {
   link: "text-link",
   primary: "text-primary",
   "term-amber": "text-term-amber",
+  inverted: "text-inverted-foreground",
+  "inverted-muted": "text-inverted-muted",
 } as const;
 
 const sizeClass = {
+  "2xs": "text-[11px]",
   xs: "text-[13px]",
   sm: "text-sm",
   base: "text-base",

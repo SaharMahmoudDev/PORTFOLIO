@@ -1,3 +1,4 @@
+export { ArrowLink } from "./arrow-link";
 export { BracketCard } from "./bracket-card";
 export { Button } from "./button";
 export { Container } from "./container";
@@ -6,6 +7,7 @@ export { Dot } from "./dot";
 export { Eyebrow } from "./eyebrow";
 export { LocaleSwitch } from "./locale-switch";
 export { Logo } from "./logo";
+export { Placeholder } from "./placeholder";
 export { Section } from "./section";
 export { Tag } from "./tag";
 export { Text } from "./text";
