@@ -12,6 +12,7 @@ const sizeClass = {
 
 const toneClass = {
   default: "text-heading",
+  primary: "text-primary",
   inverted: "text-inverted-foreground",
 } as const;
 

@@ -19,6 +19,18 @@
     "backToTop": "العودة للأعلى",
     "builtWith": "مبني بـ React وNext.js وأتمتة الذكاء الاصطناعي"
   },
+  "about": {
+    "header": {
+      "eyebrow": "$ cat about.md",
+      "title": "عن ساهر محمود",
+      "description": "مهندسة واجهات أمامية مقيمة في [المدينة، الدولة]، أركّز على بناء واجهات سريعة ومتقنة — وأدمج أتمتة الذكاء الاصطناعي في سير العمل خلفها.",
+      "location": "[المدينة، الدولة]",
+      "experience": "أكثر من [X] سنوات في بناء الويب",
+      "availability": "متاحة للعمل الحر",
+      "photo": "[صورتك]",
+      "caption": "ساهر محمود — مهندسة واجهات أمامية، أتمتة الذكاء الاصطناعي"
+    }
+  },
   "home": {
     "hero": {
       "eyebrow": "$ whoami --role=frontend-engineer --focus=ai-automation",
