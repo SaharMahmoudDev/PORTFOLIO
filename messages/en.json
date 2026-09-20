@@ -60,6 +60,12 @@
         }
       }
     },
+    "contactCta": {
+      "title": "Have a workflow worth automating?",
+      "description": "Whether it's a new interface, a dashboard rebuild, or a manual process that should run itself — let's talk about it.",
+      "cta": "Send a message",
+      "email": "[your@email.com]"
+    },
     "askAi": {
       "eyebrow": "ask-sahar-ai",
       "title": "Got a question? Ask my AI.",
