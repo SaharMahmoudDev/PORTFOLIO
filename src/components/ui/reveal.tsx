@@ -33,7 +33,11 @@ export function Reveal({
           delay,
           ease: "power3.out",
           clearProps: "all",
-          scrollTrigger: { trigger: el, start: "top 88%", once: true },
+          scrollTrigger: {
+            trigger: el,
+            start: "top 88%",
+            toggleActions: "play reset play reset",
+          },
         });
       });
 
