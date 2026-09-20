@@ -1,5 +1,11 @@
 import { setRequestLocale } from "next-intl/server";
-import { AboutHeader, Journey, MyStory, TechStack } from "@/features/guest";
+import {
+  AboutCta,
+  AboutHeader,
+  Journey,
+  MyStory,
+  TechStack,
+} from "@/features/guest";
 
 export default async function AboutPage({
   params,
@@ -13,6 +19,7 @@ export default async function AboutPage({
       <MyStory />
       <TechStack />
       <Journey />
+      <AboutCta />
     </>
   );
 }

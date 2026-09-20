@@ -1,3 +1,4 @@
+export { AboutCta } from "./components/ui/about/about-cta";
 export { AboutHeader } from "./components/ui/about/about-header";
 export { AskAi } from "./components/ui/home/ask-ai";
 export { ContactCta } from "./components/ui/home/contact-cta";
