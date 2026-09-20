@@ -9,14 +9,10 @@ export function HeroBackdrop() {
         style={{
           backgroundImage:
             "repeating-linear-gradient(0deg, rgba(53,212,130,0.07) 0 1px, transparent 1px 60px), repeating-linear-gradient(90deg, rgba(53,212,130,0.07) 0 1px, transparent 1px 60px)",
-        }}
-      />
-
-      <div
-        className="absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(65% 75% at 72% 46%, transparent 20%, var(--background) 82%)",
+          maskImage:
+            "radial-gradient(65% 75% at 72% 46%, #000 20%, transparent 82%)",
+          WebkitMaskImage:
+            "radial-gradient(65% 75% at 72% 46%, #000 20%, transparent 82%)",
         }}
       />
 

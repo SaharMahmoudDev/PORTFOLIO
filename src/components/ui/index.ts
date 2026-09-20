@@ -10,6 +10,7 @@ export { Input } from "./input";
 export { LocaleSwitch } from "./locale-switch";
 export { Logo } from "./logo";
 export { Placeholder } from "./placeholder";
+export { ScrollToTop } from "./scroll-to-top";
 export { Section } from "./section";
 export { Tag } from "./tag";
 export { Text } from "./text";
