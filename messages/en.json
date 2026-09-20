@@ -60,6 +60,27 @@
         }
       }
     },
+    "askAi": {
+      "eyebrow": "ask-sahar-ai",
+      "title": "Got a question? Ask my AI.",
+      "description": "Trained on my projects, stack and availability — it can answer most questions before you even reach out.",
+      "points": {
+        "instant": "Answers instantly, no back-and-forth",
+        "knows": "Knows my case studies, stack & rates",
+        "human": "Prefer a human? The form below reaches me directly"
+      },
+      "chat": {
+        "name": "Ask Sahar's AI",
+        "online": "online",
+        "greeting": "Hi — I'm Sahar's AI assistant. Ask me about her work, stack, or availability.",
+        "suggestions": {
+          "build": "What can you build?",
+          "best": "Show your best project",
+          "available": "Are you available now?"
+        },
+        "placeholder": "Ask a question…"
+      }
+    },
     "services": {
       "eyebrow": "freelance-services",
       "availability": "Available for select client work",
