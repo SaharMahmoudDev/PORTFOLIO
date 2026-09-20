@@ -8,6 +8,7 @@ export { Hero } from "./components/ui/home/hero";
 export { HowIWork } from "./components/ui/home/how-i-work";
 export { Journey } from "./components/ui/about/journey";
 export { MyStory } from "./components/ui/about/my-story";
+export { ProjectsGrid } from "./components/ui/projects/projects-grid";
 export { ProjectsHeader } from "./components/ui/projects/projects-header";
 export { SelectedWork } from "./components/ui/home/selected-work";
 export { ServicesCta } from "./components/ui/services/services-cta";

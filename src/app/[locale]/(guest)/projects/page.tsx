@@ -1,5 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
-import { ProjectsHeader } from "@/features/guest";
+import { ProjectsGrid, ProjectsHeader } from "@/features/guest";
+import { projects } from "@/features/guest/data/projects";
 
 export default async function ProjectsPage({
   params,
@@ -7,5 +8,10 @@ export default async function ProjectsPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  return <ProjectsHeader />;
+  return (
+    <>
+      <ProjectsHeader />
+      <ProjectsGrid items={projects} />
+    </>
+  );
 }

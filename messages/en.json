@@ -296,6 +296,36 @@
       "eyebrow": "$ ls projects/",
       "title": "Every project, from problem to outcome",
       "description": "A running collection of dashboards, storefronts and product interfaces. Each one links to a full case study — the problem, the approach, and what shipped."
+    },
+    "card": {
+      "url": "[project-url].vercel.app",
+      "name": "[Project name]",
+      "screenshot": "[project screenshot]",
+      "viewCaseStudy": "View case study"
+    },
+    "categories": {
+      "webApp": "Web App",
+      "dashboard": "Dashboard",
+      "ecommerce": "E-commerce",
+      "landing": "Landing Page"
+    },
+    "status": {
+      "live": "Live",
+      "inProgress": "In progress"
+    },
+    "items": {
+      "metrics": {
+        "outcome": "[One-line outcome — e.g. a real-time metrics dashboard rebuilt around streaming data]"
+      },
+      "storefront": {
+        "outcome": "[One-line outcome — e.g. a minimalist storefront built for conversion and speed]"
+      },
+      "launch": {
+        "outcome": "[One-line outcome — e.g. a high-conversion landing page for a developer analytics tool]"
+      },
+      "tracker": {
+        "outcome": "[One-line outcome — e.g. a lightweight project tracker built for small product teams]"
+      }
     }
   }
 }
