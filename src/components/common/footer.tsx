@@ -32,7 +32,7 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-hairline bg-background border-t">
+    <footer className="border-hairline border-t">
       <Container className="pt-20">
         <div className="grid gap-12 pb-14 md:grid-cols-[1.3fr_1fr_1fr]">
           <div className="flex max-w-85 flex-col gap-3.5">

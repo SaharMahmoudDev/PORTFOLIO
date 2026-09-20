@@ -3,7 +3,9 @@
 import { Menu, X } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
+import { useScrolled } from "@/hooks/use-scrolled";
 import { useUIStore } from "@/store/ui-store";
+import { cn } from "@/lib/utils";
 import {
   Button,
   Container,
@@ -23,6 +25,7 @@ const links = [
 export function Navbar() {
   const t = useTranslations("nav");
   const pathname = usePathname();
+  const scrolled = useScrolled();
   const mobileMenuOpen = useUIStore((s) => s.mobileMenuOpen);
   const toggleMobileMenu = useUIStore((s) => s.toggleMobileMenu);
   const setMobileMenuOpen = useUIStore((s) => s.setMobileMenuOpen);
@@ -30,7 +33,14 @@ export function Navbar() {
   const closeMenu = () => setMobileMenuOpen(false);
 
   return (
-    <header className="relative z-50">
+    <header
+      className={cn(
+        "sticky top-0 z-50 border-b transition-colors duration-300",
+        scrolled || mobileMenuOpen
+          ? "border-hairline bg-background/80 backdrop-blur-md"
+          : "border-transparent",
+      )}
+    >
       <Container
         as="nav"
         className="flex h-16 items-center justify-between md:h-[88px]"
