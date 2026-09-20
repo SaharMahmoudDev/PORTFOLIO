@@ -482,6 +482,33 @@
         "image": "[detail screenshot]",
         "caption": "[Caption — e.g. saved-view filters and the virtualized event table.]"
       }
+    },
+    "results": {
+      "eyebrow": "results",
+      "title": "Outcome",
+      "metrics": [
+        {
+          "label": "[Metric one]",
+          "value": "[Before] → [After]"
+        },
+        {
+          "label": "[Metric two]",
+          "value": "[Result]"
+        },
+        {
+          "label": "[Metric three]",
+          "value": "[Result]"
+        }
+      ]
+    },
+    "next": {
+      "label": "Next project"
+    },
+    "cta": {
+      "title": "Want something like this built?",
+      "description": "Tell me what you're building and I'll tell you honestly what it needs — no pressure, no upsell.",
+      "cta": "Send a message",
+      "email": "[your@email.com]"
     }
   }
 }
