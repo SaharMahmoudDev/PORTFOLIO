@@ -341,5 +341,12 @@
       "cta": "Start a project",
       "email": "[your@email.com]"
     }
+  },
+  "contact": {
+    "header": {
+      "eyebrow": "$ ./send-message --to=sahar",
+      "title": "Let's talk about what you're building.",
+      "description": "New project, a rebuild, or something that should just run itself — tell me a bit about it and I'll get back to you."
+    }
   }
 }
