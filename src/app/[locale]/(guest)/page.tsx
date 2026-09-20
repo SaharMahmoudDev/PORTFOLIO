@@ -1,6 +1,7 @@
 import { setRequestLocale } from "next-intl/server";
 import {
   AskAi,
+  ContactCta,
   FreelanceServices,
   Hero,
   HowIWork,
@@ -18,6 +19,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
       <HowIWork />
       <FreelanceServices />
       <AskAi />
+      <ContactCta />
     </>
   );
 }
