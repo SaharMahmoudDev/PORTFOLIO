@@ -71,6 +71,12 @@
       "periodPast": "[Start] – [End]",
       "textCurrent": "[One or two lines on what you own here and what you shipped.]",
       "textPast": "[One or two lines on what you owned here and what you shipped.]"
+    },
+    "cta": {
+      "title": "Want to see what I can build for you?",
+      "description": "I'm always happy to talk through a new interface, a rebuild, or a workflow that should run itself.",
+      "cta": "Send a message",
+      "email": "[your@email.com]"
     }
   },
   "home": {
