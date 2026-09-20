@@ -19,6 +19,66 @@
     "backToTop": "Back to top",
     "builtWith": "built with React, Next.js & AI automation"
   },
+  "about": {
+    "header": {
+      "eyebrow": "$ cat about.md",
+      "title": "About Sahar Mahmoud",
+      "description": "Frontend engineer based in [City, Country], focused on building fast, well-crafted interfaces — and folding AI automation into the workflow behind them.",
+      "location": "[City, Country]",
+      "experience": "[X]+ years building for the web",
+      "availability": "available for freelance",
+      "photo": "[your photo]",
+      "caption": "Sahar Mahmoud — Frontend Engineer, AI Automation"
+    },
+    "story": {
+      "eyebrow": "my-story",
+      "title": "How I got here",
+      "paragraph1": "[Placeholder — replace with your own story: how you got into frontend development, the kind of problems you like solving, and what pulled you toward building interfaces.]",
+      "paragraph2": "[Placeholder — a second paragraph on how AI automation entered your workflow: what it replaced, what it freed you up to focus on, and how you keep it reviewed rather than running unchecked.]",
+      "stats": {
+        "experience": {
+          "value": "[X]+",
+          "label": "years of experience"
+        },
+        "projects": {
+          "value": "[X]+",
+          "label": "projects shipped"
+        },
+        "focus": {
+          "value": "02",
+          "label": "focus areas — frontend engineering, AI automation"
+        }
+      }
+    },
+    "stack": {
+      "eyebrow": "tech-stack",
+      "title": "Tools & technologies",
+      "groups": {
+        "core": "CORE",
+        "data": "DATA & FORMS",
+        "ui": "UI & FEEDBACK",
+        "ai": "AI & AUTOMATION"
+      },
+      "aiWorkflows": "AI-assisted workflows",
+      "aiTool": "[AI tool / API]"
+    },
+    "journey": {
+      "eyebrow": "journey",
+      "title": "Where I've worked",
+      "role": "[Role title]",
+      "company": "— [Company name]",
+      "periodCurrent": "[Start] – Present",
+      "periodPast": "[Start] – [End]",
+      "textCurrent": "[One or two lines on what you own here and what you shipped.]",
+      "textPast": "[One or two lines on what you owned here and what you shipped.]"
+    },
+    "cta": {
+      "title": "Want to see what I can build for you?",
+      "description": "I'm always happy to talk through a new interface, a rebuild, or a workflow that should run itself.",
+      "cta": "Send a message",
+      "email": "[your@email.com]"
+    }
+  },
   "home": {
     "hero": {
       "eyebrow": "$ whoami --role=frontend-engineer --focus=ai-automation",
