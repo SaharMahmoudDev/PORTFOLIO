@@ -57,7 +57,7 @@ export function ProjectsGrid({ items }: ProjectsGridProps) {
               outcome={t(`items.${project.key}.outcome`)}
               screenshotLabel={t("card.screenshot")}
               ctaLabel={t("card.viewCaseStudy")}
-              href="/projects"
+              href={`/projects/${project.key}`}
               tags={project.tags}
               category={t(`categories.${project.category}`)}
               status={{
