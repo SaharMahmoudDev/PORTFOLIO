@@ -25,7 +25,9 @@ export function SectionHeading({
         {title}
       </Title>
       {description && (
-        <Text className="mt-4 max-w-xl text-pretty">{description}</Text>
+        <Text tone="muted" className="mt-4 max-w-xl text-pretty">
+          {description}
+        </Text>
       )}
     </div>
   );
