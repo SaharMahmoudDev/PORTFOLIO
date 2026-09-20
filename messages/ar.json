@@ -121,6 +121,7 @@
       "projectName": "[اسم المشروع]",
       "screenshot": "[لقطة من المشروع]",
       "viewCaseStudy": "عرض دراسة الحالة",
+      "select": "عرض المشروع: {name}",
       "projects": {
         "featured": {
           "url": "ecommerce-platform.vercel.app",
