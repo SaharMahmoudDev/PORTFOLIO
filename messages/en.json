@@ -60,6 +60,26 @@
         }
       }
     },
+    "services": {
+      "eyebrow": "freelance-services",
+      "availability": "Available for select client work",
+      "title": "Freelance services",
+      "description": "I take on a small number of freelance engagements alongside my own projects.",
+      "items": {
+        "frontend": {
+          "title": "Frontend Development",
+          "text": "Building responsive, modern web interfaces with React and Next.js, from a single component to a full application."
+        },
+        "landing": {
+          "title": "Landing Pages",
+          "text": "High-clarity, fast-loading landing pages designed to communicate a product or offer clearly and convert visitors."
+        },
+        "dashboards": {
+          "title": "Dashboard Interfaces",
+          "text": "Modern admin and data-management dashboards with sensible information hierarchy, tables, and filtering."
+        }
+      }
+    },
     "selectedWork": {
       "eyebrow": "selected-work",
       "title": "A few things I've shipped",
