@@ -203,6 +203,46 @@
       "eyebrow": "$ ls services/",
       "title": "Services",
       "description": "From a single landing page to a full product with AI wired into the workflow — here's what I build, and what's included every time."
+    },
+    "grid": {
+      "items": {
+        "frontend": {
+          "title": "Frontend Development",
+          "description": "Custom, responsive interfaces built with React and Next.js — from a single component to a full application.",
+          "points": {
+            "p1": "Custom-coded, not a page builder",
+            "p2": "Responsive across desktop, tablet & mobile",
+            "p3": "Typed, documented codebase you can hand off"
+          }
+        },
+        "landing": {
+          "title": "Landing Pages",
+          "description": "High-clarity, fast-loading pages designed to communicate an offer clearly and convert visitors.",
+          "points": {
+            "p1": "Conversion-focused layout & structure",
+            "p2": "Optimized load times & Core Web Vitals",
+            "p3": "Analytics & lead-capture wired in"
+          }
+        },
+        "dashboards": {
+          "title": "Dashboard Interfaces",
+          "description": "Modern admin and data-management dashboards with sensible information hierarchy.",
+          "points": {
+            "p1": "Tables, filtering & search that scale",
+            "p2": "Auth-gated admin views",
+            "p3": "Built to grow as your data grows"
+          }
+        },
+        "ai": {
+          "title": "AI Integration & Automation",
+          "description": "AI wired into the product itself — not bolted on — to automate the repetitive parts of your workflow.",
+          "points": {
+            "p1": "AI-powered content or data generation",
+            "p2": "Automated workflows, with human review built in",
+            "p3": "Integrates with OpenAI, Anthropic or your provider"
+          }
+        }
+      }
     }
   }
 }
