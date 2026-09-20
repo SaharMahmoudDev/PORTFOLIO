@@ -61,6 +61,16 @@
       },
       "aiWorkflows": "AI-assisted workflows",
       "aiTool": "[AI tool / API]"
+    },
+    "journey": {
+      "eyebrow": "journey",
+      "title": "Where I've worked",
+      "role": "[Role title]",
+      "company": "— [Company name]",
+      "periodCurrent": "[Start] – Present",
+      "periodPast": "[Start] – [End]",
+      "textCurrent": "[One or two lines on what you own here and what you shipped.]",
+      "textPast": "[One or two lines on what you owned here and what you shipped.]"
     }
   },
   "home": {
