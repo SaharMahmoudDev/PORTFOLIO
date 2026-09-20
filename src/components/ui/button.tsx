@@ -2,7 +2,7 @@ import type { ComponentProps } from "react";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
-type Variant = "primary" | "secondary";
+type Variant = "primary" | "secondary" | "inverted";
 type Size = "sm" | "md";
 
 const base =
@@ -12,6 +12,7 @@ const variantClass: Record<Variant, string> = {
   primary: "bg-primary text-primary-foreground hover:opacity-90",
   secondary:
     "border border-border-strong text-foreground hover:border-primary hover:text-primary",
+  inverted: "bg-inverted-foreground text-inverted hover:opacity-90",
 };
 
 const sizeClass: Record<Size, string> = {

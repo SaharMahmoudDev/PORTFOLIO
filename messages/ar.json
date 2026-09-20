@@ -34,6 +34,27 @@
       "step3": "→ تحليل بالذكاء الاصطناعي",
       "step4": "◐ في انتظار مراجعتك",
       "step5": "○ نشر"
+    },
+    "selectedWork": {
+      "eyebrow": "selected-work",
+      "title": "بعض ما أنجزته",
+      "projectName": "[اسم المشروع]",
+      "screenshot": "[لقطة من المشروع]",
+      "viewCaseStudy": "عرض دراسة الحالة",
+      "projects": {
+        "featured": {
+          "url": "ecommerce-platform.vercel.app",
+          "outcome": "[نتيجة في سطر واحد — مثلًا: تقليل التخلي عن الدفع باستبدال 4 خطوات بصفحة واحدة]"
+        },
+        "leads": {
+          "url": "lead-dashboard.vercel.app",
+          "outcome": "[نتيجة في سطر واحد — مثلًا: تصنيف العملاء المحتملين بالذكاء الاصطناعي وخفض زمن الرد إلى ساعة]"
+        },
+        "booking": {
+          "url": "booking-flow.vercel.app",
+          "outcome": "[نتيجة في سطر واحد — مثلًا: إعادة بناء مسار الحجز ورفع Lighthouse من 61 إلى 98]"
+        }
+      }
     }
   }
 }

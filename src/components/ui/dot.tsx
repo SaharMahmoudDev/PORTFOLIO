@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 
 type Tone = "primary" | "term-red" | "term-amber" | "term-grey";
 type Variant = "filled" | "ring";
-type Size = "sm" | "md";
+type Size = "xs" | "sm" | "md" | "lg";
 
 const fillClass: Record<Tone, string> = {
   primary: "bg-primary",
@@ -20,8 +20,10 @@ const ringClass: Record<Tone, string> = {
 };
 
 const sizeClass: Record<Size, string> = {
-  sm: "size-2.5",
-  md: "size-3",
+  xs: "size-1.5",
+  sm: "size-2",
+  md: "size-2.5",
+  lg: "size-3",
 };
 
 type DotProps = ComponentProps<"span"> & {
@@ -33,7 +35,7 @@ type DotProps = ComponentProps<"span"> & {
 export function Dot({
   tone = "primary",
   variant = "filled",
-  size = "sm",
+  size = "md",
   className,
   ...props
 }: DotProps) {

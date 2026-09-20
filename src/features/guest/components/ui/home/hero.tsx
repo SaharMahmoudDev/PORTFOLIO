@@ -18,7 +18,7 @@ export function Hero() {
             {t("eyebrow")}
           </Text>
 
-          <Title as="h1" size="xl" className="max-w-xl">
+          <Title as="h1" size="display" className="max-w-xl">
             {t("title")}
           </Title>
 
