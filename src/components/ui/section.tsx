@@ -1,6 +1,7 @@
 import type { ComponentProps } from "react";
 import { cn } from "@/lib/utils";
 import { Container } from "./container";
+import { Reveal } from "./reveal";
 
 const toneClass = {
   default: "",
@@ -11,6 +12,7 @@ type SectionProps = ComponentProps<"section"> & {
   tone?: keyof typeof toneClass;
   divider?: boolean;
   contained?: boolean;
+  reveal?: boolean;
   containerClassName?: string;
 };
 
@@ -18,11 +20,18 @@ export function Section({
   tone = "default",
   divider = true,
   contained = true,
+  reveal = true,
   className,
   containerClassName,
   children,
   ...props
 }: SectionProps) {
+  const content = contained ? (
+    <Container className={containerClassName}>{children}</Container>
+  ) : (
+    children
+  );
+
   return (
     <section
       className={cn(
@@ -33,11 +42,7 @@ export function Section({
       )}
       {...props}
     >
-      {contained ? (
-        <Container className={containerClassName}>{children}</Container>
-      ) : (
-        children
-      )}
+      {reveal ? <Reveal>{content}</Reveal> : content}
     </section>
   );
 }
