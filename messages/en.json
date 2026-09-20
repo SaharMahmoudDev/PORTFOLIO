@@ -19,6 +19,18 @@
     "backToTop": "Back to top",
     "builtWith": "built with React, Next.js & AI automation"
   },
+  "about": {
+    "header": {
+      "eyebrow": "$ cat about.md",
+      "title": "About Sahar Mahmoud",
+      "description": "Frontend engineer based in [City, Country], focused on building fast, well-crafted interfaces — and folding AI automation into the workflow behind them.",
+      "location": "[City, Country]",
+      "experience": "[X]+ years building for the web",
+      "availability": "available for freelance",
+      "photo": "[your photo]",
+      "caption": "Sahar Mahmoud — Frontend Engineer, AI Automation"
+    }
+  },
   "home": {
     "hero": {
       "eyebrow": "$ whoami --role=frontend-engineer --focus=ai-automation",
