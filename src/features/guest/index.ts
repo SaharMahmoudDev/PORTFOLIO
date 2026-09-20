@@ -4,6 +4,7 @@ export { AskAi } from "./components/ui/home/ask-ai";
 export { ContactCta } from "./components/ui/home/contact-cta";
 export { ContactForm } from "./components/ui/contact/contact-form";
 export { ContactHeader } from "./components/ui/contact/contact-header";
+export { ContactInfo } from "./components/ui/contact/contact-info";
 export { EngagementOptions } from "./components/ui/services/engagement-options";
 export { FreelanceServices } from "./components/ui/home/freelance-services";
 export { Hero } from "./components/ui/home/hero";

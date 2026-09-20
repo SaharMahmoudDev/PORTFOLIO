@@ -379,6 +379,13 @@
         "email": "Please enter a valid email.",
         "message": "Tell me a bit more (at least 20 characters)."
       }
+    },
+    "info": {
+      "status": "available for new projects",
+      "email": "email",
+      "github": "github",
+      "linkedin": "linkedin",
+      "timezone": "// based in Cairo · GMT+2"
     }
   }
 }
