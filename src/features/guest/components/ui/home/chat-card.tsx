@@ -1,11 +1,54 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { Dot, Tag, Text } from "@/components/ui";
+import { Button, Dot, Input, Tag, Text } from "@/components/ui";
+import { ChatBubble } from "./chat-bubble";
 
 const suggestions = ["build", "best", "available"] as const;
 
+type Message = { id: number; role: "user" | "assistant"; text: string };
+
 export function ChatCard() {
   const t = useTranslations("home.askAi.chat");
+  const [messages, setMessages] = useState<Message[]>([]);
+  const [value, setValue] = useState("");
+  const [pending, setPending] = useState(false);
+  const listRef = useRef<HTMLDivElement>(null);
+  const nextId = useRef(0);
+  const timer = useRef<ReturnType<typeof setTimeout>>(undefined);
+
+  useEffect(() => {
+    const el = listRef.current;
+    if (el) el.scrollTop = el.scrollHeight;
+  }, [messages, pending]);
+
+  useEffect(() => () => clearTimeout(timer.current), []);
+
+  const send = (text: string, replyKey = "fallback") => {
+    const question = text.trim();
+    if (!question || pending) return;
+
+    setMessages((prev) => [
+      ...prev,
+      { id: nextId.current++, role: "user", text: question },
+    ]);
+    setValue("");
+    setPending(true);
+
+    timer.current = setTimeout(() => {
+      setMessages((prev) => [
+        ...prev,
+        {
+          id: nextId.current++,
+          role: "assistant",
+          text: t(`replies.${replyKey}`),
+        },
+      ]);
+      setPending(false);
+    }, 700);
+  };
 
   return (
     <div className="relative">
@@ -29,34 +72,70 @@ export function ChatCard() {
           </div>
         </div>
 
-        <div className="px-5 pt-5 pb-1.5">
-          <div className="border-border bg-panel max-w-[88%] rounded-lg border px-3.5 py-3">
-            <Text size="xs" tone="link">
-              {t("greeting")}
-            </Text>
-          </div>
+        <div
+          ref={listRef}
+          role="log"
+          aria-live="polite"
+          className="flex max-h-72 min-h-40 flex-col gap-3 overflow-y-auto px-5 pt-5 pb-1.5"
+        >
+          <ChatBubble role="assistant">{t("greeting")}</ChatBubble>
+          {messages.map((message) => (
+            <ChatBubble key={message.id} role={message.role}>
+              {message.text}
+            </ChatBubble>
+          ))}
+          {pending && (
+            <ChatBubble role="assistant">
+              <span className="sr-only">{t("typing")}</span>
+              <span aria-hidden="true">…</span>
+            </ChatBubble>
+          )}
         </div>
 
         <div className="flex flex-wrap gap-2 px-5 pt-3.5 pb-5">
           {suggestions.map((key) => (
-            <Tag key={key} shape="pill">
-              {t(`suggestions.${key}`)}
-            </Tag>
+            <button
+              key={key}
+              type="button"
+              disabled={pending}
+              onClick={() => send(t(`suggestions.${key}`), key)}
+              className="rounded-full disabled:opacity-50"
+            >
+              <Tag shape="pill" interactive>
+                {t(`suggestions.${key}`)}
+              </Tag>
+            </button>
           ))}
         </div>
 
-        <div className="border-border flex items-center gap-2.5 border-t px-5 py-3.5">
-          <Text as="span" font="mono" size="xs" tone="faint" className="flex-1">
-            {t("placeholder")}
-          </Text>
-          <span className="bg-primary text-primary-foreground flex size-8 shrink-0 items-center justify-center rounded-[7px]">
+        <form
+          onSubmit={(event) => {
+            event.preventDefault();
+            send(value);
+          }}
+          className="border-border focus-within:border-primary flex items-center gap-2.5 border-t px-5 py-3.5"
+        >
+          <Input
+            value={value}
+            onChange={(event) => setValue(event.target.value)}
+            placeholder={t("placeholder")}
+            aria-label={t("placeholder")}
+            className="flex-1"
+          />
+          <Button
+            type="submit"
+            size="icon"
+            disabled={pending || !value.trim()}
+            aria-label={t("send")}
+            className="disabled:opacity-50"
+          >
             <ArrowRight
               size={14}
               className="rtl:-scale-x-100"
               aria-hidden="true"
             />
-          </span>
-        </div>
+          </Button>
+        </form>
       </div>
     </div>
   );

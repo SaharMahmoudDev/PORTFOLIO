@@ -84,7 +84,15 @@
           "best": "Show your best project",
           "available": "Are you available now?"
         },
-        "placeholder": "Ask a question…"
+        "placeholder": "Ask a question…",
+        "send": "Send",
+        "typing": "Sahar's AI is typing",
+        "replies": {
+          "build": "I build production interfaces in React and Next.js — landing pages, dashboards and full apps — and wire AI automation into the workflow.",
+          "best": "The e-commerce platform is a good place to start — see the Selected Work section above and open its case study.",
+          "available": "Sahar is open to a small number of freelance projects right now. Use the contact form below and she'll get back to you.",
+          "fallback": "Thanks for asking! The live assistant isn't connected yet — for now, the contact form below reaches Sahar directly."
+        }
       }
     },
     "services": {

@@ -15,12 +15,14 @@ type TagProps = ComponentProps<"span"> & {
   active?: boolean;
   size?: keyof typeof sizeClass;
   shape?: keyof typeof shapeClass;
+  interactive?: boolean;
 };
 
 export function Tag({
   active,
   size = "md",
   shape = "square",
+  interactive,
   className,
   ...props
 }: TagProps) {
@@ -33,6 +35,8 @@ export function Tag({
         active
           ? "border-primary text-primary"
           : "border-border text-muted-foreground",
+        interactive &&
+          "hover:border-primary hover:text-primary transition-colors",
         className,
       )}
       {...props}
