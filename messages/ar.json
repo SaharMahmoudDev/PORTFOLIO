@@ -347,6 +347,38 @@
       "eyebrow": "$ ./send-message --to=sahar",
       "title": "خلينا نتكلم عن اللي بتبنيه.",
       "description": "مشروع جديد، أو إعادة بناء، أو حاجة المفروض تشتغل لوحدها — احكيلي عنها شوية وهرد عليك."
+    },
+    "form": {
+      "name": "الاسم",
+      "namePlaceholder": "اسمك",
+      "email": "الإيميل",
+      "emailPlaceholder": "you@company.com",
+      "projectType": "محتاج إيه؟",
+      "projectTypes": {
+        "website": "موقع",
+        "webApp": "تطبيق ويب",
+        "automation": "AI / أتمتة",
+        "other": "حاجة تانية"
+      },
+      "budget": "الميزانية",
+      "optional": "// اختياري",
+      "budgets": {
+        "small": "أقل من ٢٠٠٠$",
+        "medium": "٢٠٠٠$ – ٥٠٠٠$",
+        "large": "+٥٠٠٠$",
+        "unsure": "لسه مش متأكد"
+      },
+      "message": "الرسالة",
+      "messagePlaceholder": "بتبني إيه، وإيه اللي يخلي المشروع ناجح؟",
+      "submit": "ابعت الرسالة",
+      "sending": "بيتبعت…",
+      "reply": "// الرد عادةً خلال ٢٤ ساعة",
+      "success": "الرسالة اتبعتت — هرد عليك قريب.",
+      "errors": {
+        "name": "من فضلك اكتب اسمك.",
+        "email": "من فضلك اكتب إيميل صحيح.",
+        "message": "احكيلي أكتر شوية (٢٠ حرف على الأقل)."
+      }
     }
   }
 }
