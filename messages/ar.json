@@ -538,7 +538,15 @@
       "title": "لوحة الأدمن",
       "signOut": "تسجيل خروج",
       "signingOut": "جاري الخروج…",
-      "signedInAs": "مسجّلة دخول بحساب {email}."
+      "signedInAs": "مسجّلة دخول بحساب {email}.",
+      "leads": {
+        "empty": "مفيش رسايل لسه.",
+        "markRead": "اتقرت",
+        "status": {
+          "new": "جديدة",
+          "read": "متقروية"
+        }
+      }
     }
   }
 }
