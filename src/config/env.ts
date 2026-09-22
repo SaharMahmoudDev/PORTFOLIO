@@ -7,11 +7,17 @@ export const env = createEnv({
       .enum(["development", "test", "production"])
       .default("development"),
     DATABASE_URL: z.url().optional(),
+    ADMIN_EMAIL: z.email().optional(),
+    ADMIN_PASSWORD_HASH: z.string().min(1).optional(),
+    AUTH_SECRET: z.string().min(32).optional(),
   },
   client: {},
   runtimeEnv: {
     NODE_ENV: process.env.NODE_ENV,
     DATABASE_URL: process.env.DATABASE_URL,
+    ADMIN_EMAIL: process.env.ADMIN_EMAIL,
+    ADMIN_PASSWORD_HASH: process.env.ADMIN_PASSWORD_HASH,
+    AUTH_SECRET: process.env.AUTH_SECRET,
   },
   emptyStringAsUndefined: true,
   skipValidation: !!process.env.SKIP_ENV_VALIDATION,

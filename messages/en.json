@@ -515,5 +515,30 @@
       "cta": "Send a message",
       "email": "[your@email.com]"
     }
+  },
+  "admin": {
+    "login": {
+      "eyebrow": "$ ./admin-login",
+      "title": "Admin sign in",
+      "email": "email",
+      "password": "password",
+      "submit": "Sign in",
+      "submitting": "Signing in…",
+      "errors": {
+        "email": "Please enter a valid email.",
+        "password": "Please enter your password."
+      },
+      "failure": {
+        "invalid": "Wrong email or password.",
+        "unavailable": "Admin login is not configured yet."
+      }
+    },
+    "dashboard": {
+      "eyebrow": "// admin",
+      "title": "Admin",
+      "signOut": "Sign out",
+      "signingOut": "Signing out…",
+      "signedInAs": "Signed in as {email}."
+    }
   }
 }
