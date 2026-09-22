@@ -2,6 +2,7 @@ import { getFormatter, getTranslations } from "next-intl/server";
 import { markLeadRead } from "../../actions/leads";
 import type { Lead } from "@/db/schema";
 import { Badge, BracketCard, Button, Tag, Text, Title } from "@/components/ui";
+import { DeleteLeadButton } from "./delete-lead-button";
 
 type LeadCardProps = {
   lead: Lead;
@@ -50,13 +51,16 @@ export async function LeadCard({ lead }: LeadCardProps) {
         {lead.message}
       </Text>
 
-      {isNew && (
-        <form action={markRead} className="mt-4">
-          <Button type="submit" variant="secondary" size="sm">
-            {t("markRead")}
-          </Button>
-        </form>
-      )}
+      <div className="mt-4 flex items-center gap-3">
+        {isNew && (
+          <form action={markRead}>
+            <Button type="submit" variant="secondary" size="sm">
+              {t("markRead")}
+            </Button>
+          </form>
+        )}
+        <DeleteLeadButton id={lead.id} />
+      </div>
     </BracketCard>
   );
 }
