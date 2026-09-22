@@ -71,7 +71,14 @@ export function LoginForm() {
             id="password"
             type="password"
             variant="field"
-            autoComplete="current-password"
+            autoComplete="off"
+            autoCorrect="off"
+            autoCapitalize="off"
+            spellCheck={false}
+            data-lpignore="true"
+            data-1p-ignore=""
+            data-bwignore="true"
+            data-form-type="other"
             aria-invalid={!!errors.password}
             {...register("password")}
           />
