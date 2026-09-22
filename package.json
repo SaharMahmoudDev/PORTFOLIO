@@ -14,7 +14,8 @@
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio",
     "prepare": "husky",
-    "auth:hash": "tsx scripts/hash-password.ts"
+    "auth:hash": "tsx scripts/hash-password.ts",
+    "auth:check": "tsx --env-file=.env.local scripts/check-password.ts"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
