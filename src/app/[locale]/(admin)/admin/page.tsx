@@ -1,5 +1,5 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { LogoutButton } from "@/features/admin";
+import { LeadsList, LogoutButton } from "@/features/admin";
 import { getAdminSession } from "@/features/admin/session";
 import { Container, Eyebrow, Text, Title } from "@/components/ui";
 
@@ -24,6 +24,7 @@ export default async function AdminPage({
       <Text tone="muted" className="mt-4">
         {t("signedInAs", { email: session?.email ?? "" })}
       </Text>
+      <LeadsList />
     </Container>
   );
 }

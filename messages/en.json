@@ -538,7 +538,15 @@
       "title": "Admin",
       "signOut": "Sign out",
       "signingOut": "Signing out…",
-      "signedInAs": "Signed in as {email}."
+      "signedInAs": "Signed in as {email}.",
+      "leads": {
+        "empty": "No messages yet.",
+        "markRead": "Mark as read",
+        "status": {
+          "new": "New",
+          "read": "Read"
+        }
+      }
     }
   }
 }
