@@ -13,3 +13,11 @@ export async function markLeadRead(id: string) {
   await db.update(leads).set({ status: "read" }).where(eq(leads.id, id));
   revalidatePath("/admin");
 }
+
+export async function deleteLead(id: string) {
+  const session = await getAdminSession();
+  if (!session) return;
+
+  await db.delete(leads).where(eq(leads.id, id));
+  revalidatePath("/admin");
+}
