@@ -28,7 +28,13 @@ export async function getLeads({
     .orderBy(desc(leads.createdAt));
 }
 
-export async function getLeadStats() {
+export type LeadStats = {
+  total: number;
+  new: number;
+  read: number;
+};
+
+export async function getLeadStats(): Promise<LeadStats> {
   const all = await db
     .select({ id: leads.id, status: leads.status })
     .from(leads);

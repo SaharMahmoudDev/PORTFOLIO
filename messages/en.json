@@ -545,7 +545,26 @@
         "status": {
           "new": "New",
           "read": "Read"
-        }
+        },
+        "delete": "Delete",
+        "deleting": "Deleting…",
+        "deleteConfirm": "Delete this message? This cannot be undone.",
+        "emptyFiltered": "No messages match this filter."
+      },
+      "stats": {
+        "total": "total",
+        "new": "new",
+        "read": "read"
+      },
+      "toolbar": {
+        "filterLabel": "Filter messages",
+        "status": {
+          "all": "All",
+          "new": "New",
+          "read": "Read"
+        },
+        "searchLabel": "Search messages",
+        "searchPlaceholder": "Search by name or email…"
       }
     }
   }
