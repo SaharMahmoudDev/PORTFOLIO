@@ -510,5 +510,23 @@
       "cta": "ابعت رسالة",
       "email": "[your@email.com]"
     }
+  },
+  "admin": {
+    "login": {
+      "eyebrow": "$ ./admin-login",
+      "title": "تسجيل دخول الأدمن",
+      "email": "الإيميل",
+      "password": "كلمة المرور",
+      "submit": "دخول",
+      "submitting": "جاري الدخول…",
+      "errors": {
+        "email": "من فضلك اكتب إيميل صحيح.",
+        "password": "من فضلك اكتب كلمة المرور."
+      },
+      "failure": {
+        "invalid": "الإيميل أو كلمة المرور غلط.",
+        "unavailable": "تسجيل دخول الأدمن لسه مش متجهز."
+      }
+    }
   }
 }
