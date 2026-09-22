@@ -5,6 +5,7 @@ import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
 import { Button, Chip, Field, Input, Text, Textarea } from "@/components/ui";
+import { submitContact } from "../../../actions/contact";
 import { budgets, contactSchema, projectTypes } from "../../../schemas/contact";
 import type { ContactValues } from "../../../schemas/contact";
 
@@ -27,8 +28,12 @@ export function ContactForm() {
     },
   });
 
-  const onSubmit = async () => {
-    await new Promise((resolve) => setTimeout(resolve, 600));
+  const onSubmit = async (values: ContactValues) => {
+    const result = await submitContact(values);
+    if (!result.ok) {
+      toast.error(t(`failure.${result.error}`));
+      return;
+    }
     toast.success(t("success"));
     reset();
   };

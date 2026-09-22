@@ -378,6 +378,11 @@
         "name": "Please enter your name.",
         "email": "Please enter a valid email.",
         "message": "Tell me a bit more (at least 20 characters)."
+      },
+      "failure": {
+        "invalid": "Please check the form and try again.",
+        "unavailable": "Messages are not being accepted right now.",
+        "failed": "Something went wrong. Please try again in a moment."
       }
     },
     "info": {
