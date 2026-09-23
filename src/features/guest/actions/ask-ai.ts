@@ -1,11 +1,11 @@
 "use server";
 
-import Anthropic from "@anthropic-ai/sdk";
+import { GoogleGenAI } from "@google/genai";
 import { z } from "zod";
 import { env } from "@/config/env";
 import { buildSystemPrompt } from "../ai/system-prompt";
 
-const MODEL = "claude-haiku-4-5-20251001";
+const MODEL = "gemini-2.5-flash";
 const MAX_HISTORY = 8;
 
 const messageSchema = z.object({
@@ -26,33 +26,32 @@ export async function askSaharsAi(input: unknown): Promise<AskAiResult> {
   const parsed = askAiSchema.safeParse(input);
   if (!parsed.success) return { ok: false, error: "invalid" };
 
-  if (!env.ANTHROPIC_API_KEY) {
+  if (!env.GEMINI_API_KEY) {
     return { ok: false, error: "unavailable" };
   }
 
   const { message, history } = parsed.data;
 
   try {
-    const client = new Anthropic({ apiKey: env.ANTHROPIC_API_KEY });
+    const client = new GoogleGenAI({ apiKey: env.GEMINI_API_KEY });
 
-    const response = await client.messages.create({
+    const response = await client.models.generateContent({
       model: MODEL,
-      max_tokens: 300,
-      system: buildSystemPrompt(),
-      messages: [
+      config: {
+        systemInstruction: buildSystemPrompt(),
+        maxOutputTokens: 300,
+      },
+      contents: [
         ...history.map((entry) => ({
-          role: entry.role,
-          content: entry.text,
+          role:
+            entry.role === "assistant" ? ("model" as const) : ("user" as const),
+          parts: [{ text: entry.text }],
         })),
-        { role: "user" as const, content: message },
+        { role: "user" as const, parts: [{ text: message }] },
       ],
     });
 
-    const reply = response.content
-      .filter((block) => block.type === "text")
-      .map((block) => block.text)
-      .join("\n")
-      .trim();
+    const reply = response.text?.trim();
 
     if (!reply) return { ok: false, error: "failed" };
 
