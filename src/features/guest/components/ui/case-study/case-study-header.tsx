@@ -62,8 +62,19 @@ export function CaseStudyHeader({ project }: CaseStudyHeaderProps) {
             {tp(`items.${project.key}.outcome`)}
           </Text>
           <div className="mt-2 flex flex-wrap items-center gap-3.5">
-            <Button href={project.demoUrl}>{t("liveDemo")}</Button>
-            <Button href={project.repoUrl} variant="secondary">
+            <Button
+              href={project.demoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t("liveDemo")}
+            </Button>
+            <Button
+              href={project.repoUrl}
+              variant="secondary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {t("source")}
             </Button>
           </div>
