@@ -3,12 +3,12 @@ import {
   BracketCard,
   Container,
   FeatureList,
-  Placeholder,
   Reveal,
   Tag,
   Text,
 } from "@/components/ui";
 import type { ProjectItem } from "../../../data/projects";
+import { ProjectImage } from "../home/project-image";
 import { CaseStudyBlock } from "./case-study-block";
 import { CaseStudyPoint } from "./case-study-point";
 
@@ -20,11 +20,12 @@ type CaseStudyBodyProps = {
 
 export function CaseStudyBody({ project }: CaseStudyBodyProps) {
   const t = useTranslations("caseStudy.body");
+  const ti = useTranslations(`caseStudy.items.${project.key}`);
 
-  const goals = t.raw("goals.items") as string[];
-  const approach = t.raw("approach.steps") as Point[];
-  const features = t.raw("features.items") as Point[];
-  const implementation = t.raw("implementation.steps") as Point[];
+  const goals = ti.raw("goals") as string[];
+  const approach = ti.raw("approach") as Point[];
+  const features = ti.raw("features") as Point[];
+  const implementation = ti.raw("implementation") as Point[];
 
   return (
     <Container className="pb-20 lg:pb-28">
@@ -33,14 +34,14 @@ export function CaseStudyBody({ project }: CaseStudyBodyProps) {
           eyebrow={t("overview.eyebrow")}
           title={t("overview.title")}
         >
-          <Text className="leading-8">{t("overview.text")}</Text>
+          <Text className="leading-8">{ti("overview")}</Text>
         </CaseStudyBlock>
 
         <CaseStudyBlock
           eyebrow={t("problem.eyebrow")}
           title={t("problem.title")}
         >
-          <Text className="leading-8">{t("problem.text")}</Text>
+          <Text className="leading-8">{ti("problem")}</Text>
         </CaseStudyBlock>
 
         <CaseStudyBlock eyebrow={t("goals.eyebrow")} title={t("goals.title")}>
@@ -85,8 +86,8 @@ export function CaseStudyBody({ project }: CaseStudyBodyProps) {
 
         <CaseStudyBlock eyebrow={t("design.eyebrow")} title={t("design.title")}>
           <CaseStudyPoint
-            title={t("design.pointTitle")}
-            text={t("design.pointText")}
+            title={ti("design.pointTitle")}
+            text={ti("design.pointText")}
           />
         </CaseStudyBlock>
 
@@ -113,18 +114,22 @@ export function CaseStudyBody({ project }: CaseStudyBodyProps) {
           title={t("challenges.title")}
         >
           <CaseStudyPoint
-            title={t("challenges.pointTitle")}
-            text={t("challenges.pointText")}
+            title={ti("challenges.pointTitle")}
+            text={ti("challenges.pointText")}
           />
         </CaseStudyBlock>
 
         <Reveal>
           <div className="border-hairline border-t pt-14">
             <BracketCard cornerSize="md" className="p-4">
-              <Placeholder label={t("detail.image")} className="h-56 sm:h-85" />
+              <ProjectImage
+                image={project.image}
+                alt={project.name}
+                className="h-56 sm:h-85"
+              />
             </BracketCard>
             <Text font="mono" size="2xs" tone="faint" className="mt-3.5">
-              {t("detail.caption")}
+              {ti("detail.caption")}
             </Text>
           </div>
         </Reveal>

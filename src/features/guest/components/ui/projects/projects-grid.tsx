@@ -52,8 +52,8 @@ export function ProjectsGrid({ items }: ProjectsGridProps) {
           <div key={project.key} data-project-card>
             <ProjectCard
               variant="grid"
-              url={t("card.url")}
-              name={t("card.name")}
+              url={project.url}
+              name={project.name}
               outcome={t(`items.${project.key}.outcome`)}
               screenshotLabel={t("card.screenshot")}
               ctaLabel={t("card.viewCaseStudy")}
@@ -64,6 +64,7 @@ export function ProjectsGrid({ items }: ProjectsGridProps) {
                 label: t(`status.${project.status}`),
                 tone: project.status === "live" ? "primary" : "muted",
               }}
+              image={project.image}
             />
           </div>
         ))}
