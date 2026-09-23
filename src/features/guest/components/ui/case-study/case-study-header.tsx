@@ -5,12 +5,12 @@ import {
   BracketCard,
   Button,
   Container,
-  Placeholder,
   Reveal,
   Text,
   Title,
 } from "@/components/ui";
 import type { ProjectItem } from "../../../data/projects";
+import { ProjectImage } from "../home/project-image";
 
 type CaseStudyHeaderProps = {
   project: ProjectItem;
@@ -19,10 +19,11 @@ type CaseStudyHeaderProps = {
 export function CaseStudyHeader({ project }: CaseStudyHeaderProps) {
   const t = useTranslations("caseStudy.header");
   const tp = useTranslations("projects");
+  const ti = useTranslations(`caseStudy.items.${project.key}`);
 
   const meta = [
-    { key: "role", value: t("roleValue") },
-    { key: "timeline", value: t("timelineValue") },
+    { key: "role", value: ti("meta.role") },
+    { key: "timeline", value: ti("meta.timeline") },
     { key: "year", value: project.year },
   ];
 
@@ -55,14 +56,25 @@ export function CaseStudyHeader({ project }: CaseStudyHeaderProps) {
             </Text>
           </div>
           <Title as="h1" size="xl">
-            {tp("card.name")}
+            {project.name}
           </Title>
           <Text size="lg" tone="muted" className="max-w-150">
             {tp(`items.${project.key}.outcome`)}
           </Text>
           <div className="mt-2 flex flex-wrap items-center gap-3.5">
-            <Button href="#">{t("liveDemo")}</Button>
-            <Button href="#" variant="secondary">
+            <Button
+              href={project.demoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {t("liveDemo")}
+            </Button>
+            <Button
+              href={project.repoUrl}
+              variant="secondary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {t("source")}
             </Button>
           </div>
@@ -91,8 +103,9 @@ export function CaseStudyHeader({ project }: CaseStudyHeaderProps) {
         </dl>
 
         <BracketCard cornerSize="lg" className="mt-14 p-5">
-          <Placeholder
-            label={t("heroImage")}
+          <ProjectImage
+            image={project.image}
+            alt={project.name}
             className="h-64 sm:h-96 lg:h-130"
           />
         </BracketCard>

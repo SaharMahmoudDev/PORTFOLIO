@@ -10,7 +10,6 @@ type NextProjectProps = {
 
 export function NextProject({ project }: NextProjectProps) {
   const t = useTranslations("caseStudy.next");
-  const tp = useTranslations("projects");
 
   return (
     <Reveal>
@@ -29,7 +28,7 @@ export function NextProject({ project }: NextProjectProps) {
               {t("label")}
             </Text>
             <Title as="p" size="md">
-              {tp("card.name")}
+              {project.name}
             </Title>
           </div>
           <ArrowRight
