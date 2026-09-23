@@ -10,6 +10,7 @@ export const env = createEnv({
     ADMIN_EMAIL: z.email().optional(),
     ADMIN_PASSWORD_HASH: z.string().min(1).optional(),
     AUTH_SECRET: z.string().min(32).optional(),
+    ANTHROPIC_API_KEY: z.string().min(1).optional(),
   },
   client: {},
   runtimeEnv: {
@@ -18,6 +19,7 @@ export const env = createEnv({
     ADMIN_EMAIL: process.env.ADMIN_EMAIL,
     ADMIN_PASSWORD_HASH: process.env.ADMIN_PASSWORD_HASH,
     AUTH_SECRET: process.env.AUTH_SECRET,
+    ANTHROPIC_API_KEY: process.env.ANTHROPIC_API_KEY,
   },
   emptyStringAsUndefined: true,
   skipValidation: !!process.env.SKIP_ENV_VALIDATION,
