@@ -5,7 +5,7 @@ import { z } from "zod";
 import { env } from "@/config/env";
 import { buildSystemPrompt } from "../ai/system-prompt";
 
-const MODEL = "gemini-2.5-flash";
+const MODEL = "gemini-3.6-flash";
 const MAX_HISTORY = 8;
 
 const messageSchema = z.object({
@@ -39,7 +39,8 @@ export async function askSaharsAi(input: unknown): Promise<AskAiResult> {
       model: MODEL,
       config: {
         systemInstruction: buildSystemPrompt(),
-        maxOutputTokens: 300,
+        maxOutputTokens: 500,
+        thinkingConfig: { thinkingBudget: 0 },
       },
       contents: [
         ...history.map((entry) => ({
