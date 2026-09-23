@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Button, Dot, Glow, Input, Tag, Text } from "@/components/ui";
+import { askSaharsAi } from "../../../actions/ask-ai";
 import { ChatBubble } from "./chat-bubble";
 
 const suggestions = ["build", "best", "available"] as const;
@@ -17,18 +18,20 @@ export function ChatCard() {
   const [pending, setPending] = useState(false);
   const listRef = useRef<HTMLDivElement>(null);
   const nextId = useRef(0);
-  const timer = useRef<ReturnType<typeof setTimeout>>(undefined);
 
   useEffect(() => {
     const el = listRef.current;
     if (el) el.scrollTop = el.scrollHeight;
   }, [messages, pending]);
 
-  useEffect(() => () => clearTimeout(timer.current), []);
-
-  const send = (text: string, replyKey = "fallback") => {
+  const send = async (text: string) => {
     const question = text.trim();
     if (!question || pending) return;
+
+    const history = messages.map((message) => ({
+      role: message.role,
+      text: message.text,
+    }));
 
     setMessages((prev) => [
       ...prev,
@@ -37,17 +40,17 @@ export function ChatCard() {
     setValue("");
     setPending(true);
 
-    timer.current = setTimeout(() => {
-      setMessages((prev) => [
-        ...prev,
-        {
-          id: nextId.current++,
-          role: "assistant",
-          text: t(`replies.${replyKey}`),
-        },
-      ]);
-      setPending(false);
-    }, 700);
+    const result = await askSaharsAi({ message: question, history });
+
+    setMessages((prev) => [
+      ...prev,
+      {
+        id: nextId.current++,
+        role: "assistant",
+        text: result.ok ? result.reply : t(`errors.${result.error}`),
+      },
+    ]);
+    setPending(false);
   };
 
   return (
@@ -98,7 +101,7 @@ export function ChatCard() {
               key={key}
               type="button"
               disabled={pending}
-              onClick={() => send(t(`suggestions.${key}`), key)}
+              onClick={() => send(t(`suggestions.${key}`))}
               className="rounded-full disabled:opacity-50"
             >
               <Tag shape="pill" interactive>
@@ -111,7 +114,7 @@ export function ChatCard() {
         <form
           onSubmit={(event) => {
             event.preventDefault();
-            send(value);
+            void send(value);
           }}
           className="border-border focus-within:border-primary flex items-center gap-2.5 border-t px-5 py-3.5"
         >
