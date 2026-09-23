@@ -33,7 +33,7 @@ export default async function CaseStudyPage({
     <>
       <CaseStudyHeader project={project} />
       <CaseStudyBody project={project} />
-      <CaseStudyResults />
+      <CaseStudyResults project={project} />
       <NextProject project={getNextProject(project.key)} />
       <CaseStudyCta />
     </>

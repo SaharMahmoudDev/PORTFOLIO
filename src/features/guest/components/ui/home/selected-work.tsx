@@ -1,16 +1,18 @@
 import { useTranslations } from "next-intl";
 import { SectionHeading } from "@/components/common";
 import { Section } from "@/components/ui";
+import { projects } from "../../../data/projects";
 import { ProjectShowcase } from "./project-showcase";
 
-const projects = [
-  { key: "featured", tags: ["Next.js", "TypeScript"] },
-  { key: "leads" },
-  { key: "booking" },
-] as const;
+const featuredKeys = ["real-estate-hub", "user-dashboard", "dolistix"] as const;
 
 export function SelectedWork() {
   const t = useTranslations("home.selectedWork");
+  const tp = useTranslations("projects");
+
+  const featured = featuredKeys
+    .map((key) => projects.find((project) => project.key === key))
+    .filter((project) => project !== undefined);
 
   return (
     <Section>
@@ -21,17 +23,18 @@ export function SelectedWork() {
       />
 
       <ProjectShowcase
-        projects={projects.map((project) => ({
+        projects={featured.map((project) => ({
           key: project.key,
-          url: t(`projects.${project.key}.url`),
-          name: t("projectName"),
-          outcome: t(`projects.${project.key}.outcome`),
-          selectLabel: t("select", { name: t(`projects.${project.key}.url`) }),
-          tags: "tags" in project ? [...project.tags] : undefined,
+          url: project.url,
+          name: project.name,
+          outcome: tp(`items.${project.key}.outcome`),
+          selectLabel: t("select", { name: project.name }),
+          href: `/projects/${project.key}`,
+          tags: project.tags,
+          image: project.image,
         }))}
         screenshotLabel={t("screenshot")}
         ctaLabel={t("viewCaseStudy")}
-        href="/projects"
       />
     </Section>
   );

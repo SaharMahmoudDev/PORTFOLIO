@@ -19,7 +19,7 @@ export function ProjectsBrowser({ items }: ProjectsBrowserProps) {
   const searched = needle
     ? items.filter((project) =>
         [
-          t("card.name"),
+          project.name,
           t(`items.${project.key}.outcome`),
           t(`categories.${project.category}`),
           ...project.tags,

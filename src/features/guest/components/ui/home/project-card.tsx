@@ -10,6 +10,8 @@ import {
   Text,
   Title,
 } from "@/components/ui";
+import type { ProjectImage as ProjectImageType } from "../../../data/projects";
+import { ProjectImage } from "./project-image";
 
 type ProjectCardProps = {
   ref?: Ref<HTMLDivElement>;
@@ -25,6 +27,7 @@ type ProjectCardProps = {
   status?: { label: string; tone: "primary" | "muted" };
   onSelect?: () => void;
   selectLabel?: string;
+  image?: ProjectImageType;
 };
 
 export function ProjectCard({
@@ -41,6 +44,7 @@ export function ProjectCard({
   status,
   onSelect,
   selectLabel,
+  image,
 }: ProjectCardProps) {
   const featured = variant === "featured";
   const large = featured || variant === "grid";
@@ -84,15 +88,28 @@ export function ProjectCard({
           </Text>
         </div>
 
-        <Placeholder
-          label={screenshotLabel}
-          className={cn(
-            large ? "mb-5" : "mb-3.5",
-            featured && "h-56 sm:h-80",
-            variant === "grid" && "h-44 sm:h-55",
-            variant === "compact" && "h-32",
-          )}
-        />
+        {image ? (
+          <ProjectImage
+            image={image}
+            alt={name}
+            className={cn(
+              large ? "mb-5" : "mb-3.5",
+              featured && "h-56 sm:h-80",
+              variant === "grid" && "h-44 sm:h-55",
+              variant === "compact" && "h-32",
+            )}
+          />
+        ) : (
+          <Placeholder
+            label={screenshotLabel}
+            className={cn(
+              large ? "mb-5" : "mb-3.5",
+              featured && "h-56 sm:h-80",
+              variant === "grid" && "h-44 sm:h-55",
+              variant === "compact" && "h-32",
+            )}
+          />
+        )}
 
         {category && status && (
           <div className="mb-3 flex items-center gap-2.5">

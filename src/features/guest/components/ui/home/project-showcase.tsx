@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { ProjectCard } from "./project-card";
+import type { ProjectImage } from "../../../data/projects";
 
 export type ShowcaseProject = {
   key: string;
@@ -10,21 +11,21 @@ export type ShowcaseProject = {
   name: string;
   outcome: string;
   selectLabel: string;
+  href: string;
   tags?: string[];
+  image?: ProjectImage;
 };
 
 type ProjectShowcaseProps = {
   projects: ShowcaseProject[];
   screenshotLabel: string;
   ctaLabel: string;
-  href: string;
 };
 
 export function ProjectShowcase({
   projects,
   screenshotLabel,
   ctaLabel,
-  href,
 }: ProjectShowcaseProps) {
   const [order, setOrder] = useState(() => projects.map((p) => p.key));
   const previous = useRef<string | null>(null);
@@ -110,10 +111,11 @@ export function ProjectShowcase({
             outcome={project.outcome}
             screenshotLabel={screenshotLabel}
             ctaLabel={ctaLabel}
-            href={href}
+            href={project.href}
             tags={index === 0 ? project.tags : undefined}
             onSelect={() => select(key)}
             selectLabel={project.selectLabel}
+            image={project.image}
           />
         );
       })}
