@@ -1,13 +1,14 @@
 import type { ReactNode } from "react";
 import { useTranslations } from "next-intl";
+import { site } from "@/config/site";
 import { Link } from "@/i18n/navigation";
 import { Container, Logo, Text } from "@/components/ui";
 
 const navKeys = ["projects", "services", "about", "contact"] as const;
 
 const connectLinks = [
-  { label: "GitHub", href: "#" },
-  { label: "LinkedIn", href: "#" },
+  { label: "GitHub", href: site.github.url },
+  { label: "LinkedIn", href: site.linkedin.url },
 ] as const;
 
 function FooterColumn({
@@ -64,6 +65,8 @@ export function Footer() {
                 key={label}
                 as="a"
                 href={href}
+                target="_blank"
+                rel="noopener noreferrer"
                 font="mono"
                 size="sm"
                 tone="link"

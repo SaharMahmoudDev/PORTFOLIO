@@ -25,6 +25,10 @@ export function ContactInfo() {
                 <a
                   dir="ltr"
                   href={item.href}
+                  {...(item.external && {
+                    target: "_blank",
+                    rel: "noopener noreferrer",
+                  })}
                   className="text-foreground hover:text-primary block text-start font-mono text-[13px] transition-colors rtl:text-right"
                 >
                   {item.value}
