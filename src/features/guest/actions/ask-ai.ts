@@ -10,12 +10,15 @@ const MAX_HISTORY = 8;
 
 const messageSchema = z.object({
   role: z.enum(["user", "assistant"]),
-  text: z.string().min(1).max(1000),
+  text: z.string().min(1).max(4000),
 });
 
 const askAiSchema = z.object({
   message: z.string().trim().min(1).max(500),
-  history: z.array(messageSchema).max(MAX_HISTORY).default([]),
+  history: z
+    .array(messageSchema)
+    .default([])
+    .transform((entries) => entries.slice(-MAX_HISTORY)),
 });
 
 export type AskAiResult =
