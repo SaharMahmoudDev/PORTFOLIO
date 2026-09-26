@@ -3,7 +3,7 @@ import { SectionHeading } from "@/components/common";
 import { Dot, Section, Text, Title } from "@/components/ui";
 import { cn } from "@/lib/utils";
 
-const entries = ["current", "previous", "earlier"] as const;
+const entries = ["current", "internship", "learning"] as const;
 
 export function Journey() {
   const t = useTranslations("about.journey");
@@ -35,10 +35,10 @@ export function Journey() {
               <div className={cn(!last && "pb-10")}>
                 <div className="mb-2 flex flex-wrap items-baseline gap-3">
                   <Title as="h3" size="sm">
-                    {t("role")}
+                    {t(`entries.${key}.role`)}
                   </Title>
                   <Text as="span" font="mono" size="xs" tone="muted">
-                    {t("company")}
+                    {t(`entries.${key}.company`)}
                   </Text>
                   <Text
                     as="span"
@@ -47,11 +47,11 @@ export function Journey() {
                     tone={current ? "primary" : "faint"}
                     className="ms-auto"
                   >
-                    {current ? t("periodCurrent") : t("periodPast")}
+                    {t(`entries.${key}.period`)}
                   </Text>
                 </div>
                 <Text size="sm" tone="muted" className="max-w-140">
-                  {current ? t("textCurrent") : t("textPast")}
+                  {t(`entries.${key}.text`)}
                 </Text>
               </div>
             </li>

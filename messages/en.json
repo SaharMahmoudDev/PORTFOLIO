@@ -60,17 +60,31 @@
         "ai": "AI & AUTOMATION"
       },
       "aiWorkflows": "AI-assisted workflows",
-      "aiTool": "[AI tool / API]"
+      "aiTool": "Gemini API"
     },
     "journey": {
       "eyebrow": "journey",
       "title": "Where I've worked",
-      "role": "[Role title]",
-      "company": "— [Company name]",
-      "periodCurrent": "[Start] – Present",
-      "periodPast": "[Start] – [End]",
-      "textCurrent": "[One or two lines on what you own here and what you shipped.]",
-      "textPast": "[One or two lines on what you owned here and what you shipped.]"
+      "entries": {
+        "current": {
+          "role": "Freelance Frontend Developer",
+          "company": "— Self-employed",
+          "period": "Present",
+          "text": "Building portfolio-grade web apps, dashboards and storefronts with React and Next.js, and adding AI features such as an AI chat assistant and an AI lead assistant."
+        },
+        "internship": {
+          "role": "Frontend Intern",
+          "company": "— AfaaqWare",
+          "period": "3 months",
+          "text": "Built a real survey product instead of a demo, working with Git and GitHub, clean architecture, clean code and a live API."
+        },
+        "learning": {
+          "role": "Self-taught Frontend Developer",
+          "company": "— Online courses",
+          "period": "3 years ago",
+          "text": "Went from a commerce degree to frontend: JavaScript, HTML and CSS first, then React, Next.js and Tailwind CSS."
+        }
+      }
     },
     "cta": {
       "title": "Want to see what I can build for you?",
