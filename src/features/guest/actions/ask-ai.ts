@@ -3,6 +3,7 @@
 import { GoogleGenAI } from "@google/genai";
 import { z } from "zod";
 import { env } from "@/config/env";
+import { isRateLimited } from "@/lib/rate-limit";
 import { buildSystemPrompt } from "../ai/system-prompt";
 
 const MODEL = "gemini-3.6-flash";
@@ -23,7 +24,7 @@ const askAiSchema = z.object({
 
 export type AskAiResult =
   | { ok: true; reply: string }
-  | { ok: false; error: "invalid" | "unavailable" | "failed" };
+  | { ok: false; error: "invalid" | "unavailable" | "failed" | "rateLimited" };
 
 export async function askSaharsAi(input: unknown): Promise<AskAiResult> {
   const parsed = askAiSchema.safeParse(input);
@@ -36,6 +37,12 @@ export async function askSaharsAi(input: unknown): Promise<AskAiResult> {
   const { message, history } = parsed.data;
 
   try {
+    if (
+      await isRateLimited({ name: "ask-ai", limit: 20, windowSeconds: 600 })
+    ) {
+      return { ok: false, error: "rateLimited" };
+    }
+
     const client = new GoogleGenAI({ apiKey: env.GEMINI_API_KEY });
 
     const response = await client.models.generateContent({

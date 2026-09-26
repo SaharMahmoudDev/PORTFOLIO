@@ -150,7 +150,8 @@
         "errors": {
           "invalid": "Please type a question first.",
           "unavailable": "The live assistant isn't connected yet — the contact form below reaches Sahar directly.",
-          "failed": "Something went wrong on my end — try again, or use the contact form below."
+          "failed": "Something went wrong on my end — try again, or use the contact form below.",
+          "rateLimited": "You've asked a lot of questions in a short time — try again in a few minutes, or use the contact form below."
         }
       }
     },
@@ -378,7 +379,8 @@
       "failure": {
         "invalid": "Please check the form and try again.",
         "unavailable": "Messages are not being accepted right now.",
-        "failed": "Something went wrong. Please try again in a moment."
+        "failed": "Something went wrong. Please try again in a moment.",
+        "rateLimited": "Too many messages from this connection. Please try again in a while."
       }
     },
     "info": {
