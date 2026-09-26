@@ -14,6 +14,7 @@ export const env = createEnv({
     RESEND_API_KEY: z.string().min(1).optional(),
     RESEND_FROM: z.string().min(1).optional(),
     NOTIFY_EMAIL: z.email().optional(),
+    GMAIL_APP_PASSWORD: z.string().min(1).optional(),
   },
   client: {},
   runtimeEnv: {
@@ -26,6 +27,7 @@ export const env = createEnv({
     RESEND_API_KEY: process.env.RESEND_API_KEY,
     RESEND_FROM: process.env.RESEND_FROM,
     NOTIFY_EMAIL: process.env.NOTIFY_EMAIL,
+    GMAIL_APP_PASSWORD: process.env.GMAIL_APP_PASSWORD,
   },
   emptyStringAsUndefined: true,
   skipValidation: !!process.env.SKIP_ENV_VALIDATION,
