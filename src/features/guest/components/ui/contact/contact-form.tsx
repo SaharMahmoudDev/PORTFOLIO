@@ -25,6 +25,7 @@ export function ContactForm() {
       projectType: "website",
       budget: "unsure",
       message: "",
+      website: "",
     },
   });
 
@@ -119,6 +120,15 @@ export function ContactForm() {
           {...register("message")}
         />
       </Field>
+
+      <input
+        type="text"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="absolute h-0 w-0 opacity-0"
+        {...register("website")}
+      />
 
       <div className="flex flex-wrap items-center gap-5">
         <Button type="submit" disabled={isSubmitting}>
