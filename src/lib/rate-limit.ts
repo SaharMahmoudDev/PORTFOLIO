@@ -15,9 +15,7 @@ async function getClientId() {
   return forwarded || list.get("x-real-ip") || "unknown";
 }
 
-export async function isRateLimited({ name, limit, windowSeconds }: Options) {
-  if (!env.DATABASE_URL) return false;
-
+async function hit({ name, limit, windowSeconds }: Options) {
   const [{ db }, { rateLimits }] = await Promise.all([
     import("@/db"),
     import("@/db/schema"),
@@ -38,4 +36,14 @@ export async function isRateLimited({ name, limit, windowSeconds }: Options) {
     .returning({ count: rateLimits.count });
 
   return row.count > limit;
+}
+
+export async function isRateLimited(options: Options) {
+  if (!env.DATABASE_URL) return false;
+
+  try {
+    return await hit(options);
+  } catch {
+    return false;
+  }
 }
