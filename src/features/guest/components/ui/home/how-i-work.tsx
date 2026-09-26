@@ -5,16 +5,10 @@ import {
   Sparkles,
   TrendingUp,
 } from "lucide-react";
+import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { SectionHeading } from "@/components/common";
-import {
-  Badge,
-  BracketCard,
-  Placeholder,
-  Section,
-  Text,
-  Title,
-} from "@/components/ui";
+import { Badge, BracketCard, Section, Text, Title } from "@/components/ui";
 import { cn } from "@/lib/utils";
 
 const steps: { key: string; icon: LucideIcon; highlight?: boolean }[] = [
@@ -31,7 +25,15 @@ export function HowIWork() {
     <Section>
       <div className="grid items-center gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-16">
         <BracketCard cornerSize="lg" className="h-80 md:h-115">
-          <Placeholder label={t("photo")} className="absolute inset-3.5" />
+          <div className="absolute inset-3.5 overflow-hidden">
+            <Image
+              src="/images/workspace.jpg"
+              alt={t("photo")}
+              fill
+              sizes="(min-width: 1024px) 40vw, 100vw"
+              className="object-cover"
+            />
+          </div>
           <Badge variant="card" className="absolute start-8.5 bottom-8.5">
             {t("badge")}
           </Badge>
