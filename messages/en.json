@@ -23,9 +23,9 @@
     "header": {
       "eyebrow": "$ cat about.md",
       "title": "About Sahar Mahmoud",
-      "description": "Frontend engineer based in [City, Country], focused on building fast, well-crafted interfaces — and folding AI automation into the workflow behind them.",
-      "location": "[City, Country]",
-      "experience": "[X]+ years building for the web",
+      "description": "Frontend engineer based in Fayoum, Egypt, focused on building fast, well-crafted interfaces — and folding AI automation into the workflow behind them.",
+      "location": "Fayoum, Egypt",
+      "experience": "3+ years building for the web",
       "availability": "available for freelance",
       "photo": "[your photo]",
       "caption": "Sahar Mahmoud — Frontend Engineer, AI Automation"
@@ -33,15 +33,15 @@
     "story": {
       "eyebrow": "my-story",
       "title": "How I got here",
-      "paragraph1": "[Placeholder — replace with your own story: how you got into frontend development, the kind of problems you like solving, and what pulled you toward building interfaces.]",
-      "paragraph2": "[Placeholder — a second paragraph on how AI automation entered your workflow: what it replaced, what it freed you up to focus on, and how you keep it reviewed rather than running unchecked.]",
+      "paragraph1": "I graduated with a commerce degree, then taught myself frontend three years ago through online courses: JavaScript, HTML and CSS, then React, Next.js and Tailwind CSS. I later spent three months as a trainee at a software company, building a real survey product rather than a demo. There I learned Git and GitHub, clean architecture, clean code, and how to work with a real API.",
+      "paragraph2": "AI is reshaping the market, so I've started studying AI automation and will begin a dedicated course next month. The goal is to fold it into how I build, while keeping every AI-generated output reviewed by a human before it ships.",
       "stats": {
         "experience": {
-          "value": "[X]+",
+          "value": "3+",
           "label": "years of experience"
         },
         "projects": {
-          "value": "[X]+",
+          "value": "8",
           "label": "projects shipped"
         },
         "focus": {
