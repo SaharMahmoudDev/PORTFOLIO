@@ -3,9 +3,10 @@
 import { env } from "@/config/env";
 import {
   canAutoReply,
-  emailEnabled,
+  canNotifyOwner,
   ownerEmail,
-  sendEmail,
+  sendOwnerEmail,
+  sendVisitorEmail,
 } from "@/lib/email/send";
 import { ownerNotification, visitorAutoReply } from "@/lib/email/templates";
 import { isRateLimited } from "@/lib/rate-limit";
@@ -37,9 +38,9 @@ export async function submitContact(input: unknown): Promise<ContactResult> {
     ]);
     await db.insert(leads).values(lead);
 
-    if (emailEnabled()) {
+    if (canNotifyOwner) {
       const jobs = [
-        sendEmail({
+        sendOwnerEmail({
           to: ownerEmail,
           replyTo: lead.email,
           ...ownerNotification(lead),
@@ -47,7 +48,7 @@ export async function submitContact(input: unknown): Promise<ContactResult> {
       ];
       if (canAutoReply) {
         jobs.push(
-          sendEmail({
+          sendVisitorEmail({
             to: lead.email,
             ...visitorAutoReply(lead.name, locale ?? "en"),
           }),
