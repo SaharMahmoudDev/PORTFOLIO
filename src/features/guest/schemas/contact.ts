@@ -15,6 +15,7 @@ export const contactSchema = z.object({
   budget: z.enum(budgets),
   message: z.string().trim().min(20, "message"),
   website: z.string().optional(),
+  locale: z.enum(["en", "ar"]).optional(),
 });
 
 export type ContactValues = z.infer<typeof contactSchema>;

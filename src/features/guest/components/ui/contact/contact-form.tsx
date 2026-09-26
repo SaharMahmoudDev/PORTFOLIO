@@ -1,6 +1,6 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Controller, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "sonner";
@@ -11,6 +11,7 @@ import type { ContactValues } from "../../../schemas/contact";
 
 export function ContactForm() {
   const t = useTranslations("contact.form");
+  const locale = useLocale();
   const {
     register,
     control,
@@ -30,7 +31,7 @@ export function ContactForm() {
   });
 
   const onSubmit = async (values: ContactValues) => {
-    const result = await submitContact(values);
+    const result = await submitContact({ ...values, locale });
     if (!result.ok) {
       toast.error(t(`failure.${result.error}`));
       return;
