@@ -403,103 +403,40 @@
     "body": {
       "overview": {
         "eyebrow": "summary",
-        "title": "Overview",
-        "text": "[Placeholder — a short overview of what the client needed and the core idea behind your solution, in 2-3 sentences.]"
+        "title": "Overview"
       },
       "problem": {
         "eyebrow": "problem",
-        "title": "The problem",
-        "text": "[Placeholder — describe the pain point in concrete terms: what was slow, broken or missing, and how it was affecting users or the business before this project.]"
+        "title": "The problem"
       },
       "goals": {
         "eyebrow": "goals",
-        "title": "What success looked like",
-        "items": [
-          "[Placeholder — a measurable goal, e.g. cut time-to-first-render below 800ms]",
-          "[Placeholder — a second goal, e.g. support saved, shareable views]",
-          "[Placeholder — a third goal, e.g. make it easy for the team to extend without a rewrite]"
-        ]
+        "title": "What success looked like"
       },
       "approach": {
         "eyebrow": "approach",
-        "title": "How I approached it",
-        "steps": [
-          {
-            "title": "[Approach step one — e.g. Data layer first]",
-            "text": "[Placeholder — explain the first decision you made and why, before any UI work started.]"
-          },
-          {
-            "title": "[Approach step two — e.g. Component contracts]",
-            "text": "[Placeholder — explain a second structural decision, such as a shared data shape or pattern that made the rest of the build easier.]"
-          }
-        ]
+        "title": "How I approached it"
       },
       "features": {
         "eyebrow": "key-features",
-        "title": "What shipped",
-        "items": [
-          {
-            "title": "[Feature one]",
-            "text": "[Placeholder — describe what this feature does and the technique behind it.]"
-          },
-          {
-            "title": "[Feature two]",
-            "text": "[Placeholder — describe a second feature and why it mattered to the outcome.]"
-          },
-          {
-            "title": "[Feature three]",
-            "text": "[Placeholder — describe a third feature, ideally one with a concrete before/after.]"
-          }
-        ]
+        "title": "What shipped"
       },
       "design": {
         "eyebrow": "design",
-        "title": "Design decisions",
-        "pointTitle": "[Design decision — e.g. Dark-first, not dark-only]",
-        "pointText": "[Placeholder — explain one deliberate design choice and the reasoning behind it, tied to how the product is actually used.]"
+        "title": "Design decisions"
       },
       "implementation": {
         "eyebrow": "implementation",
-        "title": "Technical implementation",
-        "steps": [
-          {
-            "title": "[Implementation detail one]",
-            "text": "[Placeholder — a technical detail worth calling out, e.g. how data streams in or how state is kept in sync.]"
-          },
-          {
-            "title": "[Implementation detail two]",
-            "text": "[Placeholder — a performance or architecture detail, e.g. bundle size discipline or code-splitting strategy.]"
-          }
-        ]
+        "title": "Technical implementation"
       },
       "challenges": {
         "eyebrow": "challenges",
-        "title": "What was hard",
-        "pointTitle": "[The hard part — e.g. re-renders under streaming data]",
-        "pointText": "[Placeholder — describe a real obstacle you hit and specifically how you solved it. This is the part that shows engineering judgment, not just output.]"
-      },
-      "detail": {
-        "image": "[detail screenshot]",
-        "caption": "[Caption — e.g. saved-view filters and the virtualized event table.]"
+        "title": "What was hard"
       }
     },
     "results": {
       "eyebrow": "results",
-      "title": "Outcome",
-      "metrics": [
-        {
-          "label": "[Metric one]",
-          "value": "[Before] → [After]"
-        },
-        {
-          "label": "[Metric two]",
-          "value": "[Result]"
-        },
-        {
-          "label": "[Metric three]",
-          "value": "[Result]"
-        }
-      ]
+      "title": "Outcome"
     },
     "next": {
       "label": "Next project"
