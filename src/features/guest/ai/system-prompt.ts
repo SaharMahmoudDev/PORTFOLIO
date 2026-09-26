@@ -1,5 +1,5 @@
 import { projects } from "../data/projects";
-import { contactInfo } from "../data/contact";
+import { site } from "@/config/site";
 
 const skills = [
   "React, Next.js (App Router) and TypeScript",
@@ -8,9 +8,6 @@ const skills = [
   "API integration, responsive design and accessibility",
   "Wiring AI (like this chat) into real product workflows",
 ];
-
-const email = contactInfo.find((item) => item.key === "email")?.value;
-const github = contactInfo.find((item) => item.key === "github")?.value;
 
 function projectList() {
   return projects
@@ -34,8 +31,9 @@ ${skills.map((s) => `- ${s}`).join("\n")}
 ${projectList()}
 
 ## Contact
-- Email: ${email}
-- GitHub: ${github}
+- Email: ${site.email}
+- GitHub: ${site.github.url}
+- LinkedIn: ${site.linkedin.url}
 - The site has a Contact page with a form — always point people there for anything that needs a real reply (quotes, timelines, availability for a specific project).
 
 ## How to answer

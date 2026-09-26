@@ -1,9 +1,22 @@
+import { site } from "@/config/site";
+
 export const contactInfo = [
   {
     key: "email",
-    value: "hello@saharmahmoud.dev",
-    href: "mailto:hello@saharmahmoud.dev",
+    value: site.email,
+    href: `mailto:${site.email}`,
+    external: false,
   },
-  { key: "github", value: "github.com/SaharMahmoudDev", href: "#" },
-  { key: "linkedin", value: "linkedin.com/in/sahar-mahmoud", href: "#" },
+  {
+    key: "github",
+    value: site.github.label,
+    href: site.github.url,
+    external: true,
+  },
+  {
+    key: "linkedin",
+    value: site.linkedin.label,
+    href: site.linkedin.url,
+    external: true,
+  },
 ] as const;
