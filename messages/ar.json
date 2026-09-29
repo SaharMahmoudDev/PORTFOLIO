@@ -17,7 +17,8 @@
     "connect": "تواصل",
     "email": "البريد الإلكتروني",
     "backToTop": "العودة للأعلى",
-    "builtWith": "مبني بـ React وNext.js وأتمتة الذكاء الاصطناعي"
+    "builtWith": "مبني بـ React وNext.js وأتمتة الذكاء الاصطناعي",
+    "admin": "الأدمن"
   },
   "about": {
     "header": {

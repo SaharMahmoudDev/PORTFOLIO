@@ -17,7 +17,8 @@
     "connect": "Connect",
     "email": "Email",
     "backToTop": "Back to top",
-    "builtWith": "built with React, Next.js & AI automation"
+    "builtWith": "built with React, Next.js & AI automation",
+    "admin": "Admin"
   },
   "about": {
     "header": {

@@ -78,14 +78,23 @@ Classify this message and draft a short reply, as JSON matching the schema:
 Respond with JSON only, matching the schema.`;
 }
 
-export async function classifyLead(
+const TIMEOUT_MS = 15_000;
+
+function withTimeout<T>(promise: Promise<T>, ms: number): Promise<T> {
+  return Promise.race([
+    promise,
+    new Promise<T>((_, reject) =>
+      setTimeout(() => reject(new Error("classifyLead timed out")), ms),
+    ),
+  ]);
+}
+
+async function attemptClassify(
+  client: GoogleGenAI,
   lead: LeadInput,
 ): Promise<LeadClassification | null> {
-  if (!env.GEMINI_API_KEY) return null;
-
-  try {
-    const client = new GoogleGenAI({ apiKey: env.GEMINI_API_KEY });
-    const response = await client.models.generateContent({
+  const response = await withTimeout(
+    client.models.generateContent({
       model: MODEL,
       contents: [{ role: "user", parts: [{ text: buildPrompt(lead) }] }],
       config: {
@@ -94,14 +103,34 @@ export async function classifyLead(
         responseMimeType: "application/json",
         responseSchema,
       },
-    });
+    }),
+    TIMEOUT_MS,
+  );
 
-    const text = response.text?.trim();
-    if (!text) return null;
+  const text = response.text?.trim();
+  if (!text) return null;
 
-    const parsed = classificationSchema.safeParse(JSON.parse(text));
-    return parsed.success ? parsed.data : null;
-  } catch {
-    return null;
+  const parsed = classificationSchema.safeParse(JSON.parse(text));
+  return parsed.success ? parsed.data : null;
+}
+
+export async function classifyLead(
+  lead: LeadInput,
+): Promise<LeadClassification | null> {
+  if (!env.GEMINI_API_KEY) return null;
+
+  const client = new GoogleGenAI({ apiKey: env.GEMINI_API_KEY });
+
+  for (let attempt = 0; attempt < 2; attempt++) {
+    try {
+      const result = await attemptClassify(client, lead);
+      if (result) return result;
+    } catch (error) {
+      if (attempt === 1) {
+        console.error("classifyLead failed", error);
+      }
+    }
   }
+
+  return null;
 }
