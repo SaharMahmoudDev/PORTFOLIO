@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useTranslations } from "next-intl";
 import { toast } from "sonner";
 import { createProject, updateProject } from "../../actions/projects";
+import { regenerateProjectDraft } from "../../actions/project-generator";
 import { projectFormSchema } from "../../schemas/project";
 import type {
   ProjectFormOutput,
@@ -94,6 +95,7 @@ export function ProjectForm({ project }: ProjectFormProps) {
   const tp = useTranslations("admin.dashboard.projects.publishStatus");
   const router = useRouter();
   const [isPending, startTransition] = useTransition();
+  const [isRegenerating, startRegenerate] = useTransition();
 
   const {
     register,
@@ -126,11 +128,38 @@ export function ProjectForm({ project }: ProjectFormProps) {
     return typeof message === "string" ? message : undefined;
   };
 
+  const onRegenerate = () => {
+    if (!project) return;
+    startRegenerate(async () => {
+      const result = await regenerateProjectDraft(project.id);
+      if (!result.ok) {
+        toast.error(t(`generator.errors.${result.error}`));
+        return;
+      }
+      window.location.reload();
+    });
+  };
+
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-8">
-      <Title as="h1" size="lg">
-        {project ? t("editTitle") : t("createTitle")}
-      </Title>
+      <div className="flex flex-wrap items-center justify-between gap-4">
+        <Title as="h1" size="lg">
+          {project ? t("editTitle") : t("createTitle")}
+        </Title>
+        {project?.sourceUrl && (
+          <Button
+            type="button"
+            variant="secondary"
+            size="sm"
+            onClick={onRegenerate}
+            disabled={isRegenerating}
+          >
+            {isRegenerating
+              ? t("generator.generating")
+              : t("generator.regenerate")}
+          </Button>
+        )}
+      </div>
 
       <div className="grid gap-6 md:grid-cols-2">
         <Field

@@ -575,6 +575,26 @@
             "duplicateKey": "That key is already used by another project.",
             "failed": "Couldn't save. Try again."
           }
+        },
+        "generator": {
+          "generate": "Generate with AI",
+          "generating": "Generating…",
+          "generatingHint": "Fetching the page and drafting a case study — this can take up to 30 seconds.",
+          "regenerate": "Regenerate with AI",
+          "title": "AI Project Generator",
+          "description": "Paste a live project URL. The server fetches its content and Gemini drafts a full case study for you to review — nothing publishes automatically.",
+          "sourceUrl": "project url",
+          "sourceUrlHint": "the live demo/site",
+          "repoUrl": "repo url",
+          "repoUrlHint": "optional",
+          "cancel": "Cancel",
+          "errors": {
+            "unauthorized": "Your session expired. Sign in again.",
+            "invalidUrl": "Enter a valid http(s) URL.",
+            "fetchFailed": "Couldn't fetch that page. Check the URL is reachable.",
+            "aiFailed": "AI generation failed. Try again.",
+            "noSource": "This project wasn't AI-generated, so there's nothing to regenerate from."
+          }
         }
       }
     }
