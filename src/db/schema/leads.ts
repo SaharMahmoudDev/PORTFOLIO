@@ -11,6 +11,13 @@ export const leads = pgTable("leads", {
   createdAt: timestamp("created_at", { withTimezone: true })
     .notNull()
     .defaultNow(),
+  aiType: text("ai_type"),
+  aiIndustry: text("ai_industry"),
+  aiPriority: text("ai_priority"),
+  aiFeatures: text("ai_features").array(),
+  aiSuggestedReply: text("ai_suggested_reply"),
+  aiClassifiedAt: timestamp("ai_classified_at", { withTimezone: true }),
+  repliedAt: timestamp("replied_at", { withTimezone: true }),
 });
 
 export type Lead = typeof leads.$inferSelect;

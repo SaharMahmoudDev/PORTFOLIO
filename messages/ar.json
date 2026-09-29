@@ -17,7 +17,8 @@
     "connect": "تواصل",
     "email": "البريد الإلكتروني",
     "backToTop": "العودة للأعلى",
-    "builtWith": "مبني بـ React وNext.js وأتمتة الذكاء الاصطناعي"
+    "builtWith": "مبني بـ React وNext.js وأتمتة الذكاء الاصطناعي",
+    "admin": "الأدمن"
   },
   "about": {
     "header": {
@@ -1074,7 +1075,35 @@
         "delete": "حذف",
         "deleting": "بيتحذف…",
         "deleteConfirm": "تحذف الرسالة دي؟ الخطوة دي مينفعش ترجع فيها.",
-        "emptyFiltered": "مفيش رسايل مطابقة للفلتر ده."
+        "emptyFiltered": "مفيش رسايل مطابقة للفلتر ده.",
+        "replied": "اتردّ عليها",
+        "ai": {
+          "type": {
+            "newProject": "مشروع جديد",
+            "collaboration": "تعاون",
+            "jobOpportunity": "فرصة عمل",
+            "question": "سؤال",
+            "spam": "سبام",
+            "other": "تاني"
+          },
+          "priority": {
+            "low": "أولوية منخفضة",
+            "medium": "أولوية متوسطة",
+            "high": "أولوية عالية"
+          },
+          "notClassified": "لسه متحللّتش.",
+          "classify": "حلّليها بالـ AI",
+          "reclassify": "أعيدي التحليل",
+          "classifying": "بتتحلل…",
+          "classifyFailed": "التحليل فشل. جرّبي تاني.",
+          "replyLabel": "الرد المقترح من الـ AI",
+          "replyPlaceholder": "اكتبي أو عدّلي الرد قبل الإرسال…",
+          "send": "اعتمدي وابعتي",
+          "sending": "بيتبعت…",
+          "sendFailed": "الرد مبعتش. راجعي إعدادات الإيميل.",
+          "sendUnavailable": "إرسال الإيميلات لسه مش متجهز.",
+          "sent": "اتبعت الرد {date}."
+        }
       },
       "stats": {
         "total": "الكل",
@@ -1089,7 +1118,10 @@
           "read": "متقروية"
         },
         "searchLabel": "دوّري في الرسايل",
-        "searchPlaceholder": "دوّري بالاسم أو الإيميل…"
+        "searchPlaceholder": "دوّري بالاسم أو الإيميل…",
+        "export": "تصدير إكسل",
+        "exporting": "بيتصدّر…",
+        "exportFailed": "التصدير فشل. جرّبي تاني."
       }
     }
   }

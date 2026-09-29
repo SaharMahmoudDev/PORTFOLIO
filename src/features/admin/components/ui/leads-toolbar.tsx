@@ -1,10 +1,12 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useTransition } from "react";
 import { useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
+import { toast } from "sonner";
+import { exportLeadsAction } from "../../actions/leads";
 import { useRouter } from "@/i18n/navigation";
-import { Chip, SearchField } from "@/components/ui";
+import { Button, Chip, SearchField } from "@/components/ui";
 import type { LeadStatusFilter } from "../../queries/leads";
 
 const statuses: LeadStatusFilter[] = ["all", "new", "read"];
@@ -54,6 +56,30 @@ export function LeadsToolbar({ stats }: LeadsToolbarProps) {
     read: stats.read,
   };
 
+  const [isExporting, startExport] = useTransition();
+
+  const onExport = () => {
+    startExport(async () => {
+      const result = await exportLeadsAction();
+      if (!result.ok) {
+        toast.error(t("exportFailed"));
+        return;
+      }
+      const bytes = Uint8Array.from(atob(result.base64), (c) =>
+        c.charCodeAt(0),
+      );
+      const blob = new Blob([bytes], {
+        type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = result.filename;
+      link.click();
+      URL.revokeObjectURL(url);
+    });
+  };
+
   return (
     <div className="mt-8 flex flex-wrap items-center justify-between gap-4">
       <div role="group" aria-label={t("filterLabel")} className="flex gap-2.5">
@@ -69,12 +95,23 @@ export function LeadsToolbar({ stats }: LeadsToolbarProps) {
         ))}
       </div>
 
-      <SearchField
-        label={t("searchLabel")}
-        placeholder={t("searchPlaceholder")}
-        value={query}
-        onChange={(event) => onSearchChange(event.target.value)}
-      />
+      <div className="flex flex-wrap items-center gap-3">
+        <SearchField
+          label={t("searchLabel")}
+          placeholder={t("searchPlaceholder")}
+          value={query}
+          onChange={(event) => onSearchChange(event.target.value)}
+        />
+        <Button
+          type="button"
+          variant="secondary"
+          size="sm"
+          onClick={onExport}
+          disabled={isExporting}
+        >
+          {isExporting ? t("exporting") : t("export")}
+        </Button>
+      </div>
     </div>
   );
 }
