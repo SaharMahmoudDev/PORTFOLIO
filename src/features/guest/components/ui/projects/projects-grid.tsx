@@ -5,11 +5,11 @@ import { useTranslations } from "next-intl";
 import { Button, Section, Text } from "@/components/ui";
 import { gsap, useGSAP } from "@/lib/gsap";
 import { ProjectCard } from "../home/project-card";
-import type { ProjectItem } from "../../../data/projects";
+import type { PublicProject } from "../../../data/projects";
 import { useProjectsFilter } from "../../../store";
 
 type ProjectsGridProps = {
-  items: ProjectItem[];
+  items: PublicProject[];
 };
 
 export function ProjectsGrid({ items }: ProjectsGridProps) {
@@ -54,7 +54,7 @@ export function ProjectsGrid({ items }: ProjectsGridProps) {
               variant="grid"
               url={project.url}
               name={project.name}
-              outcome={t(`items.${project.key}.outcome`)}
+              outcome={project.outcome}
               screenshotLabel={t("card.screenshot")}
               ctaLabel={t("card.viewCaseStudy")}
               href={`/projects/${project.key}`}

@@ -1,17 +1,14 @@
 import { useTranslations } from "next-intl";
 import { BracketCard, Eyebrow, Section, Text, Title } from "@/components/ui";
-import type { ProjectItem } from "../../../data/projects";
-
-type Metric = { label: string; value: string };
+import type { PublicProject } from "../../../data/projects";
 
 type CaseStudyResultsProps = {
-  project: ProjectItem;
+  project: PublicProject;
 };
 
 export function CaseStudyResults({ project }: CaseStudyResultsProps) {
   const t = useTranslations("caseStudy.results");
-  const ti = useTranslations(`caseStudy.items.${project.key}`);
-  const metrics = ti.raw("results") as Metric[];
+  const metrics = project.results;
 
   return (
     <Section>
