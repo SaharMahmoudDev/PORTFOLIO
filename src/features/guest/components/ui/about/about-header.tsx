@@ -55,6 +55,7 @@ export function AboutHeader() {
             <Monogram
               initials={t("initials")}
               label={t("title")}
+              orbitText={t("orbitText")}
               className="h-72 sm:h-96 lg:h-110"
             />
             <Text font="mono" size="xs" tone="faint" className="mt-3.5">
