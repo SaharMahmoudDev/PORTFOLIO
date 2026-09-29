@@ -45,3 +45,21 @@ export function visitorAutoReply(name: string, locale: "en" | "ar") {
     html: `<div style="font-family:sans-serif;line-height:1.7;${locale === "ar" ? "direction:rtl;text-align:right" : ""}">${reply.body(escape(name))}</div>`,
   };
 }
+
+const isArabic = (value: string) => /[؀-ۿ]/.test(value);
+
+export function leadReply(name: string, body: string) {
+  const rtl = isArabic(body);
+  const greeting = rtl ? `أهلًا ${escape(name)}،` : `Hi ${escape(name)},`;
+  const signOff = rtl ? "سحر محمود" : "Sahar Mahmoud";
+  const paragraph = escape(body).replace(/\n/g, "<br>");
+
+  return {
+    subject: rtl ? "ردًا على رسالتك" : "Re: your message",
+    html: `<div style="font-family:sans-serif;line-height:1.7;${rtl ? "direction:rtl;text-align:right" : ""}">
+<p>${greeting}</p>
+<p style="white-space:pre-wrap">${paragraph}</p>
+<p>${signOff}</p>
+</div>`,
+  };
+}

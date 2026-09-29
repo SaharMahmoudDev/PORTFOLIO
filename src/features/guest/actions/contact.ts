@@ -1,6 +1,8 @@
 "use server";
 
+import { eq } from "drizzle-orm";
 import { env } from "@/config/env";
+import { classifyLead } from "@/lib/ai/classify-lead";
 import {
   canAutoReply,
   canNotifyOwner,
@@ -36,16 +38,21 @@ export async function submitContact(input: unknown): Promise<ContactResult> {
       import("@/db"),
       import("@/db/schema"),
     ]);
-    await db.insert(leads).values(lead);
+    const [inserted] = await db
+      .insert(leads)
+      .values(lead)
+      .returning({ id: leads.id });
+
+    const jobs: Promise<unknown>[] = [];
 
     if (canNotifyOwner) {
-      const jobs = [
+      jobs.push(
         sendOwnerEmail({
           to: ownerEmail,
           replyTo: lead.email,
           ...ownerNotification(lead),
         }),
-      ];
+      );
       if (canAutoReply) {
         jobs.push(
           sendVisitorEmail({
@@ -54,8 +61,26 @@ export async function submitContact(input: unknown): Promise<ContactResult> {
           }),
         );
       }
-      await Promise.allSettled(jobs);
     }
+
+    jobs.push(
+      classifyLead({ ...lead, locale }).then(async (result) => {
+        if (!result) return;
+        await db
+          .update(leads)
+          .set({
+            aiType: result.type,
+            aiIndustry: result.industry,
+            aiPriority: result.priority,
+            aiFeatures: result.features,
+            aiSuggestedReply: result.suggestedReply,
+            aiClassifiedAt: new Date(),
+          })
+          .where(eq(leads.id, inserted.id));
+      }),
+    );
+
+    await Promise.allSettled(jobs);
 
     return { ok: true };
   } catch {

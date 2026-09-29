@@ -2,6 +2,7 @@ import { getFormatter, getTranslations } from "next-intl/server";
 import { markLeadRead } from "../../actions/leads";
 import type { Lead } from "@/db/schema";
 import { Badge, BracketCard, Button, Tag, Text, Title } from "@/components/ui";
+import { AiReplyPanel } from "./ai-reply-panel";
 import { DeleteLeadButton } from "./delete-lead-button";
 
 type LeadCardProps = {
@@ -29,6 +30,11 @@ export async function LeadCard({ lead }: LeadCardProps) {
           <Badge size="sm" tone={isNew ? "primary" : "muted"}>
             {t(`status.${lead.status}`)}
           </Badge>
+          {lead.repliedAt && (
+            <Badge size="sm" tone="primary">
+              {t("replied")}
+            </Badge>
+          )}
         </div>
         <Text font="mono" size="2xs" tone="faint">
           {format.dateTime(lead.createdAt, {
@@ -61,6 +67,17 @@ export async function LeadCard({ lead }: LeadCardProps) {
         )}
         <DeleteLeadButton id={lead.id} />
       </div>
+
+      <AiReplyPanel
+        id={lead.id}
+        aiType={lead.aiType}
+        aiIndustry={lead.aiIndustry}
+        aiPriority={lead.aiPriority}
+        aiFeatures={lead.aiFeatures}
+        aiSuggestedReply={lead.aiSuggestedReply}
+        aiClassifiedAt={lead.aiClassifiedAt?.toISOString() ?? null}
+        repliedAt={lead.repliedAt?.toISOString() ?? null}
+      />
     </BracketCard>
   );
 }
