@@ -4,7 +4,7 @@ import { z } from "zod";
 import { env } from "@/config/env";
 import { withTimeout } from "./with-timeout";
 
-const MODEL = "gemini-3.6-flash";
+const MODEL = "gemini-3.5-flash";
 
 export const leadTypes = [
   "newProject",
