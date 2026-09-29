@@ -47,8 +47,13 @@ const responseSchema = {
   required: ["type", "industry", "priority", "features", "suggestedReply"],
 };
 
+const isArabic = (value: string) => /[؀-ۿ]/.test(value);
+
 function buildPrompt(lead: LeadInput) {
-  const replyLanguage = lead.locale === "ar" ? "Arabic" : "English";
+  // The visitor's actual message wins over the site route they happened to
+  // be on — someone can type Arabic on the /en page and vice versa.
+  const replyLanguage =
+    isArabic(lead.message) || lead.locale === "ar" ? "Arabic" : "English";
 
   return `You are triaging an incoming contact-form message for Sahar Mahmoud, a freelance front-end developer (React, Next.js, TypeScript), and drafting a reply for her to review before sending.
 
