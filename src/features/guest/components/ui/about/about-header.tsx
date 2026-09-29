@@ -3,7 +3,7 @@ import {
   BracketCard,
   Container,
   Glow,
-  Placeholder,
+  Monogram,
   Reveal,
   Text,
   Title,
@@ -52,7 +52,12 @@ export function AboutHeader() {
         <div className="relative self-start">
           <Glow intensity="medium" pulse className="-end-10 -top-8 size-85" />
           <BracketCard cornerSize="lg" className="p-5">
-            <Placeholder label={t("photo")} className="h-72 sm:h-96 lg:h-110" />
+            <Monogram
+              initials={t("initials")}
+              label={t("title")}
+              orbitText={t("orbitText")}
+              className="h-72 sm:h-96 lg:h-110"
+            />
             <Text font="mono" size="xs" tone="faint" className="mt-3.5">
               {t("caption")}
             </Text>

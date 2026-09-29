@@ -15,6 +15,7 @@ export { IconBox } from "./icon-box";
 export { Input } from "./input";
 export { LocaleSwitch } from "./locale-switch";
 export { Logo } from "./logo";
+export { Monogram } from "./monogram";
 export { Placeholder } from "./placeholder";
 export { Reveal } from "./reveal";
 export { ScrollToTop } from "./scroll-to-top";
