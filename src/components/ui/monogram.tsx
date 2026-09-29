@@ -4,14 +4,18 @@ import { cn } from "@/lib/utils";
 type MonogramProps = ComponentProps<"div"> & {
   initials: string;
   label: string;
+  orbitText: string;
 };
 
 export function Monogram({
   initials,
   label,
+  orbitText,
   className,
   ...props
 }: MonogramProps) {
+  const loop = Array.from({ length: 3 }, () => orbitText).join("   •   ");
+
   return (
     <div
       role="img"
@@ -28,25 +32,54 @@ export function Monogram({
       />
       <div
         aria-hidden="true"
-        className="absolute size-56 rounded-full bg-[radial-gradient(circle,color-mix(in_oklab,var(--primary)_26%,transparent),transparent_70%)] blur-2xl"
+        className="animate-glow-pulse absolute size-44 rounded-full bg-[radial-gradient(circle,color-mix(in_oklab,var(--primary)_26%,transparent),transparent_70%)] blur-2xl motion-reduce:animate-none sm:size-52"
       />
 
-      <div className="border-primary/35 relative flex size-36 items-center justify-center rounded-full border bg-[color-mix(in_oklab,var(--card)_88%,var(--primary)_12%)] sm:size-44">
-        <span
+      <div className="relative size-40 sm:size-48">
+        <svg
           aria-hidden="true"
-          className="border-border-strong/50 absolute inset-2.5 rounded-full border border-dashed"
-        />
-        <span
-          aria-hidden="true"
-          dir="ltr"
-          className="font-display text-primary text-5xl font-semibold tracking-tight sm:text-6xl"
+          viewBox="0 0 200 200"
+          direction="ltr"
+          className="animate-orbit absolute inset-0 size-full motion-reduce:animate-none"
+          style={{ transformOrigin: "100px 100px" }}
         >
-          {initials}
-        </span>
-        <span
+          <path
+            id="monogram-orbit-path"
+            fill="none"
+            d="M 100,12 a 88,88 0 1,1 0,176 a 88,88 0 1,1 0,-176"
+          />
+          <text
+            className="fill-primary/70 font-mono"
+            fontSize="9.5"
+            letterSpacing="1.5"
+          >
+            <textPath href="#monogram-orbit-path" startOffset="0%">
+              {loop}
+            </textPath>
+          </text>
+        </svg>
+
+        <div
           aria-hidden="true"
-          className="bg-primary ring-card absolute end-1.5 bottom-1.5 size-4 rounded-full ring-4"
-        />
+          className="animate-orbit-reverse absolute inset-0 motion-reduce:animate-none"
+        >
+          <span className="bg-primary absolute start-1/2 top-1 size-2 -translate-x-1/2 rounded-full shadow-[0_0_10px_2px_rgba(53,212,130,0.55)]" />
+        </div>
+
+        <div className="border-primary/35 absolute inset-8 flex items-center justify-center rounded-full border bg-[color-mix(in_oklab,var(--card)_88%,var(--primary)_12%)] sm:inset-9">
+          <span
+            dir="ltr"
+            className="font-display text-primary flex items-baseline text-3xl font-semibold tracking-tight sm:text-4xl"
+          >
+            {initials}
+            <span
+              aria-hidden="true"
+              className="animate-caret ms-0.5 motion-reduce:animate-none"
+            >
+              _
+            </span>
+          </span>
+        </div>
       </div>
     </div>
   );
