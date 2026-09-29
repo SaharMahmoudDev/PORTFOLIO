@@ -15,6 +15,13 @@
       "when": 1790415632078,
       "tag": "0001_nebulous_umar",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1790662664693,
+      "tag": "0002_burly_anita_blake",
+      "breakpoints": true
     }
   ]
 }

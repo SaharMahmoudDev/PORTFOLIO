@@ -17,7 +17,8 @@
     "connect": "Connect",
     "email": "Email",
     "backToTop": "Back to top",
-    "builtWith": "built with React, Next.js & AI automation"
+    "builtWith": "built with React, Next.js & AI automation",
+    "admin": "Admin"
   },
   "about": {
     "header": {
@@ -1074,7 +1075,35 @@
         "delete": "Delete",
         "deleting": "Deleting…",
         "deleteConfirm": "Delete this message? This cannot be undone.",
-        "emptyFiltered": "No messages match this filter."
+        "emptyFiltered": "No messages match this filter.",
+        "replied": "Replied",
+        "ai": {
+          "type": {
+            "newProject": "New project",
+            "collaboration": "Collaboration",
+            "jobOpportunity": "Job opportunity",
+            "question": "Question",
+            "spam": "Spam",
+            "other": "Other"
+          },
+          "priority": {
+            "low": "Low priority",
+            "medium": "Medium priority",
+            "high": "High priority"
+          },
+          "notClassified": "Not analyzed yet.",
+          "classify": "Analyze with AI",
+          "reclassify": "Re-analyze",
+          "classifying": "Analyzing…",
+          "classifyFailed": "AI analysis failed. Try again.",
+          "replyLabel": "AI suggested reply",
+          "replyPlaceholder": "Write or edit the reply before sending…",
+          "send": "Approve & Send",
+          "sending": "Sending…",
+          "sendFailed": "Couldn't send the reply. Check your email settings.",
+          "sendUnavailable": "Email sending isn't configured yet.",
+          "sent": "Reply sent {date}."
+        }
       },
       "stats": {
         "total": "total",
@@ -1089,7 +1118,10 @@
           "read": "Read"
         },
         "searchLabel": "Search messages",
-        "searchPlaceholder": "Search by name or email…"
+        "searchPlaceholder": "Search by name or email…",
+        "export": "Export to Excel",
+        "exporting": "Exporting…",
+        "exportFailed": "Export failed. Try again."
       }
     }
   }
