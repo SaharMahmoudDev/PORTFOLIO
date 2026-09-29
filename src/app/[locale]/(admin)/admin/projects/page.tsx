@@ -18,9 +18,14 @@ export default async function AdminProjectsPage({
         <Title as="h1" size="lg">
           {t("title")}
         </Title>
-        <Button href="/admin/projects/new" size="sm">
-          {t("new")}
-        </Button>
+        <div className="flex items-center gap-3">
+          <Button href="/admin/projects/generate" variant="secondary" size="sm">
+            {t("generator.generate")}
+          </Button>
+          <Button href="/admin/projects/new" size="sm">
+            {t("new")}
+          </Button>
+        </div>
       </div>
 
       <ProjectsAdminList projects={projects} />

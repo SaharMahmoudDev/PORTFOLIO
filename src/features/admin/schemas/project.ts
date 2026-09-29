@@ -108,3 +108,15 @@ export const projectServerSchema = projectFormSchema.extend({
   contentEn: projectLocaleContentSchema,
   contentAr: projectLocaleContentSchema,
 });
+
+// What the AI Project Generator returns — validated before it's saved as a
+// draft row.
+export const projectDraftSchema = z.object({
+  name: z.string().trim().min(1).max(120),
+  category: z.enum(projectCategories),
+  tags: z.array(z.string().trim().min(1).max(40)).min(1).max(6),
+  en: projectLocaleContentSchema,
+  ar: projectLocaleContentSchema,
+});
+
+export type ProjectDraft = z.infer<typeof projectDraftSchema>;
