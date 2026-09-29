@@ -7,7 +7,7 @@ import { withTimeout } from "@/lib/ai/with-timeout";
 import { isRateLimited } from "@/lib/rate-limit";
 import { buildSystemPrompt } from "../ai/system-prompt";
 
-const MODEL = "gemini-3.6-flash";
+const MODEL = "gemini-3.5-flash";
 const MAX_HISTORY = 8;
 const TIMEOUT_MS = 15_000;
 

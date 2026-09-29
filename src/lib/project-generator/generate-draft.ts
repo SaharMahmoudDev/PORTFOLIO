@@ -9,7 +9,7 @@ import {
 } from "@/features/admin/schemas/project";
 import type { FetchedPage } from "./fetch-url";
 
-const MODEL = "gemini-3.6-flash";
+const MODEL = "gemini-3.5-flash";
 const TIMEOUT_MS = 25_000;
 
 const pointSchema = {
