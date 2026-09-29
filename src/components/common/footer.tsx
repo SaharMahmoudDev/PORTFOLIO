@@ -82,16 +82,28 @@ export function Footer() {
           <Text font="mono" size="xs" tone="faint">
             © {year} Sahar Mahmoud — {t("footer.builtWith")}
           </Text>
-          <Text
-            as="a"
-            href="#top"
-            font="mono"
-            size="xs"
-            tone="faint"
-            className="hover:text-foreground transition-colors"
-          >
-            {t("footer.backToTop")} ↑
-          </Text>
+          <div className="flex items-center gap-4">
+            <Text
+              as={Link}
+              href="/admin"
+              font="mono"
+              size="xs"
+              tone="faint"
+              className="hover:text-foreground transition-colors"
+            >
+              {t("footer.admin")}
+            </Text>
+            <Text
+              as="a"
+              href="#top"
+              font="mono"
+              size="xs"
+              tone="faint"
+              className="hover:text-foreground transition-colors"
+            >
+              {t("footer.backToTop")} ↑
+            </Text>
+          </div>
         </div>
       </Container>
     </footer>
