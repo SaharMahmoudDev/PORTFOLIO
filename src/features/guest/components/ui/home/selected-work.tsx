@@ -1,18 +1,18 @@
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { SectionHeading } from "@/components/common";
 import { Section } from "@/components/ui";
-import { projects } from "../../../data/projects";
+import { getFeaturedProjects } from "../../../queries/projects";
 import { ProjectShowcase } from "./project-showcase";
 
 const featuredKeys = ["real-estate-hub", "user-dashboard", "dolistix"] as const;
 
-export function SelectedWork() {
-  const t = useTranslations("home.selectedWork");
-  const tp = useTranslations("projects");
+type SelectedWorkProps = {
+  locale: "en" | "ar";
+};
 
-  const featured = featuredKeys
-    .map((key) => projects.find((project) => project.key === key))
-    .filter((project) => project !== undefined);
+export async function SelectedWork({ locale }: SelectedWorkProps) {
+  const t = await getTranslations("home.selectedWork");
+  const featured = await getFeaturedProjects(featuredKeys, locale);
 
   return (
     <Section>
@@ -27,7 +27,7 @@ export function SelectedWork() {
           key: project.key,
           url: project.url,
           name: project.name,
-          outcome: tp(`items.${project.key}.outcome`),
+          outcome: project.outcome,
           selectLabel: t("select", { name: project.name }),
           href: `/projects/${project.key}`,
           tags: project.tags,

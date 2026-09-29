@@ -9,21 +9,20 @@ import {
   Text,
   Title,
 } from "@/components/ui";
-import type { ProjectItem } from "../../../data/projects";
+import type { PublicProject } from "../../../data/projects";
 import { ProjectImage } from "../home/project-image";
 
 type CaseStudyHeaderProps = {
-  project: ProjectItem;
+  project: PublicProject;
 };
 
 export function CaseStudyHeader({ project }: CaseStudyHeaderProps) {
   const t = useTranslations("caseStudy.header");
   const tp = useTranslations("projects");
-  const ti = useTranslations(`caseStudy.items.${project.key}`);
 
   const meta = [
-    { key: "role", value: ti("meta.role") },
-    { key: "timeline", value: ti("meta.timeline") },
+    { key: "role", value: project.meta.role },
+    { key: "timeline", value: project.meta.timeline },
     { key: "year", value: project.year },
   ];
 
@@ -59,7 +58,7 @@ export function CaseStudyHeader({ project }: CaseStudyHeaderProps) {
             {project.name}
           </Title>
           <Text size="lg" tone="muted" className="max-w-150">
-            {tp(`items.${project.key}.outcome`)}
+            {project.outcome}
           </Text>
           <div className="mt-2 flex flex-wrap items-center gap-3.5">
             <Button

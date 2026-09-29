@@ -1,0 +1,21 @@
+CREATE TABLE "projects" (
+	"id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL,
+	"key" text NOT NULL,
+	"name" text NOT NULL,
+	"url" text NOT NULL,
+	"demo_url" text NOT NULL,
+	"repo_url" text NOT NULL,
+	"category" text NOT NULL,
+	"project_status" text NOT NULL,
+	"publish_status" text DEFAULT 'published' NOT NULL,
+	"year" text NOT NULL,
+	"tags" text[] NOT NULL,
+	"image_light" text NOT NULL,
+	"image_dark" text NOT NULL,
+	"sort_order" integer DEFAULT 0 NOT NULL,
+	"content" jsonb NOT NULL,
+	"source_url" text,
+	"created_at" timestamp with time zone DEFAULT now() NOT NULL,
+	"updated_at" timestamp with time zone DEFAULT now() NOT NULL,
+	CONSTRAINT "projects_key_unique" UNIQUE("key")
+);

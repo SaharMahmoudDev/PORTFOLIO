@@ -7,25 +7,18 @@ import {
   Tag,
   Text,
 } from "@/components/ui";
-import type { ProjectItem } from "../../../data/projects";
+import type { PublicProject } from "../../../data/projects";
 import { ProjectImage } from "../home/project-image";
 import { CaseStudyBlock } from "./case-study-block";
 import { CaseStudyPoint } from "./case-study-point";
 
-type Point = { title: string; text: string };
-
 type CaseStudyBodyProps = {
-  project: ProjectItem;
+  project: PublicProject;
 };
 
 export function CaseStudyBody({ project }: CaseStudyBodyProps) {
   const t = useTranslations("caseStudy.body");
-  const ti = useTranslations(`caseStudy.items.${project.key}`);
-
-  const goals = ti.raw("goals") as string[];
-  const approach = ti.raw("approach") as Point[];
-  const features = ti.raw("features") as Point[];
-  const implementation = ti.raw("implementation") as Point[];
+  const { goals, approach, features, implementation } = project;
 
   return (
     <Container className="pb-20 lg:pb-28">
@@ -34,14 +27,14 @@ export function CaseStudyBody({ project }: CaseStudyBodyProps) {
           eyebrow={t("overview.eyebrow")}
           title={t("overview.title")}
         >
-          <Text className="leading-8">{ti("overview")}</Text>
+          <Text className="leading-8">{project.overview}</Text>
         </CaseStudyBlock>
 
         <CaseStudyBlock
           eyebrow={t("problem.eyebrow")}
           title={t("problem.title")}
         >
-          <Text className="leading-8">{ti("problem")}</Text>
+          <Text className="leading-8">{project.problem}</Text>
         </CaseStudyBlock>
 
         <CaseStudyBlock eyebrow={t("goals.eyebrow")} title={t("goals.title")}>
@@ -86,8 +79,8 @@ export function CaseStudyBody({ project }: CaseStudyBodyProps) {
 
         <CaseStudyBlock eyebrow={t("design.eyebrow")} title={t("design.title")}>
           <CaseStudyPoint
-            title={ti("design.pointTitle")}
-            text={ti("design.pointText")}
+            title={project.design.pointTitle}
+            text={project.design.pointText}
           />
         </CaseStudyBlock>
 
@@ -114,8 +107,8 @@ export function CaseStudyBody({ project }: CaseStudyBodyProps) {
           title={t("challenges.title")}
         >
           <CaseStudyPoint
-            title={ti("challenges.pointTitle")}
-            text={ti("challenges.pointText")}
+            title={project.challenges.pointTitle}
+            text={project.challenges.pointText}
           />
         </CaseStudyBlock>
 
@@ -129,7 +122,7 @@ export function CaseStudyBody({ project }: CaseStudyBodyProps) {
               />
             </BracketCard>
             <Text font="mono" size="2xs" tone="faint" className="mt-3.5">
-              {ti("detail.caption")}
+              {project.detail.caption}
             </Text>
           </div>
         </Reveal>

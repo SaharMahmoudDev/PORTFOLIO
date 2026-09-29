@@ -2,10 +2,10 @@ import { ArrowRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Container, Reveal, Text, Title } from "@/components/ui";
 import { Link } from "@/i18n/navigation";
-import type { ProjectItem } from "../../../data/projects";
+import type { PublicProject } from "../../../data/projects";
 
 type NextProjectProps = {
-  project: ProjectItem;
+  project: PublicProject;
 };
 
 export function NextProject({ project }: NextProjectProps) {
