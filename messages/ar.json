@@ -378,7 +378,7 @@
       "email": "الإيميل",
       "github": "جيت هب",
       "linkedin": "لينكدإن",
-      "timezone": "// من القاهرة · GMT+2"
+      "timezone": "// من الفيوم · GMT+2"
     }
   },
   "caseStudy": {
@@ -461,6 +461,10 @@
       "signOut": "تسجيل خروج",
       "signingOut": "جاري الخروج…",
       "signedInAs": "مسجّلة دخول بحساب {email}.",
+      "nav": {
+        "messages": "الرسايل",
+        "projects": "المشاريع"
+      },
       "leads": {
         "empty": "مفيش رسايل لسه.",
         "markRead": "اتقرت",
@@ -518,6 +522,60 @@
         "export": "تصدير إكسل",
         "exporting": "بيتصدّر…",
         "exportFailed": "التصدير فشل. جرّبي تاني."
+      },
+      "projects": {
+        "title": "المشاريع",
+        "new": "مشروع جديد",
+        "empty": "مفيش مشاريع لسه.",
+        "columns": {
+          "project": "المشروع",
+          "category": "الفئة",
+          "status": "الحالة",
+          "updated": "آخر تحديث"
+        },
+        "publishStatus": {
+          "draft": "مسودة",
+          "published": "منشور"
+        },
+        "publish": "انشري",
+        "unpublish": "شيلي النشر",
+        "updating": "بيتحدّث…",
+        "edit": "تعديل",
+        "delete": "حذف",
+        "deleting": "بيتحذف…",
+        "deleteConfirm": "تحذفي المشروع ده؟ الخطوة دي مينفعش ترجع فيها.",
+        "form": {
+          "createTitle": "مشروع جديد",
+          "editTitle": "تعديل المشروع",
+          "key": "المعرّف (key)",
+          "keyHint": "بيستخدم في الرابط — حروف إنجليزي صغيرة وأرقام وشرطات بس",
+          "name": "الاسم",
+          "url": "رابط العرض",
+          "urlHint": "مثلاً example.netlify.app",
+          "demoUrl": "رابط الديمو",
+          "repoUrl": "رابط الريبو",
+          "category": "الفئة",
+          "status": "حالة المشروع",
+          "publishStatus": "حالة النشر",
+          "year": "السنة",
+          "tags": "التقنيات",
+          "tagsHint": "افصلي بينها بفاصلة",
+          "imageLight": "مسار صورة الوضع الفاتح",
+          "imageDark": "مسار صورة الوضع الداكن",
+          "sortOrder": "ترتيب العرض",
+          "contentEn": "المحتوى (إنجليزي) — JSON",
+          "contentAr": "المحتوى (عربي) — JSON",
+          "contentHint": "بنفس شكل الكيس ستادي: outcome, meta, overview, problem, goals, approach, features, design, implementation, challenges, detail, results.",
+          "save": "احفظي المشروع",
+          "saving": "بيتحفظ…",
+          "cancel": "إلغاء",
+          "errors": {
+            "unauthorized": "الجلسة انتهت. سجّلي دخول تاني.",
+            "invalid": "راجعي الحقول المحددة.",
+            "duplicateKey": "المعرّف ده مستخدم في مشروع تاني.",
+            "failed": "الحفظ فشل. جرّبي تاني."
+          }
+        }
       }
     }
   }

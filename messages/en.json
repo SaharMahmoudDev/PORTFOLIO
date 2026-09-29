@@ -378,7 +378,7 @@
       "email": "email",
       "github": "github",
       "linkedin": "linkedin",
-      "timezone": "// based in Cairo · GMT+2"
+      "timezone": "// based in Fayoum · GMT+2"
     }
   },
   "caseStudy": {
@@ -461,6 +461,10 @@
       "signOut": "Sign out",
       "signingOut": "Signing out…",
       "signedInAs": "Signed in as {email}.",
+      "nav": {
+        "messages": "Messages",
+        "projects": "Projects"
+      },
       "leads": {
         "empty": "No messages yet.",
         "markRead": "Mark as read",
@@ -518,6 +522,60 @@
         "export": "Export to Excel",
         "exporting": "Exporting…",
         "exportFailed": "Export failed. Try again."
+      },
+      "projects": {
+        "title": "Projects",
+        "new": "New project",
+        "empty": "No projects yet.",
+        "columns": {
+          "project": "Project",
+          "category": "Category",
+          "status": "Status",
+          "updated": "Updated"
+        },
+        "publishStatus": {
+          "draft": "Draft",
+          "published": "Published"
+        },
+        "publish": "Publish",
+        "unpublish": "Unpublish",
+        "updating": "Updating…",
+        "edit": "Edit",
+        "delete": "Delete",
+        "deleting": "Deleting…",
+        "deleteConfirm": "Delete this project? This cannot be undone.",
+        "form": {
+          "createTitle": "New project",
+          "editTitle": "Edit project",
+          "key": "key",
+          "keyHint": "used in the URL — lowercase letters, numbers, hyphens",
+          "name": "name",
+          "url": "display url",
+          "urlHint": "e.g. example.netlify.app",
+          "demoUrl": "demo url",
+          "repoUrl": "repo url",
+          "category": "category",
+          "status": "project status",
+          "publishStatus": "publish status",
+          "year": "year",
+          "tags": "tags",
+          "tagsHint": "comma-separated",
+          "imageLight": "light image path",
+          "imageDark": "dark image path",
+          "sortOrder": "sort order",
+          "contentEn": "content (English) — JSON",
+          "contentAr": "content (Arabic) — JSON",
+          "contentHint": "Matches the case study shape: outcome, meta, overview, problem, goals, approach, features, design, implementation, challenges, detail, results.",
+          "save": "Save project",
+          "saving": "Saving…",
+          "cancel": "Cancel",
+          "errors": {
+            "unauthorized": "Your session expired. Sign in again.",
+            "invalid": "Check the highlighted fields.",
+            "duplicateKey": "That key is already used by another project.",
+            "failed": "Couldn't save. Try again."
+          }
+        }
       }
     }
   }
