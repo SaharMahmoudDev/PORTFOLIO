@@ -579,7 +579,7 @@
         "generator": {
           "generate": "Generate with AI",
           "generating": "Generating…",
-          "generatingHint": "Fetching the page and drafting a case study — this can take up to 30 seconds.",
+          "generatingHint": "Fetching the page and drafting a full bilingual case study — usually under 20 seconds, but can take up to a couple of minutes if Gemini is slow to respond.",
           "regenerate": "Regenerate with AI",
           "title": "AI Project Generator",
           "description": "Paste a live project URL. The server fetches its content and Gemini drafts a full case study for you to review — nothing publishes automatically.",

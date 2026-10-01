@@ -10,7 +10,10 @@ import {
 import type { FetchedPage } from "./fetch-url";
 
 const MODEL = "gemini-3.5-flash";
-const TIMEOUT_MS = 25_000;
+// A full bilingual case study is a lot of structured output — a real
+// successful run took ~18s, so give each attempt real headroom rather
+// than cutting it off right as the model is finishing.
+const TIMEOUT_MS = 45_000;
 
 const pointSchema = {
   type: Type.OBJECT,
