@@ -90,6 +90,7 @@ type ProjectFormProps = {
 
 export function ProjectForm({ project }: ProjectFormProps) {
   const t = useTranslations("admin.dashboard.projects.form");
+  const tg = useTranslations("admin.dashboard.projects.generator");
   const tc = useTranslations("projects.categories");
   const ts = useTranslations("projects.status");
   const tp = useTranslations("admin.dashboard.projects.publishStatus");
@@ -133,7 +134,7 @@ export function ProjectForm({ project }: ProjectFormProps) {
     startRegenerate(async () => {
       const result = await regenerateProjectDraft(project.id);
       if (!result.ok) {
-        toast.error(t(`generator.errors.${result.error}`));
+        toast.error(tg(`errors.${result.error}`));
         return;
       }
       window.location.reload();
@@ -154,9 +155,7 @@ export function ProjectForm({ project }: ProjectFormProps) {
             onClick={onRegenerate}
             disabled={isRegenerating}
           >
-            {isRegenerating
-              ? t("generator.generating")
-              : t("generator.regenerate")}
+            {isRegenerating ? tg("generating") : tg("regenerate")}
           </Button>
         )}
       </div>
