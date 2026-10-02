@@ -4,6 +4,10 @@ import { eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
 import { db } from "@/db";
 import { projects } from "@/db/schema";
+import {
+  captureProjectScreenshots,
+  saveProjectScreenshots,
+} from "@/lib/project-generator/capture-screenshots";
 import { fetchPageSafely } from "@/lib/project-generator/fetch-url";
 import { generateProjectDraft as callAi } from "@/lib/project-generator/generate-draft";
 import { getAdminSession } from "../session";
@@ -59,14 +63,18 @@ export async function generateProjectDraft(
   const fetched = await fetchPageSafely(parsedUrl.toString());
   if (!fetched) return { ok: false, error: "fetchFailed" };
 
-  const draft = await callAi({
-    sourceUrl: parsedUrl.toString(),
-    repoUrl: repoUrl.trim() || undefined,
-    fetched,
-  });
+  const [draft, shots] = await Promise.all([
+    callAi({
+      sourceUrl: parsedUrl.toString(),
+      repoUrl: repoUrl.trim() || undefined,
+      fetched,
+    }),
+    captureProjectScreenshots(parsedUrl.toString()),
+  ]);
   if (!draft) return { ok: false, error: "aiFailed" };
 
   const key = await uniqueKey(slugify(draft.name));
+  const images = shots ? saveProjectScreenshots(key, shots) : null;
 
   const [row] = await db
     .insert(projects)
@@ -83,8 +91,8 @@ export async function generateProjectDraft(
       publishStatus: "draft",
       year: String(new Date().getFullYear()),
       tags: draft.tags,
-      imageLight: "",
-      imageDark: "",
+      imageLight: images?.imageLight ?? "",
+      imageDark: images?.imageDark ?? "",
       sortOrder: 999,
       content: { en: draft.en, ar: draft.ar },
       sourceUrl: parsedUrl.toString(),
@@ -114,12 +122,24 @@ export async function regenerateProjectDraft(
   const fetched = await fetchPageSafely(project.sourceUrl);
   if (!fetched) return { ok: false, error: "fetchFailed" };
 
-  const draft = await callAi({
-    sourceUrl: project.sourceUrl,
-    repoUrl: project.repoUrl || undefined,
-    fetched,
-  });
+  const [draft, shots] = await Promise.all([
+    callAi({
+      sourceUrl: project.sourceUrl,
+      repoUrl: project.repoUrl || undefined,
+      fetched,
+    }),
+    captureProjectScreenshots(project.sourceUrl),
+  ]);
   if (!draft) return { ok: false, error: "aiFailed" };
+
+  // Only touch the image paths when they're empty or already point at our
+  // own captures — never clobber images she set by hand.
+  const ours = (value: string, suffix: string) =>
+    value === "" || value === `/images/projects/${project.key}-${suffix}.jpg`;
+  const replaceImages =
+    ours(project.imageLight, "light") && ours(project.imageDark, "dark");
+  const images =
+    shots && replaceImages ? saveProjectScreenshots(project.key, shots) : null;
 
   await db
     .update(projects)
@@ -128,6 +148,7 @@ export async function regenerateProjectDraft(
       category: draft.category,
       tags: draft.tags,
       content: { en: draft.en, ar: draft.ar },
+      ...(images ?? {}),
       updatedAt: new Date(),
     })
     .where(eq(projects.id, id));
