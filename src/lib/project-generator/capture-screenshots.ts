@@ -1,8 +1,7 @@
 import "server-only";
 import fs from "node:fs";
 import path from "node:path";
-import puppeteer, { TimeoutError } from "puppeteer-core";
-import type { HTTPRequest } from "puppeteer-core";
+import type { Browser, HTTPRequest } from "puppeteer-core";
 import { env } from "@/config/env";
 import { assertPublicHost } from "./fetch-url";
 
@@ -74,8 +73,14 @@ export async function captureProjectScreenshots(
     if (!request.isInterceptResolutionHandled()) await request.abort();
   };
 
-  let browser: Awaited<ReturnType<typeof puppeteer.launch>> | undefined;
+  let browser: Browser | undefined;
   try {
+    // Loaded by name at runtime so deploy bundlers don't trace the browser
+    // driver into a server that can't run it.
+    const moduleName = "puppeteer-core";
+    const { default: puppeteer } = (await import(
+      /* turbopackIgnore: true */ /* webpackIgnore: true */ moduleName
+    )) as typeof import("puppeteer-core");
     browser = await puppeteer.launch({
       executablePath,
       headless: true,
@@ -106,7 +111,7 @@ export async function captureProjectScreenshots(
       } catch (error) {
         // A slow page that never goes idle is still worth a screenshot of
         // whatever rendered; any other failure means there's nothing to show.
-        if (!(error instanceof TimeoutError)) {
+        if (!(error instanceof Error && error.name === "TimeoutError")) {
           console.error("capture: navigation failed", error);
           return null;
         }
