@@ -41,7 +41,7 @@ function isPrivateIp(ip: string): boolean {
   return true; // unrecognized -> treat as unsafe
 }
 
-async function assertPublicHost(hostname: string): Promise<boolean> {
+export async function assertPublicHost(hostname: string): Promise<boolean> {
   if (hostname.toLowerCase() === "localhost") return false;
   try {
     const results = await dns.lookup(hostname, { all: true });
