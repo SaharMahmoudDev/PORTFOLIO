@@ -35,15 +35,6 @@ export async function getPublishedProjects(
   return rows.map((row) => toPublicProject(row, locale));
 }
 
-export async function getPublishedProjectKeys(): Promise<string[]> {
-  const rows = await db
-    .select({ key: projects.key })
-    .from(projects)
-    .where(eq(projects.publishStatus, "published"));
-
-  return rows.map((row) => row.key);
-}
-
 export async function getPublishedProject(
   key: string,
   locale: Locale,
