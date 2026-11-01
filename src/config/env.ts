@@ -15,6 +15,7 @@ export const env = createEnv({
     RESEND_FROM: z.string().min(1).optional(),
     NOTIFY_EMAIL: z.email().optional(),
     GMAIL_APP_PASSWORD: z.string().min(1).optional(),
+    CHROME_EXECUTABLE_PATH: z.string().min(1).optional(),
   },
   client: {},
   runtimeEnv: {
@@ -28,6 +29,7 @@ export const env = createEnv({
     RESEND_FROM: process.env.RESEND_FROM,
     NOTIFY_EMAIL: process.env.NOTIFY_EMAIL,
     GMAIL_APP_PASSWORD: process.env.GMAIL_APP_PASSWORD,
+    CHROME_EXECUTABLE_PATH: process.env.CHROME_EXECUTABLE_PATH,
   },
   emptyStringAsUndefined: true,
   skipValidation: !!process.env.SKIP_ENV_VALIDATION,

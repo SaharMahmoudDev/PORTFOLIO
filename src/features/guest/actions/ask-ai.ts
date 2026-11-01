@@ -3,11 +3,13 @@
 import { GoogleGenAI } from "@google/genai";
 import { z } from "zod";
 import { env } from "@/config/env";
+import { withTimeout } from "@/lib/ai/with-timeout";
 import { isRateLimited } from "@/lib/rate-limit";
 import { buildSystemPrompt } from "../ai/system-prompt";
 
-const MODEL = "gemini-3.6-flash";
+const MODEL = "gemini-3.5-flash";
 const MAX_HISTORY = 8;
+const TIMEOUT_MS = 15_000;
 
 const messageSchema = z.object({
   role: z.enum(["user", "assistant"]),
@@ -44,25 +46,38 @@ export async function askSaharsAi(input: unknown): Promise<AskAiResult> {
     }
 
     const client = new GoogleGenAI({ apiKey: env.GEMINI_API_KEY });
+    const systemInstruction = await buildSystemPrompt();
 
-    const response = await client.models.generateContent({
-      model: MODEL,
-      config: {
-        systemInstruction: buildSystemPrompt(),
-        maxOutputTokens: 500,
-        thinkingConfig: { thinkingBudget: 0 },
-      },
-      contents: [
-        ...history.map((entry) => ({
-          role:
-            entry.role === "assistant" ? ("model" as const) : ("user" as const),
-          parts: [{ text: entry.text }],
-        })),
-        { role: "user" as const, parts: [{ text: message }] },
-      ],
-    });
+    const contents = [
+      ...history.map((entry) => ({
+        role:
+          entry.role === "assistant" ? ("model" as const) : ("user" as const),
+        parts: [{ text: entry.text }],
+      })),
+      { role: "user" as const, parts: [{ text: message }] },
+    ];
 
-    const reply = response.text?.trim();
+    let reply: string | undefined;
+    for (let attempt = 0; attempt < 2; attempt++) {
+      try {
+        const response = await withTimeout(
+          client.models.generateContent({
+            model: MODEL,
+            config: {
+              systemInstruction,
+              maxOutputTokens: 500,
+              thinkingConfig: { thinkingBudget: 0 },
+            },
+            contents,
+          }),
+          TIMEOUT_MS,
+        );
+        reply = response.text?.trim();
+        if (reply) break;
+      } catch (error) {
+        if (attempt === 1) console.error("askSaharsAi failed", error);
+      }
+    }
 
     if (!reply) return { ok: false, error: "failed" };
 

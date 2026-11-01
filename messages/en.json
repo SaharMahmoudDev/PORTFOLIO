@@ -314,32 +314,6 @@
       "live": "Live",
       "inProgress": "In progress"
     },
-    "items": {
-      "real-estate-hub": {
-        "outcome": "Built the Buy & Rent pages for a team-run listings platform, with live search, filtering and sort across a paginated property feed."
-      },
-      "renova": {
-        "outcome": "A bilingual e-commerce storefront with live product data, category browsing and a working cart — English and Arabic from day one."
-      },
-      "dolistix": {
-        "outcome": "A task manager with fuzzy search, drag-and-drop and dark mode, all persisted client-side with no backend."
-      },
-      "user-dashboard": {
-        "outcome": "An Arabic-first admin panel for full user CRUD, with live pagination and instant light/dark switching."
-      },
-      "dashboard": {
-        "outcome": "A clean admin dashboard shell — sidebar nav, stat cards and activity widgets ready to wire up to real data."
-      },
-      "kasper": {
-        "outcome": "A dark, editorial-style landing template built section by section in semantic HTML and hand-written CSS."
-      },
-      "elzero": {
-        "outcome": "A services-and-testimonials landing page with animated counters, built to practice clean, organized CSS."
-      },
-      "leno": {
-        "outcome": "A one-page landing template focused on layout animation and a tight mobile-first build."
-      }
-    },
     "toolbar": {
       "filterLabel": "Filter projects",
       "all": "All",
@@ -404,7 +378,7 @@
       "email": "email",
       "github": "github",
       "linkedin": "linkedin",
-      "timezone": "// based in Cairo · GMT+2"
+      "timezone": "// based in Fayoum · GMT+2"
     }
   },
   "caseStudy": {
@@ -462,584 +436,6 @@
       "description": "Tell me what you're building and I'll tell you honestly what it needs — no pressure, no upsell.",
       "cta": "Send a message",
       "email": "saharmahmoud0101@gmail.com"
-    },
-    "items": {
-      "real-estate-hub": {
-        "meta": {
-          "role": "Frontend Engineer (team of 4)",
-          "timeline": "Ongoing, shipped in milestones"
-        },
-        "overview": "A multi-region property marketplace built with a small team. I owned the Buy and Rent pages end to end — from the listing grid to search, filtering and sorting.",
-        "problem": "The team needed working Buy/Rent pages before the real backend was ready, so the UI had to be built against a mock API and still feel production-ready.",
-        "goals": [
-          "Ship a listing grid that reads real data, not static cards",
-          "Support search, filter and sort without a page reload",
-          "Keep pagination usable on both desktop and mobile"
-        ],
-        "approach": [
-          {
-            "title": "Mock the API first",
-            "text": "Modeled property data behind a local REST layer (query params for status, sort and pagination) so the UI could be built and tested before the real backend existed."
-          },
-          {
-            "title": "Centralize fetch state",
-            "text": "Used TanStack Query to handle loading, caching and refetching whenever a filter or sort option changed, instead of managing that by hand."
-          }
-        ],
-        "features": [
-          {
-            "title": "Search and filtering",
-            "text": "Filter by location, price, property type, bedrooms and bathrooms, combined into a single query."
-          },
-          {
-            "title": "Sorting",
-            "text": "Sort by price (low/high), area or newest, applied through the same query."
-          },
-          {
-            "title": "Responsive pagination",
-            "text": "Page-based navigation on larger screens, infinite scroll on mobile."
-          }
-        ],
-        "design": {
-          "pointTitle": "Grid first, detail second",
-          "pointText": "The listing grid had to stay scannable at any screen size, so card density and image ratio were tuned before any detail-page work started."
-        },
-        "implementation": [
-          {
-            "title": "Data fetching",
-            "text": "React with TanStack Query and Context API for shared filter state across the Buy and Rent pages."
-          },
-          {
-            "title": "UI layer",
-            "text": "Tailwind CSS for layout, MUI for form controls, Framer Motion for card and filter transitions."
-          }
-        ],
-        "challenges": {
-          "pointTitle": "Keeping filters, sort and pagination in sync",
-          "pointText": "All three had to update the same query without racing each other or losing the current page when a filter changed — solved by driving everything off one query key derived from the active filters."
-        },
-        "detail": {
-          "caption": "The Buy page across desktop, tablet and mobile."
-        },
-        "results": [
-          {
-            "label": "role",
-            "value": "Buy & Rent pages"
-          },
-          {
-            "label": "team",
-            "value": "4 people"
-          },
-          {
-            "label": "stack",
-            "value": "React + TanStack Query"
-          }
-        ]
-      },
-      "renova": {
-        "meta": {
-          "role": "Frontend Engineer (solo)",
-          "timeline": "Personal project"
-        },
-        "overview": "A responsive e-commerce storefront built from scratch in plain HTML, CSS and JavaScript, with real product data and full Arabic/English support.",
-        "problem": "Most e-commerce practice projects stop at static markup. This one needed to actually fetch and render product data, and work in two languages and directions.",
-        "goals": [
-          "Render real product data instead of hardcoded cards",
-          "Support category browsing and a working cart",
-          "Ship a bilingual UI (Arabic and English) without duplicating markup"
-        ],
-        "approach": [
-          {
-            "title": "API first, layout second",
-            "text": "Wired up the product API calls before finishing the visual design, so the layout was built against real data shapes from the start."
-          },
-          {
-            "title": "One markup, two languages",
-            "text": "Structured the JavaScript to swap text and direction (LTR/RTL) from a single source of truth, instead of maintaining two separate pages."
-          }
-        ],
-        "features": [
-          {
-            "title": "Dynamic product listing",
-            "text": "Products, categories and pricing pulled live from an API and rendered client-side."
-          },
-          {
-            "title": "Cart",
-            "text": "Add, update and remove items with totals recalculated in real time."
-          },
-          {
-            "title": "Language switch",
-            "text": "Full Arabic/English toggle, including layout direction, from one codebase."
-          }
-        ],
-        "design": {
-          "pointTitle": "Mobile-first, not mobile-adapted",
-          "pointText": "Layout and touch targets were designed for small screens first, then expanded up — not the other way around."
-        },
-        "implementation": [
-          {
-            "title": "No framework",
-            "text": "Built in vanilla JavaScript to practice DOM manipulation and async data flow without relying on framework state management."
-          },
-          {
-            "title": "Async data",
-            "text": "All product and category data loaded asynchronously, with loading and empty states handled explicitly."
-          }
-        ],
-        "challenges": {
-          "pointTitle": "Bilingual layout without duplicating code",
-          "pointText": "Switching between Arabic and English meant flipping the whole layout direction, not just translating strings — handled by keeping spacing and alignment logical (start/end) rather than hardcoded left/right."
-        },
-        "detail": {
-          "caption": "The storefront across desktop, tablet and mobile."
-        },
-        "results": [
-          {
-            "label": "languages",
-            "value": "Arabic + English"
-          },
-          {
-            "label": "stack",
-            "value": "HTML, CSS, JS"
-          },
-          {
-            "label": "status",
-            "value": "Live"
-          }
-        ]
-      },
-      "dolistix": {
-        "meta": {
-          "role": "Frontend Engineer (solo)",
-          "timeline": "Personal project, in progress"
-        },
-        "overview": "A task manager built to go past basic to-do apps — categorized tasks, due dates, priorities, fuzzy search and drag-and-drop, all running client-side.",
-        "problem": "Simple to-do lists don't test much. This one needed real interaction complexity: search that tolerates typos, reordering by drag, and state that survives a refresh.",
-        "goals": [
-          "Persist tasks without a backend",
-          "Make search forgiving, not just exact-match",
-          "Support editing, completion and due dates per task"
-        ],
-        "approach": [
-          {
-            "title": "localStorage as the data layer",
-            "text": "All tasks, categories and completion state are persisted to localStorage, so the app works fully offline with no server."
-          },
-          {
-            "title": "Fuzzy search from the start",
-            "text": "Integrated Fuse.js early so search behaves like a real product feature, not an afterthought exact-match filter."
-          }
-        ],
-        "features": [
-          {
-            "title": "Category tabs",
-            "text": "Tasks grouped into All, Personal, Work, Study and custom categories, filterable from the top nav."
-          },
-          {
-            "title": "Fuzzy search",
-            "text": "Typo-tolerant search across task titles, powered by Fuse.js."
-          },
-          {
-            "title": "Drag-and-drop and dark mode",
-            "text": "Reorder tasks by dragging, and switch themes without losing state."
-          }
-        ],
-        "design": {
-          "pointTitle": "Status grouping over a flat list",
-          "pointText": "Tasks are split into Today, Other, Completed and Incomplete groups instead of one long list, so priority is visible without opening anything."
-        },
-        "implementation": [
-          {
-            "title": "Forms and validation",
-            "text": "Formik and Yup handle the task and login forms, including due-date and required-field validation."
-          },
-          {
-            "title": "Stable identity",
-            "text": "uuid generates unique ids per task so drag-and-drop reordering and edits never collide."
-          }
-        ],
-        "challenges": {
-          "pointTitle": "State that survives without a backend",
-          "pointText": "Every mutation (add, edit, complete, reorder) has to stay in sync with localStorage immediately, with no server as a source of truth to fall back on."
-        },
-        "detail": {
-          "caption": "The task list across desktop, tablet and mobile."
-        },
-        "results": [
-          {
-            "label": "persistence",
-            "value": "localStorage"
-          },
-          {
-            "label": "search",
-            "value": "Fuse.js"
-          },
-          {
-            "label": "status",
-            "value": "In progress"
-          }
-        ]
-      },
-      "user-dashboard": {
-        "meta": {
-          "role": "Frontend Engineer (solo)",
-          "timeline": "Personal project"
-        },
-        "overview": "An Arabic-first admin panel for managing users — full CRUD, live pagination and instant light/dark switching, built on Next.js App Router.",
-        "problem": "Admin panels are usually English-only and single-theme by default. This one needed to be genuinely RTL and support both light and dark themes from the first screen.",
-        "goals": [
-          "Full CRUD on users: create, read, update, delete",
-          "Paginated, sortable data instead of one long table",
-          "A real RTL layout, not a mirrored English one"
-        ],
-        "approach": [
-          {
-            "title": "Server state via TanStack Query",
-            "text": "Every list, create, update and delete action goes through TanStack Query, so the table stays in sync after any mutation without manual refetch logic."
-          },
-          {
-            "title": "RTL as the default, not an override",
-            "text": "Built the layout in Arabic first, so spacing, icons and alignment were correct by default instead of patched in afterwards."
-          }
-        ],
-        "features": [
-          {
-            "title": "User CRUD",
-            "text": "Create, view, update and delete users from color-coded action cards."
-          },
-          {
-            "title": "Paginated table",
-            "text": "Users list paginated against the API, with total count read from response headers."
-          },
-          {
-            "title": "Theme toggle",
-            "text": "Instant light/dark switching with no layout shift or flash."
-          }
-        ],
-        "design": {
-          "pointTitle": "Color as a status signal",
-          "pointText": "Each core action (create, read, update, delete) gets its own accent color, so the dashboard is scannable at a glance instead of relying on labels alone."
-        },
-        "implementation": [
-          {
-            "title": "Data layer",
-            "text": "Axios client with a typed API layer, paginated through query params and the response's total-count header."
-          },
-          {
-            "title": "App structure",
-            "text": "Next.js App Router with TypeScript, organized by feature (a users module) rather than by file type."
-          }
-        ],
-        "challenges": {
-          "pointTitle": "Keeping the table in sync after every mutation",
-          "pointText": "Create, update and delete all needed to invalidate the same paginated query without a full page reload or a stale row lingering in the table."
-        },
-        "detail": {
-          "caption": "The dashboard across desktop, tablet and mobile."
-        },
-        "results": [
-          {
-            "label": "language",
-            "value": "Arabic (RTL)"
-          },
-          {
-            "label": "themes",
-            "value": "Light + dark"
-          },
-          {
-            "label": "stack",
-            "value": "Next.js + TanStack Query"
-          }
-        ]
-      },
-      "dashboard": {
-        "meta": {
-          "role": "Frontend Engineer (solo)",
-          "timeline": "Personal project"
-        },
-        "overview": "A responsive admin dashboard shell — sidebar navigation, stat cards and activity widgets — built as a clean starting point for wiring up real data.",
-        "problem": "Most dashboard templates online are either bloated with a framework or too rigid to extend. This one needed to be plain, readable HTML/CSS/JS that's easy to build on.",
-        "goals": [
-          "A sidebar layout that holds up on smaller screens",
-          "Reusable stat-card and widget patterns",
-          "No framework dependency to get in the way"
-        ],
-        "approach": [
-          {
-            "title": "Layout first",
-            "text": "Built the sidebar-plus-content shell before any widget, so every screen after that just slots into an already-responsive frame."
-          },
-          {
-            "title": "Componentized CSS",
-            "text": "Wrote each widget (stat card, ticket list, task list) as an isolated, reusable block instead of one long stylesheet."
-          }
-        ],
-        "features": [
-          {
-            "title": "Stat cards",
-            "text": "At-a-glance metrics (tickets, targets) with a consistent card pattern."
-          },
-          {
-            "title": "Activity widgets",
-            "text": "Latest news and latest tasks panels, ready to bind to real data."
-          },
-          {
-            "title": "Sidebar navigation",
-            "text": "Collapsible sidebar with icon-based navigation."
-          }
-        ],
-        "design": {
-          "pointTitle": "Structure over decoration",
-          "pointText": "The template intentionally leans on layout and hierarchy rather than heavy visual styling, so it's easy to reskin for a real product."
-        },
-        "implementation": [
-          {
-            "title": "No build step",
-            "text": "Plain HTML, CSS and JavaScript with no bundler, so the whole thing runs from static files."
-          },
-          {
-            "title": "Grid-based layout",
-            "text": "CSS Grid for the dashboard shell, keeping the sidebar and content areas independently scrollable."
-          }
-        ],
-        "challenges": {
-          "pointTitle": "A sidebar that doesn't break on small screens",
-          "pointText": "Getting the fixed sidebar to collapse cleanly on mobile without heavy JavaScript breakpoint logic took a few iterations on the CSS Grid structure."
-        },
-        "detail": {
-          "caption": "The dashboard shell across desktop, tablet and mobile."
-        },
-        "results": [
-          {
-            "label": "stack",
-            "value": "HTML, CSS, JS"
-          },
-          {
-            "label": "layout",
-            "value": "CSS Grid"
-          },
-          {
-            "label": "status",
-            "value": "Live"
-          }
-        ]
-      },
-      "kasper": {
-        "meta": {
-          "role": "Frontend Engineer (solo)",
-          "timeline": "Personal project"
-        },
-        "overview": "A dark, editorial-style landing template built section by section — hero, services, portfolio, pricing and contact — in semantic HTML and hand-written CSS.",
-        "problem": "The goal was to practice building a full multi-section marketing site from a static design, without a CSS framework to lean on.",
-        "goals": [
-          "Match a multi-section layout closely from a design reference",
-          "Keep every section responsive without a framework",
-          "Add motion (slider, hover effects) without a JS library"
-        ],
-        "approach": [
-          {
-            "title": "Section by section",
-            "text": "Built and tested each section (hero, services, portfolio, pricing, contact) independently before assembling the full page."
-          },
-          {
-            "title": "Custom slider logic",
-            "text": "Wrote the hero image slider and navigation dots in plain JavaScript instead of pulling in a carousel library."
-          }
-        ],
-        "features": [
-          {
-            "title": "Hero slider",
-            "text": "Auto-advancing hero with manual prev/next controls and dot indicators."
-          },
-          {
-            "title": "Section navigation",
-            "text": "Smooth-scrolling nav links between Services, Portfolio, About, Pricing and Contact."
-          },
-          {
-            "title": "Image overlays",
-            "text": "Hover overlays on portfolio and service images for a more editorial feel."
-          }
-        ],
-        "design": {
-          "pointTitle": "Dark, image-led hero",
-          "pointText": "The hero leans on a full-bleed photograph with a translucent text panel, rather than flat color, to set an editorial tone from the first screen."
-        },
-        "implementation": [
-          {
-            "title": "Semantic HTML",
-            "text": "Sections use proper landmark elements (nav, section, footer) instead of generic divs throughout."
-          },
-          {
-            "title": "Organized CSS3",
-            "text": "One stylesheet per concern (layout, components, sections) instead of a single global file."
-          }
-        ],
-        "challenges": {
-          "pointTitle": "Smooth scrolling without janky jumps",
-          "pointText": "Getting the in-page nav links to scroll to the right offset — accounting for the fixed header — took some manual scroll-position math."
-        },
-        "detail": {
-          "caption": "The template across desktop, tablet and mobile."
-        },
-        "results": [
-          {
-            "label": "stack",
-            "value": "HTML, CSS, JS"
-          },
-          {
-            "label": "sections",
-            "value": "6"
-          },
-          {
-            "label": "status",
-            "value": "Live"
-          }
-        ]
-      },
-      "elzero": {
-        "meta": {
-          "role": "Frontend Engineer (solo)",
-          "timeline": "Personal project"
-        },
-        "overview": "A services-and-testimonials landing page built to practice clean, organized CSS3 and semantic HTML — animated counters included.",
-        "problem": "The exercise was specifically about CSS discipline: writing a full page's styles in a way that stays readable and maintainable, not just working.",
-        "goals": [
-          "Organize CSS by section instead of one flat file",
-          "Animate counters and elements without a JS animation library",
-          "Keep the markup semantic throughout"
-        ],
-        "approach": [
-          {
-            "title": "Plan the sections first",
-            "text": "Sketched out services, testimonials and counters as separate blocks before writing any CSS, to keep each one self-contained."
-          },
-          {
-            "title": "CSS-driven animation",
-            "text": "Used CSS transitions and keyframes for hover and reveal effects instead of a JavaScript animation library."
-          }
-        ],
-        "features": [
-          {
-            "title": "Services section",
-            "text": "Icon-led service cards in a responsive grid."
-          },
-          {
-            "title": "Testimonials",
-            "text": "Customer quote cards with a consistent layout."
-          },
-          {
-            "title": "Animated counters",
-            "text": "Numbers that count up into view as the user scrolls."
-          }
-        ],
-        "design": {
-          "pointTitle": "Consistency over novelty",
-          "pointText": "Every section reuses the same spacing scale and card pattern, so the page reads as one system rather than a collection of separate experiments."
-        },
-        "implementation": [
-          {
-            "title": "Semantic structure",
-            "text": "Proper heading hierarchy and landmark elements throughout, not just visual formatting."
-          },
-          {
-            "title": "Organized CSS3",
-            "text": "Styles grouped by section with consistent naming, making the stylesheet easy to navigate."
-          }
-        ],
-        "challenges": {
-          "pointTitle": "Counters that only animate once, on view",
-          "pointText": "Triggering the counter animation exactly when it scrolls into view — and not re-triggering it on every scroll — needed a simple visibility check rather than a scroll-position listener."
-        },
-        "detail": {
-          "caption": "The page across desktop, tablet and mobile."
-        },
-        "results": [
-          {
-            "label": "stack",
-            "value": "HTML, CSS, JS"
-          },
-          {
-            "label": "focus",
-            "value": "CSS organization"
-          },
-          {
-            "label": "status",
-            "value": "Live"
-          }
-        ]
-      },
-      "leno": {
-        "meta": {
-          "role": "Frontend Engineer (solo)",
-          "timeline": "Personal project"
-        },
-        "overview": "A one-page landing template focused on layout animation and a tight mobile-first build, in HTML5, CSS3 and JavaScript.",
-        "problem": "The brief was a single, self-contained landing page — everything had to live in one scroll, with no routing or multiple views.",
-        "goals": [
-          "Keep the entire experience on one page",
-          "Animate sections in as the user scrolls",
-          "Build mobile-first, not desktop-first"
-        ],
-        "approach": [
-          {
-            "title": "Mobile layout first",
-            "text": "Built and styled the small-screen layout before expanding up to tablet and desktop breakpoints."
-          },
-          {
-            "title": "Scroll-triggered animation",
-            "text": "Sections fade and slide into view on scroll, using lightweight JavaScript rather than a heavier animation library."
-          }
-        ],
-        "features": [
-          {
-            "title": "Single-page flow",
-            "text": "All sections (hero, about, features, contact) live on one scrollable page."
-          },
-          {
-            "title": "Scroll animations",
-            "text": "Layout elements animate in as they enter the viewport."
-          },
-          {
-            "title": "Clean, minimal structure",
-            "text": "A deliberately small codebase kept easy to read end to end."
-          }
-        ],
-        "design": {
-          "pointTitle": "One page, clear rhythm",
-          "pointText": "Section spacing and typography scale were kept consistent throughout, so scrolling through the page feels like one continuous read rather than stitched-together blocks."
-        },
-        "implementation": [
-          {
-            "title": "Vanilla JavaScript",
-            "text": "No framework or animation library — scroll listeners and class toggles drive the reveal animations."
-          },
-          {
-            "title": "Mobile-first CSS",
-            "text": "Base styles target small screens, with breakpoints layered on top for tablet and desktop."
-          }
-        ],
-        "challenges": {
-          "pointTitle": "Keeping animations light on scroll",
-          "pointText": "Running animation checks on every scroll event risked jank on lower-end devices, so the scroll listener was throttled to keep it smooth."
-        },
-        "detail": {
-          "caption": "The landing page across desktop, tablet and mobile."
-        },
-        "results": [
-          {
-            "label": "stack",
-            "value": "HTML, CSS, JS"
-          },
-          {
-            "label": "pages",
-            "value": "1"
-          },
-          {
-            "label": "status",
-            "value": "Live"
-          }
-        ]
-      }
     }
   },
   "admin": {
@@ -1065,6 +461,10 @@
       "signOut": "Sign out",
       "signingOut": "Signing out…",
       "signedInAs": "Signed in as {email}.",
+      "nav": {
+        "messages": "Messages",
+        "projects": "Projects"
+      },
       "leads": {
         "empty": "No messages yet.",
         "markRead": "Mark as read",
@@ -1122,6 +522,80 @@
         "export": "Export to Excel",
         "exporting": "Exporting…",
         "exportFailed": "Export failed. Try again."
+      },
+      "projects": {
+        "title": "Projects",
+        "new": "New project",
+        "empty": "No projects yet.",
+        "columns": {
+          "project": "Project",
+          "category": "Category",
+          "status": "Status",
+          "updated": "Updated"
+        },
+        "publishStatus": {
+          "draft": "Draft",
+          "published": "Published"
+        },
+        "publish": "Publish",
+        "unpublish": "Unpublish",
+        "updating": "Updating…",
+        "edit": "Edit",
+        "delete": "Delete",
+        "deleting": "Deleting…",
+        "deleteConfirm": "Delete this project? This cannot be undone.",
+        "form": {
+          "createTitle": "New project",
+          "editTitle": "Edit project",
+          "key": "key",
+          "keyHint": "used in the URL — lowercase letters, numbers, hyphens",
+          "name": "name",
+          "url": "display url",
+          "urlHint": "e.g. example.netlify.app",
+          "demoUrl": "demo url",
+          "repoUrl": "repo url",
+          "category": "category",
+          "status": "project status",
+          "publishStatus": "publish status",
+          "year": "year",
+          "tags": "tags",
+          "tagsHint": "comma-separated",
+          "imageLight": "light image path",
+          "imageDark": "dark image path",
+          "sortOrder": "sort order",
+          "contentEn": "content (English) — JSON",
+          "contentAr": "content (Arabic) — JSON",
+          "contentHint": "Matches the case study shape: outcome, meta, overview, problem, goals, approach, features, design, implementation, challenges, detail, results.",
+          "save": "Save project",
+          "saving": "Saving…",
+          "cancel": "Cancel",
+          "errors": {
+            "unauthorized": "Your session expired. Sign in again.",
+            "invalid": "Check the highlighted fields.",
+            "duplicateKey": "That key is already used by another project.",
+            "failed": "Couldn't save. Try again."
+          }
+        },
+        "generator": {
+          "generate": "Generate with AI",
+          "generating": "Generating…",
+          "generatingHint": "Fetching the page and drafting a full bilingual case study — usually under 20 seconds, but can take up to a couple of minutes if Gemini is slow to respond.",
+          "regenerate": "Regenerate with AI",
+          "title": "AI Project Generator",
+          "description": "Paste a live project URL. The server fetches its content and Gemini drafts a full case study for you to review — nothing publishes automatically.",
+          "sourceUrl": "project url",
+          "sourceUrlHint": "the live demo/site",
+          "repoUrl": "repo url",
+          "repoUrlHint": "optional",
+          "cancel": "Cancel",
+          "errors": {
+            "unauthorized": "Your session expired. Sign in again.",
+            "invalidUrl": "Enter a valid http(s) URL.",
+            "fetchFailed": "Couldn't fetch that page. Check the URL is reachable.",
+            "aiFailed": "AI generation failed. Try again.",
+            "noSource": "This project wasn't AI-generated, so there's nothing to regenerate from."
+          }
+        }
       }
     }
   }

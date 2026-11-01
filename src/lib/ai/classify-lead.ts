@@ -2,8 +2,9 @@ import "server-only";
 import { GoogleGenAI, Type } from "@google/genai";
 import { z } from "zod";
 import { env } from "@/config/env";
+import { withTimeout } from "./with-timeout";
 
-const MODEL = "gemini-3.6-flash";
+const MODEL = "gemini-3.5-flash";
 
 export const leadTypes = [
   "newProject",
@@ -79,15 +80,6 @@ Respond with JSON only, matching the schema.`;
 }
 
 const TIMEOUT_MS = 15_000;
-
-function withTimeout<T>(promise: Promise<T>, ms: number): Promise<T> {
-  return Promise.race([
-    promise,
-    new Promise<T>((_, reject) =>
-      setTimeout(() => reject(new Error("classifyLead timed out")), ms),
-    ),
-  ]);
-}
 
 async function attemptClassify(
   client: GoogleGenAI,

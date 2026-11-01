@@ -8,15 +8,16 @@ import {
   NextProject,
 } from "@/features/guest";
 import {
-  getNextProject,
-  getProject,
-  projects,
-} from "@/features/guest/data/projects";
+  getNextPublishedProject,
+  getPublishedProject,
+  getPublishedProjectKeys,
+} from "@/features/guest/queries/projects";
 import { routing } from "@/i18n/routing";
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
+  const keys = await getPublishedProjectKeys();
   return routing.locales.flatMap((locale) =>
-    projects.map((project) => ({ locale, slug: project.key })),
+    keys.map((key) => ({ locale, slug: key })),
   );
 }
 
@@ -25,16 +26,19 @@ export default async function CaseStudyPage({
 }: PageProps<"/[locale]/projects/[slug]">) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
+  const resolvedLocale = locale === "ar" ? "ar" : "en";
 
-  const project = getProject(slug);
+  const project = await getPublishedProject(slug, resolvedLocale);
   if (!project) notFound();
+
+  const nextProject = await getNextPublishedProject(slug, resolvedLocale);
 
   return (
     <>
       <CaseStudyHeader project={project} />
       <CaseStudyBody project={project} />
       <CaseStudyResults project={project} />
-      <NextProject project={getNextProject(project.key)} />
+      {nextProject && <NextProject project={nextProject} />}
       <CaseStudyCta />
     </>
   );
