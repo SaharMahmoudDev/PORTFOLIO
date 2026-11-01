@@ -1,0 +1,602 @@
+{
+  "nav": {
+    "projects": "Projects",
+    "services": "Services",
+    "about": "About",
+    "contact": "Contact",
+    "startProject": "Start a project",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "themeToLight": "Switch to light theme",
+    "themeToDark": "Switch to dark theme",
+    "switchLanguage": "Switch language"
+  },
+  "footer": {
+    "tagline": "Frontend engineer building React & Next.js interfaces, with AI automation wired into the workflow.",
+    "sitemap": "Sitemap",
+    "connect": "Connect",
+    "email": "Email",
+    "backToTop": "Back to top",
+    "builtWith": "built with React, Next.js & AI automation",
+    "admin": "Admin"
+  },
+  "about": {
+    "header": {
+      "eyebrow": "$ cat about.md",
+      "title": "About Sahar Mahmoud",
+      "description": "Frontend engineer based in Fayoum, Egypt, focused on building fast, well-crafted interfaces — and folding AI automation into the workflow behind them.",
+      "location": "Fayoum, Egypt",
+      "experience": "3+ years building for the web",
+      "availability": "available for freelance",
+      "initials": "SM",
+      "orbitText": "Frontend Engineer — AI Automation",
+      "caption": "Sahar Mahmoud — Frontend Engineer, AI Automation"
+    },
+    "story": {
+      "eyebrow": "my-story",
+      "title": "How I got here",
+      "paragraph1": "I graduated with a commerce degree, then taught myself frontend three years ago through online courses: JavaScript, HTML and CSS, then React, Next.js and Tailwind CSS. I later spent three months as a trainee at a software company, building a real survey product rather than a demo. There I learned Git and GitHub, clean architecture, clean code, and how to work with a real API.",
+      "paragraph2": "AI is reshaping the market, so I've started studying AI automation and will begin a dedicated course next month. The goal is to fold it into how I build, while keeping every AI-generated output reviewed by a human before it ships.",
+      "stats": {
+        "experience": {
+          "value": "3+",
+          "label": "years of experience"
+        },
+        "projects": {
+          "value": "8",
+          "label": "projects shipped"
+        },
+        "focus": {
+          "value": "02",
+          "label": "focus areas — frontend engineering, AI automation"
+        }
+      }
+    },
+    "stack": {
+      "eyebrow": "tech-stack",
+      "title": "Tools & technologies",
+      "groups": {
+        "core": "CORE",
+        "data": "DATA & FORMS",
+        "ui": "UI & FEEDBACK",
+        "ai": "AI & AUTOMATION"
+      },
+      "aiWorkflows": "AI-assisted workflows",
+      "aiTool": "Gemini API"
+    },
+    "journey": {
+      "eyebrow": "journey",
+      "title": "Where I've worked",
+      "entries": {
+        "current": {
+          "role": "Freelance Frontend Developer",
+          "company": "— Self-employed",
+          "period": "Present",
+          "text": "Building portfolio-grade web apps, dashboards and storefronts with React and Next.js, and adding AI features such as an AI chat assistant and an AI lead assistant."
+        },
+        "internship": {
+          "role": "Frontend Intern",
+          "company": "— AfaaqWare",
+          "period": "3 months",
+          "text": "Built a real survey product instead of a demo, working with Git and GitHub, clean architecture, clean code and a live API."
+        },
+        "learning": {
+          "role": "Self-taught Frontend Developer",
+          "company": "— Online courses",
+          "period": "3 years ago",
+          "text": "Went from a commerce degree to frontend: JavaScript, HTML and CSS first, then React, Next.js and Tailwind CSS."
+        }
+      }
+    },
+    "cta": {
+      "title": "Want to see what I can build for you?",
+      "description": "I'm always happy to talk through a new interface, a rebuild, or a workflow that should run itself.",
+      "cta": "Send a message",
+      "email": "saharmahmoud0101@gmail.com"
+    }
+  },
+  "home": {
+    "hero": {
+      "eyebrow": "$ whoami --role=frontend-engineer --focus=ai-automation",
+      "title": "Frontend engineering, with the busywork automated away.",
+      "description": "I design and build production interfaces in React and Next.js — then wire AI automation straight into the workflow itself, from content generation to lead triage.",
+      "primaryCta": "View selected work",
+      "secondaryCta": "Start a project →"
+    },
+    "pipeline": {
+      "log": "ai-project-generator.log",
+      "step1": "$ paste project url",
+      "step2": "→ extract metadata & content",
+      "step3": "→ analyze with AI",
+      "step4": "◐ awaiting your review",
+      "step5": "○ publish"
+    },
+    "howIWork": {
+      "eyebrow": "how-i-work",
+      "title": "How I work",
+      "description": "Four things I hold to on every build, from a single component to a full product.",
+      "photo": "A laptop and tablet on a wooden desk at night",
+      "badge": "Turning ideas into shipped interfaces",
+      "steps": {
+        "performance": {
+          "title": "01 — Performance first",
+          "text": "Loading, rendering and JS load handled as part of the build, not an afterthought."
+        },
+        "clean": {
+          "title": "02 — Clean & maintainable",
+          "text": "Reusable components, typed end-to-end with Zod and TypeScript."
+        },
+        "ai": {
+          "title": "03 — AI-assisted workflow",
+          "text": "AI accelerates the build and automates repetitive parts — every output reviewed before it ships."
+        },
+        "responsive": {
+          "title": "04 — Responsive by default",
+          "text": "Designed and tested across desktop, tablet and mobile, not just the screenshot breakpoint."
+        }
+      }
+    },
+    "contactCta": {
+      "title": "Have a workflow worth automating?",
+      "description": "Whether it's a new interface, a dashboard rebuild, or a manual process that should run itself — let's talk about it.",
+      "cta": "Send a message",
+      "email": "saharmahmoud0101@gmail.com"
+    },
+    "askAi": {
+      "eyebrow": "ask-sahar-ai",
+      "title": "Got a question? Ask my AI.",
+      "description": "Trained on my projects, stack and availability — it can answer most questions before you even reach out.",
+      "points": {
+        "instant": "Answers instantly, no back-and-forth",
+        "knows": "Knows my case studies, stack & rates",
+        "human": "Prefer a human? The form below reaches me directly"
+      },
+      "chat": {
+        "name": "Ask Sahar's AI",
+        "online": "online",
+        "greeting": "Hi — I'm Sahar's AI assistant. Ask me about her work, stack, or availability.",
+        "suggestions": {
+          "build": "What can you build?",
+          "best": "Show your best project",
+          "available": "Are you available now?"
+        },
+        "placeholder": "Ask a question…",
+        "send": "Send",
+        "typing": "Sahar's AI is typing",
+        "errors": {
+          "invalid": "Please type a question first.",
+          "unavailable": "The live assistant isn't connected yet — the contact form below reaches Sahar directly.",
+          "failed": "Something went wrong on my end — try again, or use the contact form below.",
+          "rateLimited": "You've asked a lot of questions in a short time — try again in a few minutes, or use the contact form below."
+        }
+      }
+    },
+    "services": {
+      "eyebrow": "freelance-services",
+      "availability": "Available for select client work",
+      "title": "Freelance services",
+      "description": "I take on a small number of freelance engagements alongside my own projects.",
+      "items": {
+        "frontend": {
+          "title": "Frontend Development",
+          "text": "Building responsive, modern web interfaces with React and Next.js, from a single component to a full application."
+        },
+        "landing": {
+          "title": "Landing Pages",
+          "text": "High-clarity, fast-loading landing pages designed to communicate a product or offer clearly and convert visitors."
+        },
+        "dashboards": {
+          "title": "Dashboard Interfaces",
+          "text": "Modern admin and data-management dashboards with sensible information hierarchy, tables, and filtering."
+        }
+      }
+    },
+    "selectedWork": {
+      "eyebrow": "selected-work",
+      "title": "A few things I've shipped",
+      "screenshot": "[project screenshot]",
+      "viewCaseStudy": "View case study",
+      "select": "Show project: {name}"
+    }
+  },
+  "services": {
+    "header": {
+      "eyebrow": "$ ls services/",
+      "title": "Services",
+      "description": "From a single landing page to a full product with AI wired into the workflow — here's what I build, and what's included every time."
+    },
+    "grid": {
+      "items": {
+        "frontend": {
+          "title": "Frontend Development",
+          "description": "Custom, responsive interfaces built with React and Next.js — from a single component to a full application.",
+          "points": {
+            "p1": "Custom-coded, not a page builder",
+            "p2": "Responsive across desktop, tablet & mobile",
+            "p3": "Typed, documented codebase you can hand off"
+          }
+        },
+        "landing": {
+          "title": "Landing Pages",
+          "description": "High-clarity, fast-loading pages designed to communicate an offer clearly and convert visitors.",
+          "points": {
+            "p1": "Conversion-focused layout & structure",
+            "p2": "Optimized load times & Core Web Vitals",
+            "p3": "Analytics & lead-capture wired in"
+          }
+        },
+        "dashboards": {
+          "title": "Dashboard Interfaces",
+          "description": "Modern admin and data-management dashboards with sensible information hierarchy.",
+          "points": {
+            "p1": "Tables, filtering & search that scale",
+            "p2": "Auth-gated admin views",
+            "p3": "Built to grow as your data grows"
+          }
+        },
+        "ai": {
+          "title": "AI Integration & Automation",
+          "description": "AI wired into the product itself — not bolted on — to automate the repetitive parts of your workflow.",
+          "points": {
+            "p1": "AI-powered content or data generation",
+            "p2": "Automated workflows, with human review built in",
+            "p3": "Integrates with OpenAI, Anthropic or your provider"
+          }
+        }
+      }
+    },
+    "pricing": {
+      "eyebrow": "how-i-price",
+      "title": "Engagement options",
+      "description": "A rough starting point — every quote is scoped to what you actually need after a short discovery call.",
+      "startingAt": "starting at",
+      "cta": "Get a quote",
+      "popular": "MOST COMMON",
+      "plans": {
+        "single": {
+          "label": "SINGLE PAGE",
+          "price": "$[X]",
+          "description": "A focused landing page or one-off interface, launched fast.",
+          "points": {
+            "p1": "1 page, fully responsive",
+            "p2": "Up to 2 rounds of revisions",
+            "p3": "~1 week delivery"
+          }
+        },
+        "multi": {
+          "label": "MULTI-PAGE SITE",
+          "price": "$[X]",
+          "description": "A full marketing site or small product, built to grow.",
+          "points": {
+            "p1": "Up to [X] pages, CMS-ready",
+            "p2": "Analytics & SEO setup included",
+            "p3": "~2–3 week delivery"
+          }
+        },
+        "full": {
+          "label": "FULL PRODUCT",
+          "price": "$[X]",
+          "description": "Dashboards, auth, AI features — a complete application.",
+          "points": {
+            "p1": "Custom backend & database",
+            "p2": "AI automation available on request",
+            "p3": "Ongoing support plans available"
+          }
+        }
+      }
+    },
+    "cta": {
+      "title": "Not sure which one fits?",
+      "description": "Tell me what you're building and I'll tell you honestly what it needs — no pressure, no upsell.",
+      "cta": "Send a message",
+      "email": "saharmahmoud0101@gmail.com"
+    }
+  },
+  "projects": {
+    "header": {
+      "eyebrow": "$ ls projects/",
+      "title": "Every project, from problem to outcome",
+      "description": "A running collection of dashboards, storefronts and product interfaces. Each one links to a full case study — the problem, the approach, and what shipped."
+    },
+    "card": {
+      "url": "[project-url].vercel.app",
+      "name": "[Project name]",
+      "screenshot": "[project screenshot]",
+      "viewCaseStudy": "View case study"
+    },
+    "categories": {
+      "webApp": "Web App",
+      "dashboard": "Dashboard",
+      "ecommerce": "E-commerce",
+      "landing": "Landing Page"
+    },
+    "status": {
+      "live": "Live",
+      "inProgress": "In progress"
+    },
+    "toolbar": {
+      "filterLabel": "Filter projects",
+      "all": "All",
+      "searchLabel": "Search projects",
+      "searchPlaceholder": "Search projects…",
+      "empty": "No projects match your search.",
+      "reset": "Clear filters"
+    },
+    "cta": {
+      "title": "Got a project like these in mind?",
+      "description": "Tell me what you're building — I'll tell you honestly what it takes to ship it well.",
+      "cta": "Start a project",
+      "email": "saharmahmoud0101@gmail.com"
+    }
+  },
+  "contact": {
+    "header": {
+      "eyebrow": "$ ./send-message --to=sahar",
+      "title": "Let's talk about what you're building.",
+      "description": "New project, a rebuild, or something that should just run itself — tell me a bit about it and I'll get back to you."
+    },
+    "form": {
+      "name": "name",
+      "namePlaceholder": "Your name",
+      "email": "email",
+      "emailPlaceholder": "you@company.com",
+      "projectType": "what do you need?",
+      "projectTypes": {
+        "website": "Website",
+        "webApp": "Web app",
+        "automation": "AI / automation",
+        "other": "Something else"
+      },
+      "budget": "budget",
+      "optional": "// optional",
+      "budgets": {
+        "small": "< $2k",
+        "medium": "$2k – $5k",
+        "large": "$5k+",
+        "unsure": "Not sure yet"
+      },
+      "message": "message",
+      "messagePlaceholder": "What are you building, and what does success look like?",
+      "submit": "Send message",
+      "sending": "Sending…",
+      "reply": "// usually replies within 24h",
+      "success": "Message sent — I'll get back to you soon.",
+      "errors": {
+        "name": "Please enter your name.",
+        "email": "Please enter a valid email.",
+        "message": "Tell me a bit more (at least 20 characters)."
+      },
+      "failure": {
+        "invalid": "Please check the form and try again.",
+        "unavailable": "Messages are not being accepted right now.",
+        "failed": "Something went wrong. Please try again in a moment.",
+        "rateLimited": "Too many messages from this connection. Please try again in a while."
+      }
+    },
+    "info": {
+      "status": "available for new projects",
+      "email": "email",
+      "github": "github",
+      "linkedin": "linkedin",
+      "timezone": "// based in Fayoum · GMT+2"
+    }
+  },
+  "caseStudy": {
+    "header": {
+      "back": "All projects",
+      "role": "Role",
+      "timeline": "Timeline",
+      "liveDemo": "Live demo",
+      "source": "Source",
+      "year": "Year"
+    },
+    "body": {
+      "overview": {
+        "eyebrow": "summary",
+        "title": "Overview"
+      },
+      "problem": {
+        "eyebrow": "problem",
+        "title": "The problem"
+      },
+      "goals": {
+        "eyebrow": "goals",
+        "title": "What success looked like"
+      },
+      "approach": {
+        "eyebrow": "approach",
+        "title": "How I approached it"
+      },
+      "features": {
+        "eyebrow": "key-features",
+        "title": "What shipped"
+      },
+      "design": {
+        "eyebrow": "design",
+        "title": "Design decisions"
+      },
+      "implementation": {
+        "eyebrow": "implementation",
+        "title": "Technical implementation"
+      },
+      "challenges": {
+        "eyebrow": "challenges",
+        "title": "What was hard"
+      }
+    },
+    "results": {
+      "eyebrow": "results",
+      "title": "Outcome"
+    },
+    "next": {
+      "label": "Next project"
+    },
+    "cta": {
+      "title": "Want something like this built?",
+      "description": "Tell me what you're building and I'll tell you honestly what it needs — no pressure, no upsell.",
+      "cta": "Send a message",
+      "email": "saharmahmoud0101@gmail.com"
+    }
+  },
+  "admin": {
+    "login": {
+      "eyebrow": "$ ./admin-login",
+      "title": "Admin sign in",
+      "email": "email",
+      "password": "password",
+      "submit": "Sign in",
+      "submitting": "Signing in…",
+      "errors": {
+        "email": "Please enter a valid email.",
+        "password": "Please enter your password."
+      },
+      "failure": {
+        "invalid": "Wrong email or password.",
+        "unavailable": "Admin login is not configured yet."
+      }
+    },
+    "dashboard": {
+      "eyebrow": "// admin",
+      "title": "Admin",
+      "signOut": "Sign out",
+      "signingOut": "Signing out…",
+      "signedInAs": "Signed in as {email}.",
+      "nav": {
+        "messages": "Messages",
+        "projects": "Projects"
+      },
+      "leads": {
+        "empty": "No messages yet.",
+        "markRead": "Mark as read",
+        "status": {
+          "new": "New",
+          "read": "Read"
+        },
+        "delete": "Delete",
+        "deleting": "Deleting…",
+        "deleteConfirm": "Delete this message? This cannot be undone.",
+        "emptyFiltered": "No messages match this filter.",
+        "replied": "Replied",
+        "ai": {
+          "type": {
+            "newProject": "New project",
+            "collaboration": "Collaboration",
+            "jobOpportunity": "Job opportunity",
+            "question": "Question",
+            "spam": "Spam",
+            "other": "Other"
+          },
+          "priority": {
+            "low": "Low priority",
+            "medium": "Medium priority",
+            "high": "High priority"
+          },
+          "notClassified": "Not analyzed yet.",
+          "classify": "Analyze with AI",
+          "reclassify": "Re-analyze",
+          "classifying": "Analyzing…",
+          "classifyFailed": "AI analysis failed. Try again.",
+          "replyLabel": "AI suggested reply",
+          "replyPlaceholder": "Write or edit the reply before sending…",
+          "send": "Approve & Send",
+          "sending": "Sending…",
+          "sendFailed": "Couldn't send the reply. Check your email settings.",
+          "sendUnavailable": "Email sending isn't configured yet.",
+          "sent": "Reply sent {date}."
+        }
+      },
+      "stats": {
+        "total": "total",
+        "new": "new",
+        "read": "read"
+      },
+      "toolbar": {
+        "filterLabel": "Filter messages",
+        "status": {
+          "all": "All",
+          "new": "New",
+          "read": "Read"
+        },
+        "searchLabel": "Search messages",
+        "searchPlaceholder": "Search by name or email…",
+        "export": "Export to Excel",
+        "exporting": "Exporting…",
+        "exportFailed": "Export failed. Try again."
+      },
+      "projects": {
+        "title": "Projects",
+        "new": "New project",
+        "empty": "No projects yet.",
+        "columns": {
+          "project": "Project",
+          "category": "Category",
+          "status": "Status",
+          "updated": "Updated"
+        },
+        "publishStatus": {
+          "draft": "Draft",
+          "published": "Published"
+        },
+        "publish": "Publish",
+        "unpublish": "Unpublish",
+        "updating": "Updating…",
+        "edit": "Edit",
+        "delete": "Delete",
+        "deleting": "Deleting…",
+        "deleteConfirm": "Delete this project? This cannot be undone.",
+        "form": {
+          "createTitle": "New project",
+          "editTitle": "Edit project",
+          "key": "key",
+          "keyHint": "used in the URL — lowercase letters, numbers, hyphens",
+          "name": "name",
+          "url": "display url",
+          "urlHint": "e.g. example.netlify.app",
+          "demoUrl": "demo url",
+          "repoUrl": "repo url",
+          "category": "category",
+          "status": "project status",
+          "publishStatus": "publish status",
+          "year": "year",
+          "tags": "tags",
+          "tagsHint": "comma-separated",
+          "imageLight": "light image path",
+          "imageDark": "dark image path",
+          "sortOrder": "sort order",
+          "contentEn": "content (English) — JSON",
+          "contentAr": "content (Arabic) — JSON",
+          "contentHint": "Matches the case study shape: outcome, meta, overview, problem, goals, approach, features, design, implementation, challenges, detail, results.",
+          "save": "Save project",
+          "saving": "Saving…",
+          "cancel": "Cancel",
+          "errors": {
+            "unauthorized": "Your session expired. Sign in again.",
+            "invalid": "Check the highlighted fields.",
+            "duplicateKey": "That key is already used by another project.",
+            "failed": "Couldn't save. Try again."
+          }
+        },
+        "generator": {
+          "generate": "Generate with AI",
+          "generating": "Generating…",
+          "generatingHint": "Fetching the page and drafting a full bilingual case study — usually under 20 seconds, but can take up to a couple of minutes if Gemini is slow to respond.",
+          "regenerate": "Regenerate with AI",
+          "title": "AI Project Generator",
+          "description": "Paste a live project URL. The server fetches its content and Gemini drafts a full case study for you to review — nothing publishes automatically.",
+          "sourceUrl": "project url",
+          "sourceUrlHint": "the live demo/site",
+          "repoUrl": "repo url",
+          "repoUrlHint": "optional",
+          "cancel": "Cancel",
+          "errors": {
+            "unauthorized": "Your session expired. Sign in again.",
+            "invalidUrl": "Enter a valid http(s) URL.",
+            "fetchFailed": "Couldn't fetch that page. Check the URL is reachable.",
+            "aiFailed": "AI generation failed. Try again.",
+            "noSource": "This project wasn't AI-generated, so there's nothing to regenerate from."
+          }
+        }
+      }
+    }
+  }
+}
