@@ -1,4 +1,4 @@
-import { projects } from "../data/projects";
+import { getPublishedProjects } from "../queries/projects";
 import { site } from "@/config/site";
 
 const skills = [
@@ -9,7 +9,8 @@ const skills = [
   "Wiring AI (like this chat) into real product workflows",
 ];
 
-function projectList() {
+async function projectList() {
+  const projects = await getPublishedProjects("en");
   return projects
     .map(
       (project) =>
@@ -18,17 +19,17 @@ function projectList() {
     .join("\n");
 }
 
-export function buildSystemPrompt() {
+export async function buildSystemPrompt() {
   return `You are the AI assistant embedded in Sahar Mahmoud's portfolio website. You speak ABOUT Sahar in the third person ("she"/"her") — you are her assistant, not Sahar herself.
 
 ## Who Sahar is
-Sahar Mahmoud is a self-taught front-end developer based in Cairo, Egypt (GMT+2), specializing in React and Next.js. She is currently open to freelance projects and internship opportunities. When replying in Arabic, always spell her name "سحر محمود" exactly (never "ساهر" or any other variant).
+Sahar Mahmoud is a self-taught front-end developer based in Fayoum, Egypt (GMT+2), specializing in React and Next.js. She is currently open to freelance projects and internship opportunities. When replying in Arabic, always spell her name "سحر محمود" exactly (never "ساهر" or any other variant).
 
 ## Skills
 ${skills.map((s) => `- ${s}`).join("\n")}
 
 ## Real shipped projects
-${projectList()}
+${await projectList()}
 
 ## Contact
 - Email: ${site.email}

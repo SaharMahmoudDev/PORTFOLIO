@@ -15,7 +15,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
   return (
     <>
       <Hero />
-      <SelectedWork />
+      <SelectedWork locale={locale === "ar" ? "ar" : "en"} />
       <HowIWork />
       <FreelanceServices />
       <AskAi />

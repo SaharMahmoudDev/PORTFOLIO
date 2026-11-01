@@ -2,13 +2,13 @@
 
 import { useTranslations } from "next-intl";
 import { projectCategories } from "../../../data/projects";
-import type { ProjectCategory, ProjectItem } from "../../../data/projects";
+import type { ProjectCategory, PublicProject } from "../../../data/projects";
 import { useProjectsFilter } from "../../../store";
 import { ProjectsGrid } from "./projects-grid";
 import { ProjectsToolbar } from "./projects-toolbar";
 
 type ProjectsBrowserProps = {
-  items: ProjectItem[];
+  items: PublicProject[];
 };
 
 export function ProjectsBrowser({ items }: ProjectsBrowserProps) {
@@ -20,7 +20,7 @@ export function ProjectsBrowser({ items }: ProjectsBrowserProps) {
     ? items.filter((project) =>
         [
           project.name,
-          t(`items.${project.key}.outcome`),
+          project.outcome,
           t(`categories.${project.category}`),
           ...project.tags,
         ]
