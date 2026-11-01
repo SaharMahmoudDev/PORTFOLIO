@@ -15,7 +15,7 @@ import {
 import { routing } from "@/i18n/routing";
 
 export async function generateStaticParams() {
-  const keys = await getPublishedProjectKeys();
+  const keys = await getPublishedProjectKeys().catch(() => []);
   return routing.locales.flatMap((locale) =>
     keys.map((key) => ({ locale, slug: key })),
   );
