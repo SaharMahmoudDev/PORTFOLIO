@@ -2,7 +2,6 @@
 
 import { desc, eq } from "drizzle-orm";
 import { revalidatePath } from "next/cache";
-import ExcelJS from "exceljs";
 import { db } from "@/db";
 import { leads } from "@/db/schema";
 import { classifyLead } from "@/lib/ai/classify-lead";
@@ -140,6 +139,7 @@ export async function exportLeadsAction(): Promise<ExportLeadsResult> {
 
   const rows = await db.select().from(leads).orderBy(desc(leads.createdAt));
 
+  const { default: ExcelJS } = await import("exceljs");
   const workbook = new ExcelJS.Workbook();
   workbook.creator = "Sahar Mahmoud — Portfolio Admin";
   workbook.created = new Date();
