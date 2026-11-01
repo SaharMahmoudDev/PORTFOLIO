@@ -13,8 +13,6 @@ if (!env.DATABASE_URL) {
 
 const databaseUrl = env.DATABASE_URL;
 
-// Neon is queried over HTTP so the same code runs on Cloudflare Workers, where
-// postgres.js can't keep a TCP connection alive. Any other Postgres uses it.
 const isNeon = new URL(databaseUrl).hostname.endsWith(".neon.tech");
 
 export const db = isNeon

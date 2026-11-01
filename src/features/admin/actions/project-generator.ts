@@ -132,8 +132,6 @@ export async function regenerateProjectDraft(
   ]);
   if (!draft) return { ok: false, error: "aiFailed" };
 
-  // Only touch the image paths when they're empty or already point at our
-  // own captures — never clobber images she set by hand.
   const ours = (value: string, suffix: string) =>
     value === "" || value === `/images/projects/${project.key}-${suffix}.jpg`;
   const replaceImages =

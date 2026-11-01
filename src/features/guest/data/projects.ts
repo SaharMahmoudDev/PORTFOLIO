@@ -15,7 +15,6 @@ export type ProjectImage = {
   dark: string;
 };
 
-// Card-level fields, shared by every project regardless of locale.
 export type ProjectItem = {
   key: string;
   name: string;
@@ -29,6 +28,4 @@ export type ProjectItem = {
   image: ProjectImage;
 };
 
-// What guest-facing pages render: the card fields plus that project's
-// content resolved to a single locale.
 export type PublicProject = ProjectItem & ProjectLocaleContent;

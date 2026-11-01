@@ -38,7 +38,7 @@ function isPrivateIp(ip: string): boolean {
     }
     return false;
   }
-  return true; // unrecognized -> treat as unsafe
+  return true;
 }
 
 export async function assertPublicHost(hostname: string): Promise<boolean> {
@@ -94,10 +94,6 @@ function parseHtml(html: string): FetchedPage {
   };
 }
 
-// Fetches a page for the AI Project Generator with basic SSRF protections:
-// only http(s), DNS-resolves the host (and every redirect hop, manually
-// followed) and rejects anything resolving to a private/loopback/link-local
-// address, short timeout, capped response size, HTML only.
 export async function fetchPageSafely(
   rawUrl: string,
 ): Promise<FetchedPage | null> {
