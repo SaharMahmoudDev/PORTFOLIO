@@ -29,10 +29,6 @@ function findChrome() {
   return candidates.find((candidate) => fs.existsSync(candidate)) ?? null;
 }
 
-// Captures the project's landing page in light and dark colour schemes with
-// the local Chrome/Edge. Returns null (and never throws) when there's no
-// browser available — e.g. on Vercel — or the page can't be captured, so the
-// generator just leaves the image fields empty.
 export async function captureProjectScreenshots(
   url: string,
 ): Promise<ProjectScreenshots | null> {
@@ -44,8 +40,6 @@ export async function captureProjectScreenshots(
     return null;
   }
 
-  // The browser follows redirects and loads subresources on its own, so every
-  // request it makes goes through the same public-host check as fetchPageSafely.
   const hostChecks = new Map<string, Promise<boolean>>();
   const isPublic = (hostname: string) => {
     let check = hostChecks.get(hostname);
@@ -67,16 +61,12 @@ export async function captureProjectScreenshots(
       if (web && (await isPublic(target.hostname))) {
         return await request.continue();
       }
-    } catch {
-      // fall through to abort
-    }
+    } catch {}
     if (!request.isInterceptResolutionHandled()) await request.abort();
   };
 
   let browser: Browser | undefined;
   try {
-    // Loaded by name at runtime so deploy bundlers don't trace the browser
-    // driver into a server that can't run it.
     const moduleName = "puppeteer-core";
     const { default: puppeteer } = (await import(
       /* turbopackIgnore: true */ /* webpackIgnore: true */ moduleName
@@ -109,8 +99,6 @@ export async function captureProjectScreenshots(
           return null;
         }
       } catch (error) {
-        // A slow page that never goes idle is still worth a screenshot of
-        // whatever rendered; any other failure means there's nothing to show.
         if (!(error instanceof Error && error.name === "TimeoutError")) {
           console.error("capture: navigation failed", error);
           return null;

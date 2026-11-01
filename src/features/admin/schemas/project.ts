@@ -41,9 +41,6 @@ export type ProjectLocaleContentInput = z.infer<
   typeof projectLocaleContentSchema
 >;
 
-// Parses a JSON string typed into an admin textarea and validates it
-// against the content shape — used by the RHF form (zodResolver) so
-// invalid JSON or a missing field surfaces as a normal field error.
 export const contentJsonField = z.string().transform((value, ctx) => {
   let parsed: unknown;
   try {
@@ -98,19 +95,11 @@ export const projectFormSchema = z.object({
 export type ProjectFormValues = z.input<typeof projectFormSchema>;
 export type ProjectFormOutput = z.output<typeof projectFormSchema>;
 
-// The RHF form already parses contentEn/contentAr into objects client-side
-// (via contentJsonField's transform) before calling the server action, so
-// re-running that same string->JSON transform server-side would fail on an
-// object input. This mirrors projectFormSchema but validates the content
-// fields directly as objects — i.e. it accepts exactly what the client form
-// actually sends (ProjectFormOutput).
 export const projectServerSchema = projectFormSchema.extend({
   contentEn: projectLocaleContentSchema,
   contentAr: projectLocaleContentSchema,
 });
 
-// What the AI Project Generator returns — validated before it's saved as a
-// draft row.
 export const projectDraftSchema = z.object({
   name: z.string().trim().min(1).max(120),
   category: z.enum(projectCategories),

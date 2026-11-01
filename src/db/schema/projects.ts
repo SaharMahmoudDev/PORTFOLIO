@@ -38,15 +38,15 @@ export const projects = pgTable("projects", {
   demoUrl: text("demo_url").notNull(),
   repoUrl: text("repo_url").notNull(),
   category: text("category").notNull(),
-  projectStatus: text("project_status").notNull(), // "live" | "inProgress"
-  publishStatus: text("publish_status").notNull().default("published"), // "draft" | "published"
+  projectStatus: text("project_status").notNull(),
+  publishStatus: text("publish_status").notNull().default("published"),
   year: text("year").notNull(),
   tags: text("tags").array().notNull(),
   imageLight: text("image_light").notNull(),
   imageDark: text("image_dark").notNull(),
   sortOrder: integer("sort_order").notNull().default(0),
   content: jsonb("content").$type<ProjectContent>().notNull(),
-  sourceUrl: text("source_url"), // the URL pasted into the AI Project Generator, if any
+  sourceUrl: text("source_url"),
   createdAt: timestamp("created_at", { withTimezone: true })
     .notNull()
     .defaultNow(),
