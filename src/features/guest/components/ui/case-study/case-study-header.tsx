@@ -61,16 +61,18 @@ export function CaseStudyHeader({ project }: CaseStudyHeaderProps) {
             {project.outcome}
           </Text>
           <div className="mt-2 flex flex-wrap items-center gap-3.5">
-            <Button
-              href={project.demoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {t("liveDemo")}
-            </Button>
+            {project.demoUrl && (
+              <Button
+                href={project.demoUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t("liveDemo")}
+              </Button>
+            )}
             <Button
               href={project.repoUrl}
-              variant="secondary"
+              variant={project.demoUrl ? "secondary" : "primary"}
               target="_blank"
               rel="noopener noreferrer"
             >

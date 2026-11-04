@@ -14,7 +14,7 @@ async function projectList() {
   return projects
     .map(
       (project) =>
-        `- ${project.name} (${project.category}, ${project.status}, ${project.year}): ${project.tags.join(", ")} — ${project.demoUrl}`,
+        `- ${project.name} (${project.category}, ${project.status}, ${project.year}): ${project.tags.join(", ")} — ${project.demoUrl || "no live demo yet"}`,
     )
     .join("\n");
 }

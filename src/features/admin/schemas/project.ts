@@ -75,7 +75,7 @@ export const projectFormSchema = z.object({
     .regex(/^[a-z0-9-]+$/, "Lowercase letters, numbers and hyphens only."),
   name: z.string().trim().min(1, "Required.").max(120),
   url: z.string().trim().min(1, "Required.").max(200),
-  demoUrl: z.url("Must be a valid URL."),
+  demoUrl: z.union([z.literal(""), z.url("Must be a valid URL.")]),
   repoUrl: z.url("Must be a valid URL."),
   category: z.enum(projectCategories),
   status: z.enum(["live", "inProgress"]),
