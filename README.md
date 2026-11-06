@@ -68,7 +68,13 @@ The app runs at http://localhost:3000.
 | `npm run db:generate` / `db:migrate` | Generate and apply database migrations |
 | `npm run cf:deploy` | Build with OpenNext and deploy to Cloudflare |
 
+## How this project was built
+
+I built this project with the help of an AI assistant (Claude) as a way to practice working with AI tools and to get more done. I describe what I want each part to do, the assistant helps write it, and then we go through the code together so I understand it and can change it myself. It is a learning exercise in AI-assisted development, not something I handed off completely.
+
 ## Author
 
 **Sahar Mahmoud** — Junior Front-End Developer
-LinkedIn: https://www.linkedin.com/in/saharmahmoud-dev/ · GitHub: https://github.com/SaharMahmoudDev
+
+- LinkedIn: https://www.linkedin.com/in/saharmahmoud-dev/
+- Portfolio: https://sahar-portfolio.webcraft-labs.workers.dev/
