@@ -50,7 +50,10 @@ export function AboutHeader() {
         </div>
 
         <div className="relative self-start">
-          <Glow intensity="medium" pulse className="-end-10 -top-8 size-85" />
+          <Glow
+            intensity="medium"
+            className="inset-e-0 -top-8 size-64 sm:size-85 lg:-inset-e-10"
+          />
           <BracketCard cornerSize="lg" className="p-5">
             <Monogram
               initials={t("initials")}

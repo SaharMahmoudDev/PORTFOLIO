@@ -21,18 +21,18 @@ export function Monogram({
       role="img"
       aria-label={label}
       className={cn(
-        "relative flex items-center justify-center overflow-hidden bg-[var(--card)]",
+        "relative flex items-center justify-center overflow-hidden bg-(--card)",
         className,
       )}
       {...props}
     >
       <div
         aria-hidden="true"
-        className="absolute inset-0 [background-image:radial-gradient(color-mix(in_oklab,var(--border-strong)_70%,transparent)_1px,transparent_1px)] [background-size:20px_20px] opacity-60"
+        className="absolute inset-0 bg-[radial-gradient(color-mix(in_oklab,var(--border-strong)_70%,transparent)_1px,transparent_1px)] bg-size-[20px_20px] opacity-60"
       />
       <div
         aria-hidden="true"
-        className="animate-glow-pulse absolute size-44 rounded-full bg-[radial-gradient(circle,color-mix(in_oklab,var(--primary)_26%,transparent),transparent_70%)] blur-2xl motion-reduce:animate-none sm:size-52"
+        className="md:animate-glow-pulse absolute size-44 rounded-full bg-[radial-gradient(circle,color-mix(in_oklab,var(--primary)_26%,transparent),transparent_70%)] blur-2xl motion-reduce:animate-none sm:size-52"
       />
 
       <div className="relative size-40 sm:size-48">
@@ -63,7 +63,7 @@ export function Monogram({
           aria-hidden="true"
           className="animate-orbit-reverse absolute inset-0 motion-reduce:animate-none"
         >
-          <span className="bg-primary absolute start-1/2 top-1 size-2 -translate-x-1/2 rounded-full shadow-[0_0_10px_2px_rgba(53,212,130,0.55)]" />
+          <span className="bg-primary absolute inset-s-1/2 top-1 size-2 -translate-x-1/2 rounded-full shadow-[0_0_10px_2px_rgba(53,212,130,0.55)]" />
         </div>
 
         <div className="border-primary/35 absolute inset-8 flex items-center justify-center rounded-full border bg-[color-mix(in_oklab,var(--card)_88%,var(--primary)_12%)] sm:inset-9">
