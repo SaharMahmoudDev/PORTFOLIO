@@ -58,6 +58,7 @@ export default async function LocaleLayout({
       lang={locale}
       dir={getDirection(locale)}
       className={`${fontVariables} h-full antialiased`}
+      data-scroll-behavior="smooth"
       suppressHydrationWarning
     >
       <body id="top" className="font-sans">

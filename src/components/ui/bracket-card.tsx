@@ -10,7 +10,7 @@ type BracketCardProps = ComponentProps<"div"> & {
 const cornerSizeMap = {
   sm: "size-5",
   md: "size-6",
-  lg: "size-[26px]",
+  lg: "size-6.5",
 } as const;
 
 export function BracketCard({
@@ -35,14 +35,16 @@ export function BracketCard({
       {...props}
     >
       <span
-        className={cn(base, corner, "start-0 top-0 border-s-2 border-t-2")}
-      />
-      <span className={cn(base, corner, "end-0 top-0 border-e-2 border-t-2")} />
-      <span
-        className={cn(base, corner, "start-0 bottom-0 border-s-2 border-b-2")}
+        className={cn(base, corner, "inset-s-0 top-0 border-s-2 border-t-2")}
       />
       <span
-        className={cn(base, corner, "end-0 bottom-0 border-e-2 border-b-2")}
+        className={cn(base, corner, "inset-e-0 top-0 border-e-2 border-t-2")}
+      />
+      <span
+        className={cn(base, corner, "inset-s-0 bottom-0 border-s-2 border-b-2")}
+      />
+      <span
+        className={cn(base, corner, "inset-e-0 bottom-0 border-e-2 border-b-2")}
       />
       {children}
     </div>

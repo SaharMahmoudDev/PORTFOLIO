@@ -34,7 +34,7 @@ export function HowIWork() {
               className="object-cover"
             />
           </div>
-          <Badge variant="card" className="absolute start-8.5 bottom-8.5">
+          <Badge variant="card" className="absolute inset-s-8.5 bottom-8.5">
             {t("badge")}
           </Badge>
         </BracketCard>

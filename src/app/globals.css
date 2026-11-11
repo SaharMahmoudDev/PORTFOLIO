@@ -115,6 +115,8 @@
         color-mix(in oklab, var(--primary) 9%, transparent),
         transparent 70%
       );
-    background-attachment: fixed;
+    @media (min-width: 48rem) {
+      background-attachment: fixed;
+    }
   }
 }

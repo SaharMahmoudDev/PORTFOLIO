@@ -49,7 +49,7 @@ export function ProjectsGrid({ items }: ProjectsGridProps) {
     <Section divider={false} spacing="flush-top">
       <div ref={gridRef} className="grid gap-7 md:grid-cols-2">
         {items.map((project) => (
-          <div key={project.key} data-project-card>
+          <div key={project.key} data-project-card className="min-w-0">
             <ProjectCard
               variant="grid"
               url={project.url}
