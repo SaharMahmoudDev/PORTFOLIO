@@ -463,7 +463,8 @@
       "signedInAs": "Signed in as {email}.",
       "nav": {
         "messages": "Messages",
-        "projects": "Projects"
+        "projects": "Projects",
+        "settings": "settings"
       },
       "leads": {
         "empty": "No messages yet.",
@@ -593,8 +594,43 @@
             "invalidUrl": "Enter a valid http(s) URL.",
             "fetchFailed": "Couldn't fetch that page. Check the URL is reachable.",
             "aiFailed": "AI generation failed. Try again.",
-            "noSource": "This project wasn't AI-generated, so there's nothing to regenerate from."
+            "noSource": "This project wasn't AI-generated, so there's nothing to regenerate from.",
+            "disabled": "This feature is turned off in Settings."
           }
+        }
+      },
+      "settings": {
+        "title": "Plan & features",
+        "description": "Choose which AI features are active on this site. Switch a plan to apply its preset, or toggle features one by one. Changes apply to the live site right away.",
+        "plan": {
+          "label": "plan",
+          "basic": "Basic",
+          "pro": "Pro",
+          "premium": "Premium",
+          "hint": "Preset applied. Toggling a feature below switches to a custom setup.",
+          "custom": "Custom setup"
+        },
+        "features": {
+          "projectGenerator": {
+            "title": "AI Project Generator",
+            "description": "Paste a live URL in the admin and get a bilingual case-study draft to review. Included from Pro."
+          },
+          "leadAssistant": {
+            "title": "AI Lead Assistant",
+            "description": "Classifies new contact messages and drafts a reply you approve before it is sent. Included in Premium."
+          },
+          "askAi": {
+            "title": "Ask Sahar's AI",
+            "description": "The chat widget on the home page that answers visitors about skills, projects and availability. Included in Premium."
+          }
+        },
+        "save": "Save changes",
+        "saving": "Saving…",
+        "saved": "Settings saved.",
+        "errors": {
+          "unauthorized": "Your session expired. Sign in again.",
+          "invalid": "Those settings are not valid.",
+          "failed": "Could not save the settings. Try again."
         }
       }
     }

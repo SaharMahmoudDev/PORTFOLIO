@@ -41,6 +41,16 @@ export default async function AdminLayout({
               >
                 {t("projects")}
               </Text>
+              <Text
+                as={Link}
+                href="/admin/settings"
+                font="mono"
+                size="xs"
+                tone="muted"
+                className="hover:text-foreground transition-colors"
+              >
+                {t("settings")}
+              </Text>
             </nav>
           )}
         </Container>
