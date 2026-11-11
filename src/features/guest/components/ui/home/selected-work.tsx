@@ -4,7 +4,7 @@ import { Section } from "@/components/ui";
 import { getFeaturedProjects } from "../../../queries/projects";
 import { ProjectShowcase } from "./project-showcase";
 
-const featuredKeys = ["renova", "real-estate-hub", "dolistix"] as const;
+const featuredKeys = ["surveyland", "renova", "real-estate-hub"] as const;
 
 type SelectedWorkProps = {
   locale: "en" | "ar";
