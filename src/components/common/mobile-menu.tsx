@@ -49,7 +49,7 @@ export function MobileMenu({ links }: MobileMenuProps) {
         id="mobile-menu"
         inert={!open}
         className={cn(
-          "border-hairline bg-background fixed inset-y-0 end-0 z-60 flex w-[min(82vw,320px)] flex-col gap-1 border-s px-5 pb-5 transition-transform duration-400 ease-out",
+          "border-hairline bg-background fixed inset-y-0 inset-e-0 z-60 flex w-[min(82vw,320px)] flex-col gap-1 border-s px-5 pb-5 transition-transform duration-400 ease-out",
           open ? "translate-x-0" : "ltr:translate-x-full rtl:-translate-x-full",
         )}
       >

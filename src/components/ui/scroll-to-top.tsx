@@ -26,7 +26,7 @@ export function ScrollToTop({ label, className }: ScrollToTopProps) {
       onClick={scrollToTop}
       tabIndex={visible ? 0 : -1}
       className={cn(
-        "border-border-strong bg-card text-foreground hover:border-primary hover:text-primary fixed end-5 bottom-5 z-40 inline-flex size-11 items-center justify-center rounded-full border shadow-lg transition-all duration-300",
+        "border-border-strong bg-card text-foreground hover:border-primary hover:text-primary fixed inset-e-5 bottom-5 z-40 inline-flex size-11 items-center justify-center rounded-full border shadow-lg transition-all duration-300",
         visible
           ? "translate-y-0 opacity-100"
           : "pointer-events-none translate-y-3 opacity-0",

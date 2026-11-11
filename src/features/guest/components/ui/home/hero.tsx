@@ -12,7 +12,7 @@ export function Hero() {
     <section className="relative -mt-16 overflow-hidden md:-mt-22">
       <HeroBackdrop />
 
-      <Container className="relative z-10 grid gap-14 pt-28 pb-20 md:pt-33 lg:grid-cols-[1.05fr_0.95fr] lg:items-start lg:gap-16 lg:pt-[168px] lg:pb-28">
+      <Container className="relative z-10 grid gap-14 pt-28 pb-20 md:pt-33 lg:grid-cols-[1.05fr_0.95fr] lg:items-start lg:gap-16 lg:pt-42 lg:pb-28">
         <div className="flex flex-col items-start gap-6">
           <Text font="mono" size="xs" tone="primary">
             {t("eyebrow")}

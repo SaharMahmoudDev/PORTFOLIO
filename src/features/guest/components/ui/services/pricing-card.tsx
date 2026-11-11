@@ -30,7 +30,11 @@ export function PricingCard({
       className={cn("relative flex flex-col p-8")}
     >
       {badge && (
-        <Badge variant="solid" dot={false} className="absolute start-8 -top-3">
+        <Badge
+          variant="solid"
+          dot={false}
+          className="absolute inset-s-8 -top-3"
+        >
           {badge}
         </Badge>
       )}

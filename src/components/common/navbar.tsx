@@ -45,7 +45,7 @@ export function Navbar() {
       >
         <Container
           as="nav"
-          className="flex h-16 items-center justify-between md:h-[88px]"
+          className="flex h-16 items-center justify-between md:h-22"
         >
           <Link
             href="/"
