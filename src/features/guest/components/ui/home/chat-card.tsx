@@ -55,7 +55,10 @@ export function ChatCard() {
 
   return (
     <div className="relative">
-      <Glow intensity="soft" className="-start-10 -top-8 size-80" />
+      <Glow
+        intensity="soft"
+        className="inset-s-0 -top-8 size-64 sm:size-80 lg:-inset-s-10"
+      />
 
       <div className="border-border bg-card relative overflow-hidden rounded-[10px] border">
         <div className="border-border bg-panel flex items-center justify-between gap-2.5 border-b px-5 py-4">
