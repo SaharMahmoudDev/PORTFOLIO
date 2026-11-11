@@ -3,27 +3,25 @@ import { notFound } from "next/navigation";
 import { NextIntlClientProvider } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { AppProviders } from "@/providers";
+import { site } from "@/config/site";
 import { fontVariables } from "@/lib/fonts";
 import { getDirection, isValidLocale, routing } from "@/i18n/routing";
 import "../globals.css";
 
-const SITE_URL = "https://sahar-portfolio.webcraft-labs.workers.dev";
-const SITE_TITLE = "Sahar Mahmoud — Front-End Developer";
 const SITE_DESCRIPTION = "Portfolio of Sahar Mahmoud, front-end developer.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
-  title: SITE_TITLE,
+  metadataBase: new URL(site.url),
+  title: { default: site.title, template: `%s | ${site.name}` },
   description: SITE_DESCRIPTION,
   openGraph: {
     type: "website",
-    url: SITE_URL,
-    siteName: "Sahar Mahmoud",
-    title: SITE_TITLE,
+    siteName: site.name,
+    title: site.title,
     description: SITE_DESCRIPTION,
     images: [
       {
-        url: "/images/projects/og-image.jpg",
+        url: site.ogImage,
         width: 1200,
         height: 630,
         alt: "Sahar Mahmoud portfolio home page",
@@ -32,9 +30,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: SITE_TITLE,
+    title: site.title,
     description: SITE_DESCRIPTION,
-    images: ["/images/projects/og-image.jpg"],
+    images: [site.ogImage],
   },
 };
 
