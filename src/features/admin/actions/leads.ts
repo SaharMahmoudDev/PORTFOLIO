@@ -7,6 +7,7 @@ import { leads } from "@/db/schema";
 import { classifyLead } from "@/lib/ai/classify-lead";
 import { canAutoReply, sendVisitorEmail } from "@/lib/email/send";
 import { leadReply } from "@/lib/email/templates";
+import { getFeatureFlags } from "@/lib/features";
 import { getAdminSession } from "../session";
 
 export async function markLeadRead(id: string) {
@@ -32,6 +33,7 @@ export async function classifyLeadAction(
 ): Promise<ClassifyLeadResult> {
   const session = await getAdminSession();
   if (!session) return { ok: false };
+  if (!(await getFeatureFlags()).leadAssistant) return { ok: false };
 
   const [lead] = await db.select().from(leads).where(eq(leads.id, id));
   if (!lead) return { ok: false };

@@ -2,6 +2,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ProjectsAdminList } from "@/features/admin";
 import { getAdminProjects } from "@/features/admin/queries/projects";
 import { Button, Container, Title } from "@/components/ui";
+import { getFeatureFlags } from "@/lib/features";
 
 export default async function AdminProjectsPage({
   params,
@@ -11,6 +12,7 @@ export default async function AdminProjectsPage({
   const t = await getTranslations("admin.dashboard.projects");
 
   const projects = await getAdminProjects();
+  const { projectGenerator } = await getFeatureFlags();
 
   return (
     <Container className="max-w-220 py-16">
@@ -19,9 +21,15 @@ export default async function AdminProjectsPage({
           {t("title")}
         </Title>
         <div className="flex items-center gap-3">
-          <Button href="/admin/projects/generate" variant="secondary" size="sm">
-            {t("generator.generate")}
-          </Button>
+          {projectGenerator && (
+            <Button
+              href="/admin/projects/generate"
+              variant="secondary"
+              size="sm"
+            >
+              {t("generator.generate")}
+            </Button>
+          )}
           <Button href="/admin/projects/new" size="sm">
             {t("new")}
           </Button>
