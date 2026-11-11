@@ -634,5 +634,31 @@
         }
       }
     }
+  },
+  "seo": {
+    "home": {
+      "title": "Sahar Mahmoud — Front-End Developer",
+      "description": "Front-end engineer building React and Next.js interfaces, with AI automation wired into the workflow. See selected work and start a project."
+    },
+    "projects": {
+      "title": "Projects",
+      "description": "Dashboards, storefronts and product interfaces — each with a full case study covering the problem, the approach and what shipped."
+    },
+    "about": {
+      "title": "About",
+      "description": "Front-end engineer based in Fayoum, Egypt, building fast, well-crafted interfaces with React and Next.js and folding AI automation into the workflow."
+    },
+    "services": {
+      "title": "Services",
+      "description": "Freelance front-end work from a single landing page to a full product, with optional AI features like lead triage and content drafting."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "New project, a rebuild, or something that should just run itself — tell Sahar about it and get a reply."
+    },
+    "person": {
+      "jobTitle": "Front-End Developer",
+      "location": "Fayoum, Egypt"
+    }
   }
 }

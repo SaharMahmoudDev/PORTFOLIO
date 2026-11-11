@@ -84,3 +84,13 @@ export async function getFeaturedProjects(
     .filter((row) => row !== undefined)
     .map((row) => toPublicProject(row, locale));
 }
+
+export async function getPublishedProjectEntries(): Promise<
+  { key: string; updatedAt: Date }[]
+> {
+  return db
+    .select({ key: projects.key, updatedAt: projects.updatedAt })
+    .from(projects)
+    .where(eq(projects.publishStatus, "published"))
+    .orderBy(asc(projects.sortOrder));
+}
