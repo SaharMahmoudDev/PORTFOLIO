@@ -86,9 +86,13 @@ function defaultsFor(project?: Project): ProjectFormValues {
 
 type ProjectFormProps = {
   project?: Project;
+  canRegenerate?: boolean;
 };
 
-export function ProjectForm({ project }: ProjectFormProps) {
+export function ProjectForm({
+  project,
+  canRegenerate = false,
+}: ProjectFormProps) {
   const t = useTranslations("admin.dashboard.projects.form");
   const tg = useTranslations("admin.dashboard.projects.generator");
   const tc = useTranslations("projects.categories");
@@ -147,7 +151,7 @@ export function ProjectForm({ project }: ProjectFormProps) {
         <Title as="h1" size="lg">
           {project ? t("editTitle") : t("createTitle")}
         </Title>
-        {project?.sourceUrl && (
+        {canRegenerate && project?.sourceUrl && (
           <Button
             type="button"
             variant="secondary"

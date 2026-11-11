@@ -3,6 +3,7 @@
 import { eq } from "drizzle-orm";
 import { env } from "@/config/env";
 import { classifyLead } from "@/lib/ai/classify-lead";
+import { getFeatureFlags } from "@/lib/features";
 import {
   canAutoReply,
   canNotifyOwner,
@@ -63,22 +64,25 @@ export async function submitContact(input: unknown): Promise<ContactResult> {
       }
     }
 
-    jobs.push(
-      classifyLead({ ...lead, locale }).then(async (result) => {
-        if (!result) return;
-        await db
-          .update(leads)
-          .set({
-            aiType: result.type,
-            aiIndustry: result.industry,
-            aiPriority: result.priority,
-            aiFeatures: result.features,
-            aiSuggestedReply: result.suggestedReply,
-            aiClassifiedAt: new Date(),
-          })
-          .where(eq(leads.id, inserted.id));
-      }),
-    );
+    const { leadAssistant } = await getFeatureFlags();
+    if (leadAssistant) {
+      jobs.push(
+        classifyLead({ ...lead, locale }).then(async (result) => {
+          if (!result) return;
+          await db
+            .update(leads)
+            .set({
+              aiType: result.type,
+              aiIndustry: result.industry,
+              aiPriority: result.priority,
+              aiFeatures: result.features,
+              aiSuggestedReply: result.suggestedReply,
+              aiClassifiedAt: new Date(),
+            })
+            .where(eq(leads.id, inserted.id));
+        }),
+      );
+    }
 
     await Promise.allSettled(jobs);
 

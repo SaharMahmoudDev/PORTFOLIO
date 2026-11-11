@@ -4,6 +4,7 @@ import { GoogleGenAI } from "@google/genai";
 import { z } from "zod";
 import { env } from "@/config/env";
 import { withTimeout } from "@/lib/ai/with-timeout";
+import { getFeatureFlags } from "@/lib/features";
 import { isRateLimited } from "@/lib/rate-limit";
 import { buildSystemPrompt } from "../ai/system-prompt";
 
@@ -32,7 +33,7 @@ export async function askSaharsAi(input: unknown): Promise<AskAiResult> {
   const parsed = askAiSchema.safeParse(input);
   if (!parsed.success) return { ok: false, error: "invalid" };
 
-  if (!env.GEMINI_API_KEY) {
+  if (!env.GEMINI_API_KEY || !(await getFeatureFlags()).askAi) {
     return { ok: false, error: "unavailable" };
   }
 

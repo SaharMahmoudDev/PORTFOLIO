@@ -8,6 +8,7 @@ import { Button, Tag, Text, Textarea } from "@/components/ui";
 
 type AiReplyPanelProps = {
   id: string;
+  aiEnabled: boolean;
   aiType: string | null;
   aiIndustry: string | null;
   aiPriority: string | null;
@@ -19,6 +20,7 @@ type AiReplyPanelProps = {
 
 export function AiReplyPanel({
   id,
+  aiEnabled,
   aiType,
   aiIndustry,
   aiPriority,
@@ -66,7 +68,7 @@ export function AiReplyPanel({
 
   return (
     <div className="border-border mt-4 border-t pt-4">
-      {classified ? (
+      {!aiEnabled ? null : classified ? (
         <div className="flex flex-wrap items-center gap-2">
           {aiType && <Tag size="sm">{t(`type.${aiType}`)}</Tag>}
           {aiIndustry && <Tag size="sm">{aiIndustry}</Tag>}
@@ -108,7 +110,12 @@ export function AiReplyPanel({
         </div>
       )}
 
-      <Text font="mono" size="2xs" tone="faint" className="mt-4 mb-1.5">
+      <Text
+        font="mono"
+        size="2xs"
+        tone="faint"
+        className={aiEnabled ? "mt-4 mb-1.5" : "mb-1.5"}
+      >
         {t("replyLabel")}
       </Text>
       <Textarea

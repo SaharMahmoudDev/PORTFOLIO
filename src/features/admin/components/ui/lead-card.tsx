@@ -1,5 +1,6 @@
 import { getFormatter, getTranslations } from "next-intl/server";
 import { markLeadRead } from "../../actions/leads";
+import { getFeatureFlags } from "@/lib/features";
 import type { Lead } from "@/db/schema";
 import { Badge, BracketCard, Button, Tag, Text, Title } from "@/components/ui";
 import { AiReplyPanel } from "./ai-reply-panel";
@@ -14,6 +15,7 @@ export async function LeadCard({ lead }: LeadCardProps) {
   const tc = await getTranslations("contact.form");
   const format = await getFormatter();
   const isNew = lead.status === "new";
+  const { leadAssistant } = await getFeatureFlags();
 
   const markRead = async () => {
     "use server";
@@ -70,6 +72,7 @@ export async function LeadCard({ lead }: LeadCardProps) {
 
       <AiReplyPanel
         id={lead.id}
+        aiEnabled={leadAssistant}
         aiType={lead.aiType}
         aiIndustry={lead.aiIndustry}
         aiPriority={lead.aiPriority}

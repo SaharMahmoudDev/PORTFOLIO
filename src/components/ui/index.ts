@@ -21,6 +21,7 @@ export { Reveal } from "./reveal";
 export { ScrollToTop } from "./scroll-to-top";
 export { SearchField } from "./search-field";
 export { Section } from "./section";
+export { Switch } from "./switch";
 export { Tag } from "./tag";
 export { Text } from "./text";
 export { Textarea } from "./textarea";

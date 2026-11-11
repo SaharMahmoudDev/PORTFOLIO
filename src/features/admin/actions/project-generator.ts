@@ -10,6 +10,7 @@ import {
 } from "@/lib/project-generator/capture-screenshots";
 import { fetchPageSafely } from "@/lib/project-generator/fetch-url";
 import { generateProjectDraft as callAi } from "@/lib/project-generator/generate-draft";
+import { getFeatureFlags } from "@/lib/features";
 import { getAdminSession } from "../session";
 
 function slugify(value: string) {
@@ -40,7 +41,8 @@ export type GenerateDraftResult =
   | { ok: true; id: string }
   | {
       ok: false;
-      error: "unauthorized" | "invalidUrl" | "fetchFailed" | "aiFailed";
+      error:
+        "unauthorized" | "disabled" | "invalidUrl" | "fetchFailed" | "aiFailed";
     };
 
 export async function generateProjectDraft(
@@ -49,6 +51,9 @@ export async function generateProjectDraft(
 ): Promise<GenerateDraftResult> {
   const session = await getAdminSession();
   if (!session) return { ok: false, error: "unauthorized" };
+  if (!(await getFeatureFlags()).projectGenerator) {
+    return { ok: false, error: "disabled" };
+  }
 
   let parsedUrl: URL;
   try {
@@ -107,7 +112,8 @@ export type RegenerateDraftResult =
   | { ok: true }
   | {
       ok: false;
-      error: "unauthorized" | "noSource" | "fetchFailed" | "aiFailed";
+      error:
+        "unauthorized" | "disabled" | "noSource" | "fetchFailed" | "aiFailed";
     };
 
 export async function regenerateProjectDraft(
@@ -115,6 +121,9 @@ export async function regenerateProjectDraft(
 ): Promise<RegenerateDraftResult> {
   const session = await getAdminSession();
   if (!session) return { ok: false, error: "unauthorized" };
+  if (!(await getFeatureFlags()).projectGenerator) {
+    return { ok: false, error: "disabled" };
+  }
 
   const [project] = await db.select().from(projects).where(eq(projects.id, id));
   if (!project?.sourceUrl) return { ok: false, error: "noSource" };
