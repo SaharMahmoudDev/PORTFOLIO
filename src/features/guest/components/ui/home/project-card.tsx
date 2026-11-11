@@ -56,6 +56,7 @@ export function ProjectCard({
       cornerSize={featured ? "lg" : variant === "grid" ? "md" : "sm"}
       interactive={selectable}
       className={cn(
+        "min-w-0",
         featured && "p-6 lg:row-span-2",
         variant === "grid" && "p-6",
         variant === "compact" && "p-4.5",
