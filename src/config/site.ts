@@ -1,4 +1,8 @@
 export const site = {
+  url: "https://sahar-portfolio.webcraft-labs.workers.dev",
+  name: "Sahar Mahmoud",
+  title: "Sahar Mahmoud — Front-End Developer",
+  ogImage: "/images/projects/og-image.jpg",
   email: "saharmahmoud0101@gmail.com",
   github: {
     label: "github.com/SaharMahmoudDev",
